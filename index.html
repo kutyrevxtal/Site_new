@@ -3,18 +3,275 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Website</title>
+    <title>Anton Kutyrev | Petrology, Mineralogy, Critical Minerals</title>
+    <meta
+      name="description"
+      content="Anton Kutyrev researches layered intrusions, chromitites, platinum-group elements, critical minerals, and isotope geochemistry."
+    />
     <link rel="stylesheet" href="./styles.css" />
+    <script src="./script.js" defer></script>
   </head>
   <body>
-    <main class="page">
-      <p class="eyebrow">Website project</p>
-      <h1>Everything for this site now lives in this folder.</h1>
-      <p class="intro">
-        This is a clean starter page so we can begin building your website in
-        one place and track every change with git.
-      </p>
-      <a class="button" href="mailto:hello@example.com">Update This Later</a>
-    </main>
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="brand" href="./index.html">Anton Kutyrev</a>
+        <nav class="site-nav" aria-label="Primary">
+          <a class="active" href="./index.html">Home</a>
+          <a href="./research.html">Research</a>
+          <a href="./publications.html">Publications</a>
+          <a href="./cv.html">CV</a>
+          <a href="./talks.html">Talks</a>
+          <a href="./photography.html">Photography</a>
+        </nav>
+        <button class="theme-toggle" type="button" aria-label="Toggle color theme">
+          Dark mode
+        </button>
+      </header>
+
+      <main>
+        <figure class="hero-banner panel">
+          <img
+            src="./assets/images/cover-mountain.jpg"
+            alt="Snow-covered mountain landscape from Anton Kutyrev's field photography."
+          />
+        </figure>
+
+        <section class="hero hero-home">
+          <div class="hero-copy">
+            <p class="eyebrow">Petrology | Mineralogy | Critical Minerals</p>
+            <h1>Reading magmatic systems</h1>
+            <p class="hero-text">
+              I am a petrologist and mineralogist working on mafic-ultramafic
+              systems, platinum-group elements, oxygen isotopes, and critical
+              minerals. My research moves from field geology and petrography to
+              microanalytical work, thermodynamic modelling, and geochemical
+              interpretation.
+            </p>
+            <div class="button-row">
+              <a class="button" href="./research.html">Explore Research</a>
+              <a class="button button-secondary" href="./publications.html"
+                >Browse Publications</a
+              >
+            </div>
+          </div>
+
+          <aside class="hero-panel">
+            <figure class="hero-visual panel">
+              <img
+                src="./assets/images/portrait-main.jpeg"
+                alt="Portrait of Anton Kutyrev in a mountain landscape."
+              />
+            </figure>
+
+            <div class="panel profile-panel">
+              <p class="panel-kicker">Current base</p>
+              <h2>University of the Witwatersrand</h2>
+              <p>
+                Postdoctoral Research Fellow in the School of Geosciences,
+                working on critical minerals in layered mafic-ultramafic
+                intrusions and Bushveld chromitites.
+              </p>
+            </div>
+
+            <div class="stats-grid">
+              <article class="stat-card">
+                <p class="stat-label">Research terrain</p>
+                <p class="stat-value">Layered intrusions</p>
+              </article>
+              <article class="stat-card">
+                <p class="stat-label">Core materials</p>
+                <p class="stat-value">Chromitites & PGE</p>
+              </article>
+              <article class="stat-card">
+                <p class="stat-label">Funding received</p>
+                <p class="stat-value">~CAD 566k</p>
+              </article>
+              <article class="stat-card">
+                <p class="stat-label">Research footprint</p>
+                <p class="stat-value">South Africa, UK, USA, Russia</p>
+              </article>
+            </div>
+          </aside>
+        </section>
+
+        <section class="section-block">
+          <div class="section-heading">
+            <p class="eyebrow">Research focus</p>
+            <h2>What drives the work</h2>
+          </div>
+          <div class="card-grid feature-grid">
+            <article class="panel feature-card">
+              <h3>Layered intrusions</h3>
+              <p>
+                Understanding Ni-Cu-PGE systems, chromitites, and the
+                petrogenesis of the Bushveld Critical Zone in the context of the
+                energy transition.
+              </p>
+            </article>
+            <article class="panel feature-card">
+              <h3>PGE mineralogy</h3>
+              <p>
+                Tracking platinum-group minerals, alloys, oxides, and their
+                overprints from field textures to high-resolution analytical
+                data.
+              </p>
+            </article>
+            <article class="panel feature-card">
+              <h3>Melt-rock interaction</h3>
+              <p>
+                Using mineral textures, inclusion assemblages, and geochemistry
+                to decode how melts and fluids reshape ultramafic systems.
+              </p>
+            </article>
+            <article class="panel feature-card">
+              <h3>Early Earth isotopes</h3>
+              <p>
+                Applying triple oxygen and hydrogen isotopes to constrain crustal
+                recycling, hydrothermal alteration, and ancient surface
+                processes.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section-block two-column">
+          <div>
+            <div class="section-heading">
+              <p class="eyebrow">Site logic</p>
+              <h2>A research home</h2>
+            </div>
+            <p class="supporting-text">
+              The structure of this website follows the logic of a modern
+              academic profile site: a front page that quickly introduces the
+              person and the science, followed by dedicated sections for
+              research, publications, CV, talks, and public-facing visual work.
+            </p>
+            <p class="supporting-text">
+              That means this site can work both as a professional reference for
+              collaborators and as an accessible entry point for students,
+              journalists, and anyone curious about your research.
+            </p>
+          </div>
+
+          <div class="stack">
+            <article class="panel compact-panel">
+              <p class="panel-kicker">Research</p>
+              <p>
+                Themes, analytical methods, and current questions across
+                ultramafic systems, isotopes, and mineral deposits.
+              </p>
+            </article>
+            <article class="panel compact-panel">
+              <p class="panel-kicker">Publications</p>
+              <p>
+                Peer-reviewed papers, under-review work, and datasets with DOI
+                links.
+              </p>
+            </article>
+            <article class="panel compact-panel">
+              <p class="panel-kicker">Photography</p>
+              <p>
+                A dedicated gallery section for field, mineral, and travel
+                images, ready for your photographs.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-heading">
+            <p class="eyebrow">Selected outputs</p>
+            <h2>Recent work</h2>
+          </div>
+          <div class="card-grid publication-preview">
+            <article class="panel publication-card">
+              <p class="publication-year">2026</p>
+              <h3>Formation of natural IrO2 through Os-Ir-Ru alloy oxidation</h3>
+              <p>Chemical Geology</p>
+              <a class="text-link" href="https://doi.org/10.1016/j.chemgeo.2025.123167"
+                >View DOI</a
+              >
+            </article>
+            <article class="panel publication-card">
+              <p class="publication-year">2024</p>
+              <h3>
+                Seawater-oceanic crust interaction constrained by triple oxygen
+                and hydrogen isotopes
+              </h3>
+              <p>Chemical Geology</p>
+              <a class="text-link" href="https://doi.org/10.1016/j.chemgeo.2024.122378"
+                >View DOI</a
+              >
+            </article>
+            <article class="panel publication-card">
+              <p class="publication-year">2025</p>
+              <h3>Iridium L3-edge XAS dataset of natural Ir-O phase</h3>
+              <p>Zenodo dataset</p>
+              <a class="text-link" href="https://doi.org/10.5281/zenodo.15650871"
+                >View DOI</a
+              >
+            </article>
+          </div>
+        </section>
+
+        <section class="section-block home-split">
+          <div class="panel">
+            <div class="section-heading">
+              <p class="eyebrow">Talks</p>
+              <h2>Talks and recordings</h2>
+            </div>
+            <p class="supporting-text">
+              The talks page already includes your conference history from the
+              CV and is ready for YouTube links, embedded recordings, and talk
+              abstracts.
+            </p>
+            <a class="button button-secondary" href="./talks.html"
+              >Open Talks Page</a
+            >
+          </div>
+
+          <div class="panel">
+            <div class="section-heading">
+              <p class="eyebrow">Photography</p>
+              <h2>Photo galleries</h2>
+            </div>
+            <p class="supporting-text">
+              A dedicated gallery page is in place so we can turn your best
+              images into a proper visual portfolio rather than hiding them in
+              the background of the site.
+            </p>
+            <a class="button button-secondary" href="./photography.html"
+              >View Galleries</a
+            >
+          </div>
+        </section>
+
+        <section class="section-block contact-block">
+          <div class="section-heading">
+            <p class="eyebrow">Contact</p>
+            <h2>Contact</h2>
+          </div>
+          <div class="card-grid contact-grid">
+            <article class="panel contact-card">
+              <p class="panel-kicker">Email</p>
+              <a class="text-link" href="mailto:anton.kutyrev@wits.ac.za"
+                >anton.kutyrev@wits.ac.za</a
+              >
+            </article>
+            <article class="panel contact-card">
+              <p class="panel-kicker">ORCID</p>
+              <a class="text-link" href="https://orcid.org/0000-0001-5933-6455"
+                >0000-0001-5933-6455</a
+              >
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>Anton Kutyrev</p>
+        <p>Petrology | Mineralogy | Critical Minerals</p>
+      </footer>
+    </div>
   </body>
 </html>

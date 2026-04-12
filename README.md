@@ -1,13 +1,24 @@
-# Site_new
+# Anton Kutyrev Website
 
-This folder is now the root of the website project.
+Static multi-page academic website.
 
-Current setup:
-- Local git repository initialized on the `main` branch
-- Basic `.gitignore` added
-- Starter static website files added in the project root
+Pages:
+- `index.html` - homepage
+- `research.html` - research themes and methods
+- `publications.html` - publications, under review papers, datasets
+- `cv.html` - short web CV
+- `talks.html` - talks and YouTube-ready placeholders
+- `photography.html` - imported gallery images plus future galleries
 
-Next step to connect this to GitHub or another git host:
-- create an empty remote repository
-- add the remote URL here
-- configure your git name and email for commits
+Assets:
+- `assets/images/` - imported photographs and mineral images
+- `script.js` - light/dark theme toggle
+- `styles.css` - shared design system
+
+Downloads:
+- `Kutyrev_CV_INRS.docx`
+- `Kutyrev_CV_INRS.pdf`
+
+Local preview:
+- run `python3 -m http.server 8000`
+- open `http://127.0.0.1:8000/index.html`
