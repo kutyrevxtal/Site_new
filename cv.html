@@ -6,7 +6,7 @@
     <title>CV | Anton Kutyrev</title>
     <meta
       name="description"
-      content="CV for Anton Kutyrev including appointments, education, teaching, service, fieldwork, funding, and skills."
+      content="CV for Anton Kutyrev including appointments, education, teaching, fieldwork, service, funding, and analytical skills."
     />
     <link rel="stylesheet" href="./styles.css" />
     <script src="./script.js" defer></script>
@@ -18,25 +18,114 @@
       <main>
         <section class="landing-hero rubric-hero">
           <div class="landing-backdrop">
-            <img
-              src="./assets/images/headers/cv-bear.jpg"
-              alt="Bear photograph used as the CV page header."
-            />
+            <button
+              class="hero-lightbox-trigger"
+              type="button"
+              data-lightbox-src="./assets/images/headers/cv-bear.jpg"
+              data-lightbox-alt="Bear photograph used as the CV page header."
+              data-lightbox-title="Bear"
+              data-lightbox-note="CV"
+            >
+              <img
+                src="./assets/images/headers/cv-bear.jpg"
+                alt="Bear photograph used as the CV page header."
+              />
+            </button>
           </div>
           <div class="landing-inner">
             <div class="landing-copy">
               <h1>CV</h1>
               <p class="hero-text">
-                Appointments, education, teaching, fieldwork, service, and
-                analytical skills.
+                Appointments, teaching, fieldwork, funding, service, and
+                analytical methods.
               </p>
               <div class="button-row">
-                <a class="button" href="./Kutyrev_CV_INRS.pdf">Download CV (.pdf)</a>
+                <a class="button" href="./Kutyrev_CV_INRS.pdf">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      fill="currentColor"
+                      d="M12 3a1 1 0 0 1 1 1v8.17l2.59-2.58L17 11l-5 5-5-5 1.41-1.41L11 12.17V4a1 1 0 0 1 1-1Zm-7 14h14v2H5v-2Z"
+                    />
+                  </svg>
+                  Download CV (.pdf)
+                </a>
+                <a class="button-secondary" href="./publications.html">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      fill="currentColor"
+                      d="M6 3h9l5 5v13H6V3Zm8 1.5V9h4.5L14 4.5ZM8 12h8v1.8H8V12Zm0 3.6h8v1.8H8v-1.8Zm0-7.2h4.5v1.8H8V8.4Z"
+                    />
+                  </svg>
+                  Publications
+                </a>
+                <a class="button-secondary" href="mailto:anton.kutyrev@wits.ac.za">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      fill="currentColor"
+                      d="M3 6.5A1.5 1.5 0 0 1 4.5 5h15A1.5 1.5 0 0 1 21 6.5v11a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 17.5v-11Zm1.8.47v.28l7.2 4.8 7.2-4.8v-.28h-14.4Zm14.4 2.42-6.7 4.47a1 1 0 0 1-1.1 0L4.8 9.39v7.81h14.4V9.39Z"
+                    />
+                  </svg>
+                  Email
+                </a>
+                <a
+                  class="button-secondary"
+                  href="https://orcid.org/0000-0001-5933-6455"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.18" />
+                    <text
+                      x="12"
+                      y="15.2"
+                      text-anchor="middle"
+                      font-size="7.2"
+                      font-family="IBM Plex Sans, sans-serif"
+                      font-weight="700"
+                      fill="currentColor"
+                    >
+                      iD
+                    </text>
+                  </svg>
+                  ORCID
+                </a>
+                <a
+                  class="button-secondary"
+                  href="https://scholar.google.com/citations?user=Z1HjL2MAAAAJ&hl=en&oi=ao"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      fill="currentColor"
+                      d="M12 3 1.5 8.6 12 14.2 20.6 9.6V17h1.9V8.6L12 3Zm-6.9 8.5V15c0 2.4 3.1 4.4 6.9 4.4s6.9-2 6.9-4.4v-3.5L12 15.2 5.1 11.5Z"
+                    />
+                  </svg>
+                  Google Scholar
+                </a>
+                <a
+                  class="button-secondary"
+                  href="https://www.researchgate.net/profile/Anton-Kutyrev-2?ev=hdr_xprf"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.18" />
+                    <text
+                      x="12"
+                      y="15.2"
+                      text-anchor="middle"
+                      font-size="8.5"
+                      font-family="IBM Plex Sans, sans-serif"
+                      font-weight="600"
+                      fill="currentColor"
+                    >
+                      RG
+                    </text>
+                  </svg>
+                  ResearchGate
+                </a>
               </div>
-              <p class="cv-top-link">
-                Publications are listed separately on
-                <a class="text-link" href="./publications.html">Publications</a>.
-              </p>
             </div>
           </div>
         </section>
@@ -44,60 +133,39 @@
         <section class="section-block cv-block">
           <div class="cv-section">
             <div class="section-heading">
-              <p class="eyebrow">General information</p>
               <h2>General information</h2>
             </div>
-            <ul class="simple-list tight-list">
-              <li class="panel cv-entry">
-                <p><strong>Anton Kutyrev</strong></p>
-              </li>
-              <li class="panel cv-entry">
-                <p>
-                  Email:
-                  <a class="text-link" href="mailto:anton.kutyrev@wits.ac.za">anton.kutyrev@wits.ac.za</a>
-                </p>
-              </li>
-              <li class="panel cv-entry">
-                <p>
-                  ORCID:
-                  <a class="text-link" href="https://orcid.org/0000-0001-5933-6455" target="_blank" rel="noreferrer">0000-0001-5933-6455</a>
-                </p>
-              </li>
-              <li class="panel cv-entry">
-                <p>
-                  Google Scholar:
-                  <a class="text-link" href="https://scholar.google.com/citations?user=Z1HjL2MAAAAJ&hl=en&oi=ao" target="_blank" rel="noreferrer">Google Scholar</a>
-                </p>
-              </li>
-              <li class="panel cv-entry">
-                <p>
-                  ResearchGate:
-                  <a class="text-link" href="https://www.researchgate.net/profile/Anton-Kutyrev-2?ev=hdr_xprf" target="_blank" rel="noreferrer">ResearchGate</a>
-                </p>
-              </li>
-            </ul>
+            <article class="panel cv-entry prose-panel">
+              <p><strong>Anton Kutyrev</strong></p>
+              <p>
+                Petrologist and mineralogist working on mafic-ultramafic
+                systems, chromitites, platinum-group minerals, arc magmas, and
+                isotope geochemistry. He is currently a Postdoctoral Research
+                Fellow in the School of Geosciences at the University of the
+                Witwatersrand, Johannesburg.
+              </p>
+            </article>
           </div>
 
           <div class="cv-section">
             <div class="section-heading">
-              <p class="eyebrow">Education</p>
               <h2>Education</h2>
             </div>
             <ul class="simple-list">
               <li class="panel cv-entry">
                 <p class="cv-entry-meta">2020</p>
                 <p>
-                  <strong>PhD in Geology and Mineral Sciences</strong>,
-                  awarded after defence in 2019 through the Dissertation
-                  Council at the V.S. Sobolev Institute of Geology and
-                  Mineralogy. Research was conducted at the Institute of
-                  Volcanology and Seismology in Petropavlovsk-Kamchatsky.
+                  <strong>PhD in geology and mineral sciences</strong>, awarded
+                  after the 2019 defence through the Dissertation Council at
+                  the V.S. Sobolev Institute of Geology and Mineralogy.
+                  Research was conducted at the Institute of Volcanology and
+                  Seismology in Petropavlovsk-Kamchatsky.
                 </p>
               </li>
               <li class="panel cv-entry">
                 <p class="cv-entry-meta">2017</p>
                 <p>
-                  <strong>Specialist degree with distinction in Applied Geology</strong>,
+                  <strong>Specialist degree with distinction in applied geology</strong>,
                   Saint Petersburg Mining University. Five-year full-time degree
                   broadly equivalent to an MSc.
                 </p>
@@ -107,7 +175,6 @@
 
           <div class="cv-section">
             <div class="section-heading">
-              <p class="eyebrow">Academic appointments</p>
               <h2>Academic appointments</h2>
             </div>
             <ul class="simple-list">
@@ -121,8 +188,8 @@
                 <p>
                   Research on critical minerals in layered mafic-ultramafic
                   intrusions and Bushveld chromitites within the DSTI CIMERA
-                  industry-public consortium, with a focus on Ni-Cu-PGE systems,
-                  chromitites, and Critical Zone petrogenesis.
+                  industry-public consortium, with a focus on Ni-Cu-PGE
+                  systems, chromitites, and Critical Zone petrogenesis.
                 </p>
               </li>
               <li class="panel cv-entry">
@@ -147,7 +214,7 @@
                 <p>
                   Research on Early Archean climate using triple oxygen and
                   hydrogen isotopes in 3.8 Ga metalavas from the Saglek-Hebron
-                  terrane, including isotope fractionation modelling.
+                  terrane, including isotope-fractionation modelling.
                 </p>
               </li>
               <li class="panel cv-entry">
@@ -168,7 +235,7 @@
                   Seismology, Petropavlovsk-Kamchatsky, Russia.
                 </p>
                 <p>
-                  Doctoral work on geology and platinum mineralization of
+                  Doctoral work on the geology and platinum mineralization of
                   concentrically zoned dunite-clinopyroxenite-gabbro complexes
                   of the Tamanvayam and Epilchik groups.
                 </p>
@@ -180,8 +247,8 @@
                   Geological Institute, Saint Petersburg, Russia.
                 </p>
                 <p>
-                  Work on regional geology and petrology, including petrography
-                  and geochemical data for igneous and metamorphic rocks.
+                  Regional geology and petrology, including petrography and
+                  geochemical work on igneous and metamorphic rocks.
                 </p>
               </li>
             </ul>
@@ -189,7 +256,6 @@
 
           <div class="cv-section">
             <div class="section-heading">
-              <p class="eyebrow">Industry appointments</p>
               <h2>Industry appointments</h2>
             </div>
             <ul class="simple-list">
@@ -232,32 +298,29 @@
 
           <div class="cv-section">
             <div class="section-heading">
-              <p class="eyebrow">Research focus</p>
               <h2>Research focus</h2>
             </div>
-            <ul class="simple-list">
-              <li class="panel cv-entry">
-                <p>
-                  Petrology and mineralogy of mafic-ultramafic and island-arc
-                  systems; melt-rock and fluid-rock interaction; origin of
-                  chromitites; PGE mineralogy from hand sample to nanoscale,
-                  including alloys and PGE oxides; PGE and PGM cycling and
-                  mobility in melts and fluids in ultramafic rocks and layered
-                  intrusions; oxygen isotopes as tracers of crustal recycling
-                  and early Earth surface environments; critical minerals in
-                  the context of the energy transition.
-                </p>
-              </li>
-            </ul>
+            <article class="panel cv-entry prose-panel">
+              <p>
+                Petrology and mineralogy of mafic-ultramafic and island-arc
+                systems; melt-rock and fluid-rock interaction; origin of
+                chromitites; PGE mineralogy from hand sample to nanoscale,
+                including alloys and PGE oxides; PGE and PGM cycling and
+                mobility in melts and fluids in ultramafic rocks and layered
+                intrusions; oxygen isotopes as tracers of crustal recycling and
+                early Earth surface environments; and critical minerals in the
+                context of the energy transition.
+              </p>
+            </article>
           </div>
 
           <div class="cv-section">
             <div class="section-heading">
-              <p class="eyebrow">Teaching experience</p>
               <h2>Teaching experience</h2>
             </div>
             <ul class="simple-list">
               <li class="panel cv-entry">
+                <p class="cv-entry-meta">2025 to present</p>
                 <p>
                   <strong>University of the Witwatersrand</strong>. Guest
                   lectures on mineral deposits for senior undergraduate
@@ -265,19 +328,40 @@
                 </p>
               </li>
               <li class="panel cv-entry">
+                <p class="cv-entry-meta">2023 to 2025</p>
                 <p>
                   <strong>Cardiff University</strong>. Practical sessions for
-                  the mineral deposits course; guest lectures on mineral
-                  deposits; demonstrator for field courses in geological
-                  mapping, exploration geology, and environmental geoscience in
-                  Cyprus, Cornwall, and South Wales.
+                  the Mineral Deposits course.
                 </p>
               </li>
               <li class="panel cv-entry">
+                <p class="cv-entry-meta">2023 to 2025</p>
+                <p>
+                  <strong>Cardiff University</strong>. Guest lectures on
+                  mineral deposits.
+                </p>
+              </li>
+              <li class="panel cv-entry">
+                <p class="cv-entry-meta">2023 to 2025</p>
+                <p>
+                  <strong>Cardiff University</strong>. Demonstrator for field
+                  courses in geological mapping, exploration geology, and
+                  environmental geoscience in Cyprus, Cornwall, and South
+                  Wales.
+                </p>
+              </li>
+              <li class="panel cv-entry">
+                <p class="cv-entry-meta">2022 to 2023</p>
                 <p>
                   <strong>University of Oregon</strong>. Demonstrator for
-                  petrology field courses; guest lectures in petrology and
-                  geohazards.
+                  petrology field courses.
+                </p>
+              </li>
+              <li class="panel cv-entry">
+                <p class="cv-entry-meta">2022 to 2023</p>
+                <p>
+                  <strong>University of Oregon</strong>. Guest lectures in
+                  petrology and geohazards.
                 </p>
               </li>
             </ul>
@@ -285,12 +369,14 @@
 
           <div class="cv-section">
             <div class="section-heading">
-              <p class="eyebrow">Formal teaching training</p>
               <h2>Formal teaching training</h2>
             </div>
             <ul class="simple-list">
               <li class="panel cv-entry">
-                <p>2024. Teaching to Improve the Quality of Student Learning, Cardiff University.</p>
+                <p>
+                  2024. Teaching to Improve the Quality of Student Learning,
+                  Cardiff University.
+                </p>
               </li>
               <li class="panel cv-entry">
                 <p>2024. Lecturing Skills, Cardiff University.</p>
@@ -300,7 +386,6 @@
 
           <div class="cv-section">
             <div class="section-heading">
-              <p class="eyebrow">Student supervision</p>
               <h2>Student supervision</h2>
             </div>
             <ul class="simple-list">
@@ -308,8 +393,11 @@
                 <p class="cv-entry-meta">2025 to present</p>
                 <p>
                   Supervisor of the project
-                  <strong>Mineralogy of the iron-rich ultramafic pegmatites, eastern Bushveld Complex</strong>
-                  with student Botshelo Tshite.
+                  <strong>
+                    Mineralogy of the iron-rich ultramafic pegmatites, eastern
+                    Bushveld Complex
+                  </strong>
+                  with Botshelo Tshite.
                 </p>
               </li>
             </ul>
@@ -317,119 +405,271 @@
 
           <div class="cv-section">
             <div class="section-heading">
-              <p class="eyebrow">Additional professional training</p>
               <h2>Additional professional training</h2>
             </div>
             <ul class="simple-list">
-              <li class="panel cv-entry"><p>2025. Reading the rocks, Polokwane, South Africa.</p></li>
-              <li class="panel cv-entry"><p>2025. Resource Geology Workshop at the 2025 GeoCongress, Bloemfontein, South Africa.</p></li>
-              <li class="panel cv-entry"><p>2024. Being a Good LGBTQA+ Ally, Cardiff University.</p></li>
-              <li class="panel cv-entry"><p>2024. MDSG workshop, Magmatic Ni-Cu Mineral Systems in Europe, Edinburgh.</p></li>
-              <li class="panel cv-entry"><p>2021. TESCAN electron microscopy course, Saint Petersburg.</p></li>
-              <li class="panel cv-entry"><p>2018. Gold Short Course, Prague.</p></li>
+              <li class="panel cv-entry">
+                <p>2025. Reading the rocks, Polokwane, South Africa.</p>
+              </li>
+              <li class="panel cv-entry">
+                <p>
+                  2025. Resource Geology Workshop at the 2025 GeoCongress,
+                  Bloemfontein, South Africa.
+                </p>
+              </li>
+              <li class="panel cv-entry">
+                <p>2024. Being a Good LGBTQA+ Ally, Cardiff University.</p>
+              </li>
+              <li class="panel cv-entry">
+                <p>
+                  2024. MDSG workshop, <em>Magmatic Ni-Cu Mineral Systems in
+                  Europe</em>, Edinburgh.
+                </p>
+              </li>
+              <li class="panel cv-entry">
+                <p>2021. TESCAN electron microscopy course, Saint Petersburg.</p>
+              </li>
+              <li class="panel cv-entry">
+                <p>2018. Gold Short Course, Prague.</p>
+              </li>
             </ul>
           </div>
 
           <div class="cv-section">
             <div class="section-heading">
-              <p class="eyebrow">Analytical and modelling skills</p>
               <h2>Analytical and modelling skills</h2>
             </div>
             <ul class="simple-list">
               <li class="panel cv-entry">
-                <p><strong>Hands-on:</strong> SEM-EDS, Raman spectroscopy, field portable XRF, clean-lab chemistry and mass spectrometry for Rb-Sr, Sm-Nd, and triple-oxygen isotopes using laser fluorination.</p>
+                <p>
+                  <strong>Hands-on</strong>: SEM-EDS, Raman spectroscopy,
+                  field-portable XRF, clean-lab chemistry, and mass
+                  spectrometry for Rb-Sr, Sm-Nd, and triple-oxygen isotopes
+                  using laser fluorination.
+                </p>
               </li>
               <li class="panel cv-entry">
-                <p><strong>Data reduction and interpretation:</strong> LA-ICP-MS, EBSD, X-ray diffraction, synchrotron micro-XRF/XAS, FIB-TEM, EPMA, and atom-probe tomography.</p>
+                <p>
+                  <strong>Data reduction and interpretation</strong>:
+                  LA-ICP-MS, EBSD, X-ray diffraction, synchrotron micro-XRF/XAS,
+                  FIB-TEM, EPMA, and atom-probe tomography.
+                </p>
               </li>
               <li class="panel cv-entry">
-                <p><strong>Modelling and data processing:</strong> Python and spreadsheet-based workflows, MELTS and MAGEMin thermodynamic modelling, Monte Carlo modelling of triple-oxygen isotope exchange, and mass-balance and mixing models.</p>
+                <p>
+                  <strong>Modelling and data processing</strong>: Python and
+                  spreadsheet-based workflows, MELTS and MAGEMin thermodynamic
+                  modelling, Monte Carlo modelling of triple-oxygen isotope
+                  exchange, and mass-balance and mixing models.
+                </p>
               </li>
             </ul>
           </div>
 
           <div class="cv-section">
             <div class="section-heading">
-              <p class="eyebrow">Scientific service</p>
               <h2>Scientific service</h2>
             </div>
             <ul class="simple-list">
-              <li class="panel cv-entry"><p>2024 to 2025. Coordinator, Minerals and Energy Research Centre, Cardiff University.</p></li>
-              <li class="panel cv-entry"><p>Member of the organizing committee for the 2023 International Platinum Symposium in Cardiff.</p></li>
-              <li class="panel cv-entry"><p>Reviewer for Ore Geology Reviews, Mineralium Deposita, Nature Communications, Chemical Geology, Journal of Petrology, Australian Journal of Earth Sciences, Contributions to Mineralogy and Petrology, Journal of the Geological Society, Lithos, and Marine Geology.</p></li>
+              <li class="panel cv-entry">
+                <p>
+                  2024 to 2025. Coordinator, Minerals and Energy Research
+                  Centre, Cardiff University.
+                </p>
+              </li>
+              <li class="panel cv-entry">
+                <p>
+                  Member of the organizing committee for the 2023 International
+                  Platinum Symposium in Cardiff.
+                </p>
+              </li>
+              <li class="panel cv-entry">
+                <p>
+                  Reviewer for <em>Ore Geology Reviews</em>,
+                  <em>Mineralium Deposita</em>, <em>Nature Communications</em>,
+                  <em>Chemical Geology</em>, <em>Journal of Petrology</em>,
+                  <em>Australian Journal of Earth Sciences</em>,
+                  <em>Contributions to Mineralogy and Petrology</em>,
+                  <em>Journal of the Geological Society</em>, <em>Lithos</em>,
+                  and <em>Marine Geology</em>.
+                </p>
+              </li>
             </ul>
           </div>
 
           <div class="cv-section">
             <div class="section-heading">
-              <p class="eyebrow">Competitively awarded funding</p>
               <h2>Competitively awarded funding</h2>
             </div>
             <ul class="simple-list">
-              <li class="panel cv-entry"><p>2024. In-kind analytical access through the AuScope Access Program at Curtin University for the project <strong>Silicate-oxide-platinum group minerals intergrowths: implications for unknown aspects of low-T PGE behaviour</strong>, approximately CAD 17,188.</p></li>
-              <li class="panel cv-entry"><p>2022 to 2023. Fulbright Scholarship, approximately CAD 42,662.</p></li>
-              <li class="panel cv-entry"><p>2020 to 2022. RFBR project executor on <strong>Formation and alteration of minerals in active volcanic hydrothermal systems (Kamchatka)</strong>, approximately CAD 182,653.</p></li>
-              <li class="panel cv-entry"><p>2020 to 2021. RFBR principal investigator on <strong>Distribution of Ni-Fe-Co intermetallic compounds and platinum-group minerals in mafic and ultramafic rocks of various formational types</strong>, approximately CAD 34,511.</p></li>
-              <li class="panel cv-entry"><p>2018 to 2020. RSCI project executor on <strong>Melt-fluid evolution, magmatic immiscibility, and metal budgeting in subduction-related magmas</strong>, approximately CAD 273,911.</p></li>
-              <li class="panel cv-entry"><p>2018 to 2019. RFBR principal investigator on <strong>Typomorphism and formation conditions of PGE minerals in concentrically zoned ultramafic massifs (Epilchik area, Koryak-Kamchatka belt)</strong>, approximately CAD 15,551.</p></li>
-              <li class="panel cv-entry"><p>Total research funding received: approximately CAD 566,477.</p></li>
+              <li class="panel cv-entry">
+                <p>
+                  2024. In-kind analytical access through the AuScope Access
+                  Program at Curtin University for the project
+                  <strong>
+                    Silicate-oxide-platinum group minerals intergrowths:
+                    implications for unknown aspects of low-T PGE behaviour
+                  </strong>,
+                  approximately CAD 17,188.
+                </p>
+              </li>
+              <li class="panel cv-entry">
+                <p>2022 to 2023. Fulbright Scholarship, approximately CAD 42,662.</p>
+              </li>
+              <li class="panel cv-entry">
+                <p>
+                  2020 to 2022. RFBR project executor on
+                  <strong>
+                    Formation and alteration of minerals in active volcanic
+                    hydrothermal systems (Kamchatka)
+                  </strong>,
+                  approximately CAD 182,653.
+                </p>
+              </li>
+              <li class="panel cv-entry">
+                <p>
+                  2020 to 2021. RFBR principal investigator on
+                  <strong>
+                    Distribution of Ni-Fe-Co intermetallic compounds and
+                    platinum-group minerals in mafic and ultramafic rocks of
+                    various formational types
+                  </strong>,
+                  approximately CAD 34,511.
+                </p>
+              </li>
+              <li class="panel cv-entry">
+                <p>
+                  2018 to 2020. RSCI project executor on
+                  <strong>
+                    Melt-fluid evolution, magmatic immiscibility, and metal
+                    budgeting in subduction-related magmas
+                  </strong>,
+                  approximately CAD 273,911.
+                </p>
+              </li>
+              <li class="panel cv-entry">
+                <p>
+                  2018 to 2019. RFBR principal investigator on
+                  <strong>
+                    Typomorphism and formation conditions of PGE minerals in
+                    concentrically zoned ultramafic massifs (Epilchik area,
+                    Koryak-Kamchatka belt)
+                  </strong>,
+                  approximately CAD 15,551.
+                </p>
+              </li>
+              <li class="panel cv-entry">
+                <p>Total research funding received: approximately CAD 566,477.</p>
+              </li>
             </ul>
           </div>
 
           <div class="cv-section">
             <div class="section-heading">
-              <p class="eyebrow">Field work</p>
               <h2>Field work</h2>
             </div>
             <ul class="simple-list">
-              <li class="panel cv-entry"><p>2025 to ongoing. Mapping and sampling of the Critical Zone across the western and eastern Bushveld Complex, South Africa, plus regular mine visits.</p></li>
-              <li class="panel cv-entry"><p>2023 to 2025. Fieldwork at the Rhiw layered intrusion, Wales.</p></li>
-              <li class="panel cv-entry"><p>2021. Principal investigator and organizer of a helicopter-supported expedition to Tumrok Range arc picrites in Kamchatka.</p></li>
-              <li class="panel cv-entry"><p>2020. Sampling of alluvial awaruite in the Kamchatsky Mys ophiolite.</p></li>
-              <li class="panel cv-entry"><p>2020. Documentation of cooling lava flows and caves of the 2012-13 Tolbachik Fissure Eruption and observations of Klyuchevskoy volcano.</p></li>
-              <li class="panel cv-entry"><p>2019. Underground and field sampling of mineralized intrusions and related flood basalts in Norilsk.</p></li>
-              <li class="panel cv-entry"><p>2018. Documentation of lava temperatures in the caves of the 2012-13 Tolbachik Fissure Eruption and observations of Shiveluch volcano.</p></li>
-              <li class="panel cv-entry"><p>2018. Fieldwork on the Kamchatsky Mys ophiolite.</p></li>
-              <li class="panel cv-entry"><p>2018. Prospecting on the Kirganik Cu porphyry and epithermal Au occurrence.</p></li>
-              <li class="panel cv-entry"><p>2016 to 2017. Prospecting for lode and placer PGE mineralization in the Epilchik and Matysken areas, Koryak Highlands.</p></li>
-              <li class="panel cv-entry"><p>2015. Geological mapping at 1:200,000 scale in the Koryak Highlands.</p></li>
+              <li class="panel cv-entry">
+                <p>
+                  2025 to ongoing. Mapping and sampling of the Critical Zone
+                  across the western and eastern Bushveld Complex, South Africa,
+                  together with regular mine visits.
+                </p>
+              </li>
+              <li class="panel cv-entry">
+                <p>2023 to 2025. Fieldwork at the Rhiw layered intrusion, Wales.</p>
+              </li>
+              <li class="panel cv-entry">
+                <p>
+                  2021. Principal investigator and organizer of a
+                  helicopter-supported expedition to Tumrok Range arc picrites
+                  in Kamchatka.
+                </p>
+              </li>
+              <li class="panel cv-entry">
+                <p>2020. Sampling of alluvial awaruite in the Kamchatsky Mys ophiolite.</p>
+              </li>
+              <li class="panel cv-entry">
+                <p>
+                  2020. Documentation of cooling lava flows and caves of the
+                  2012-13 Tolbachik Fissure Eruption, and observations of
+                  Klyuchevskoy volcano.
+                </p>
+              </li>
+              <li class="panel cv-entry">
+                <p>
+                  2019. Underground and field sampling of mineralized
+                  intrusions and related flood basalts in Norilsk.
+                </p>
+              </li>
+              <li class="panel cv-entry">
+                <p>
+                  2018. Documentation of lava temperatures in the caves of the
+                  2012-13 Tolbachik Fissure Eruption, and observations of
+                  Shiveluch volcano.
+                </p>
+              </li>
+              <li class="panel cv-entry">
+                <p>2018. Fieldwork on the Kamchatsky Mys ophiolite.</p>
+              </li>
+              <li class="panel cv-entry">
+                <p>
+                  2018. Prospecting on the Kirganik Cu porphyry and epithermal
+                  Au occurrence.
+                </p>
+              </li>
+              <li class="panel cv-entry">
+                <p>
+                  2016 to 2017. Prospecting for lode and placer PGE
+                  mineralization in the Epilchik and Matysken areas, Koryak
+                  Highlands.
+                </p>
+              </li>
+              <li class="panel cv-entry">
+                <p>2015. Geological mapping at 1:200,000 scale in the Koryak Highlands.</p>
+              </li>
             </ul>
           </div>
 
           <div class="cv-section">
             <div class="section-heading">
-              <p class="eyebrow">Professional societies</p>
               <h2>Professional societies</h2>
             </div>
             <ul class="simple-list">
-              <li class="panel cv-entry"><p>2023 to present. Mineralogical Society of Great Britain and Northern Ireland.</p></li>
-              <li class="panel cv-entry"><p>2017 to present. Society of Geology Applied to Mineral Deposits.</p></li>
+              <li class="panel cv-entry">
+                <p>2023 to present. Mineralogical Society of Great Britain and Northern Ireland.</p>
+              </li>
+              <li class="panel cv-entry">
+                <p>2017 to present. Society of Geology Applied to Mineral Deposits.</p>
+              </li>
             </ul>
           </div>
 
           <div class="cv-section">
             <div class="section-heading">
-              <p class="eyebrow">Awards</p>
               <h2>Awards</h2>
             </div>
             <ul class="simple-list">
-              <li class="panel cv-entry"><p>2023. Minerals Young Investigator Award.</p></li>
-              <li class="panel cv-entry"><p>2021. Marie Skłodowska-Curie Actions Seal of Excellence.</p></li>
+              <li class="panel cv-entry">
+                <p>2023. Minerals Young Investigator Award.</p>
+              </li>
+              <li class="panel cv-entry">
+                <p>2021. Marie Skłodowska-Curie Actions Seal of Excellence.</p>
+              </li>
             </ul>
           </div>
 
           <div class="cv-section">
             <div class="section-heading">
-              <p class="eyebrow">Public outreach</p>
               <h2>Public outreach</h2>
             </div>
             <ul class="simple-list">
               <li class="panel cv-entry">
                 <p>
-                  Experience of school visits in the UK and Russia for ages 8
-                  to 16, including interactive lectures about volcanoes,
-                  minerals, rocks, the societal relevance of geology, and
-                  geoscience careers.
+                  School visits in the UK and Russia for audiences aged 8 to
+                  16, including interactive lectures about volcanoes, minerals,
+                  rocks, the societal relevance of geology, and geoscience
+                  careers.
                 </p>
               </li>
             </ul>
@@ -437,7 +677,11 @@
         </section>
       </main>
 
-      <footer class="site-footer" data-site-footer data-site-footer-secondary="CV with publications kept separate"></footer>
+      <footer
+        class="site-footer"
+        data-site-footer
+        data-site-footer-secondary="CV with publications kept separate"
+      ></footer>
     </div>
   </body>
 </html>

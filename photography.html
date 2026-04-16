@@ -6,7 +6,7 @@
     <title>Photography | Anton Kutyrev</title>
     <meta
       name="description"
-      content="Photography index organized by field regions and localities."
+      content="Photography organized as regional albums."
     />
     <link rel="stylesheet" href="./styles.css" />
     <script src="./script.js" defer></script>
@@ -18,16 +18,26 @@
       <main>
         <section class="landing-hero rubric-hero">
           <div class="landing-backdrop">
-            <img
-              src="./assets/images/photography/mountain-weather-landscape.jpg"
-              alt="Snow-covered mountain landscape from Anton Kutyrev's field photography."
-            />
+            <button
+              class="hero-lightbox-trigger"
+              type="button"
+              data-lightbox-src="./assets/images/photography/kamchatka/mountain-weather-landscape.jpg"
+              data-lightbox-alt="Snow-covered mountain landscape from Anton Kutyrev's field photography."
+              data-lightbox-title="Mountain weather"
+              data-lightbox-note="Photography"
+            >
+              <img
+                src="./assets/images/photography/kamchatka/mountain-weather-landscape.jpg"
+                alt="Snow-covered mountain landscape from Anton Kutyrev's field photography."
+              />
+            </button>
           </div>
           <div class="landing-inner">
             <div class="landing-copy">
               <h1>Photography</h1>
               <p class="hero-text">
-                Images organized by field region rather than as one long gallery.
+                Photographs organized as regional albums rather than one long
+                gallery.
               </p>
             </div>
           </div>
@@ -35,58 +45,46 @@
 
         <section class="section-block">
           <div class="section-heading">
-            <p class="eyebrow">Geographic rubrics</p>
-            <h2>Browse by region</h2>
+            <h2>Albums</h2>
             <p>
-              Each rubric opens a separate page with photographs, locality links,
-              and longer notes.
+              Each album keeps its own images, notes, and locality links.
             </p>
           </div>
           <div class="card-grid research-grid research-index-grid">
-            <a class="panel research-index-card research-index-link" href="./photography-kamchatka.html">
+            <a
+              class="panel research-index-card research-index-link"
+              href="./photography-kamchatka.html"
+            >
               <img
                 class="research-index-cover"
-                src="./assets/images/photography/kamchatka-tolbachik-volcano.jpg"
+                src="./assets/images/photography/kamchatka/kamchatka-tolbachik-volcano.jpg"
                 alt="Tolbachik volcano in Kamchatka."
                 loading="lazy"
               />
               <div class="research-index-copy">
                 <h3>Kamchatka</h3>
                 <p>
-                  Volcanoes, field routes, wildlife, lava caves, and laboratory-scale
-                  observations tied to Kamchatka fieldwork.
+                  Volcanoes, field routes, portraits, wildlife, and microscopy
+                  tied to Kamchatka fieldwork.
                 </p>
               </div>
             </a>
 
-            <a class="panel research-index-card research-index-link" href="./photography-south-africa.html">
+            <a
+              class="panel research-index-card research-index-link"
+              href="./photography-south-africa.html"
+            >
               <img
                 class="research-index-cover"
-                src="./assets/images/portraits/anton-field-portrait.jpg"
-                alt="Anton Kutyrev standing in the field in South Africa."
+                src="./assets/images/photography/south-africa/magnet-heights-bushveld.jpg"
+                alt="Field team on outcrop at Magnet Heights, Bushveld."
                 loading="lazy"
               />
               <div class="research-index-copy">
                 <h3>South Africa</h3>
                 <p>
-                  Bushveld-related field images, travel notes, and photographs connected
-                  to current work in South Africa.
-                </p>
-              </div>
-            </a>
-
-            <a class="panel research-index-card research-index-link" href="./photography-other-localities.html">
-              <img
-                class="research-index-cover"
-                src="./assets/images/photography/mountain-weather-landscape.jpg"
-                alt="Mountain landscape from Anton Kutyrev's field photography."
-                loading="lazy"
-              />
-              <div class="research-index-copy">
-                <h3>Other localities</h3>
-                <p>
-                  A place for photographs from Wales and other field areas that do not
-                  fit the Kamchatka or South Africa sections.
+                  Bushveld field notes, outcrops, and images connected to the
+                  current South African work.
                 </p>
               </div>
             </a>
@@ -97,7 +95,7 @@
       <footer
         class="site-footer"
         data-site-footer
-        data-site-footer-secondary="Photography organized by field region"
+        data-site-footer-secondary="Photography organized by regional album"
       ></footer>
     </div>
   </body>
