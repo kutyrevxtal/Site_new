@@ -651,6 +651,17 @@ figcaption p {
   gap: 1rem;
 }
 
+.cv-section .section-heading h2 {
+  margin: 0 0 0.7rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  line-height: 1.4;
+}
+
 .cv-entry ul {
   padding-left: 1.15rem;
 }
