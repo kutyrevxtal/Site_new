@@ -1,233 +1,689 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Publications | Anton Kutyrev</title>
-    <meta
-      name="description"
-      content="Peer-reviewed papers, under-review work, and datasets by Anton Kutyrev, with DOI links."
-    />
-    <link rel="stylesheet" href="./styles.css" />
-    <script src="./script.js" defer></script>
-  </head>
-  <body>
-    <div class="site-shell">
-      <header class="site-header">
-        <a class="brand" href="./index.html">Anton Kutyrev</a>
-        <nav class="site-nav" aria-label="Primary">
-          <a href="./index.html">Home</a>
-          <a href="./research.html">Research</a>
-          <a class="active" href="./publications.html">Publications</a>
-          <a href="./cv.html">CV</a>
-          <a href="./talks.html">Talks</a>
-          <a href="./photography.html">Photography</a>
-        </nav>
-        <button class="theme-toggle" type="button" aria-label="Toggle color theme">
-          Dark mode
-        </button>
-      </header>
+<!doctype html>
+<html lang="en" data-theme="dark">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Publications | Anton Kutyrev</title>
+        <meta
+            name="description"
+            content="Peer-reviewed papers, under-review work, and datasets by Anton Kutyrev, with DOI links."
+        />
+        <link rel="stylesheet" href="./styles.css" />
+        <script src="./script.js" defer></script>
+    </head>
+    <body>
+        <div class="site-shell">
+            <header
+                class="site-header"
+                data-site-header="publications"
+            ></header>
 
-      <main>
-        <section class="hero page-hero">
-          <div class="hero-copy">
-            <p class="eyebrow">Publications</p>
-            <h1>Papers, reviews, datasets</h1>
-            <p class="hero-text">
-              This page is built directly from the CV content and keeps DOI
-              links visible so collaborators, students, and editors can move
-              quickly from the site to the source material.
-            </p>
-          </div>
-        </section>
+            <main>
+                <section class="landing-hero rubric-hero">
+                    <div class="landing-backdrop">
+                        <img
+                            src="./assets/images/photography/anton-volcanic-landscape.jpg"
+                            alt="Anton Kutyrev in a volcanic mountain landscape."
+                        />
+                    </div>
+                    <div class="landing-inner">
+                        <div class="landing-copy">
+                            <h1>Publications</h1>
+                            <p class="hero-text">
+                                Papers, reviews, and datasets.
+                            </p>
+                        </div>
+                    </div>
+                </section>
 
-        <section class="section-block">
-          <div class="section-heading">
-            <p class="eyebrow">Peer-reviewed articles</p>
-            <h2>Published</h2>
-          </div>
-          <ol class="publication-list">
-            <li class="panel publication-item">
-              <p>Kutyrev, A., Filimonova, O., Saxey, D.W., Vymazalova, A., Evans, K., Kamenetsky, V.S., Wermeille, D., Fougerouse, D., Reddy, S.M., 2026. Formation of natural IrO2 through Os-Ir-Ru alloy oxidation. <em>Chemical Geology</em>, 123167.</p>
-              <a class="doi-link" href="https://doi.org/10.1016/j.chemgeo.2025.123167">10.1016/j.chemgeo.2025.123167</a>
-            </li>
-            <li class="panel publication-item">
-              <p>Kutyrev, A., Bindeman, I.N., O'Neil, J., Rizo, H., 2024. Seawater-oceanic crust interaction constrained by triple oxygen and hydrogen isotopes in rocks from the Saglek-Hebron complex, NE Canada: Implications for moderately low-d18O Eoarchean ocean. <em>Chemical Geology</em> 670.</p>
-              <a class="doi-link" href="https://doi.org/10.1016/j.chemgeo.2024.122378">10.1016/j.chemgeo.2024.122378</a>
-            </li>
-            <li class="panel publication-item">
-              <p>Kutyrev, A., Kamenetsky, V.S., Chayka, I.F., Nekrylov, N.A., Kryuchkova, L., Shilovskikh, V.V., Kontonikas-Charos, A., Krasheninnikov, S.P., Sapegina, A., Perchuk, A.L., 2024. Metamorphic origin of large nuggets of platinum-group metals: evidence from multiphase inclusions in Os-Ir-Ru alloys from the Adamsfield placer, Tasmania. <em>Journal of Petrology</em>.</p>
-              <a class="doi-link" href="https://doi.org/10.1093/petrology/egae086">10.1093/petrology/egae086</a>
-            </li>
-            <li class="panel publication-item">
-              <p>Kutyrev, A.V., Kamenetsky, V.S., Park, J.-W., Maas, R., Demonterova, E.I., Antsiferova, T.N., Ivanov, A.V., Hwang, J., Abersteiner, A., Ozerov, A.Y., 2021. Primitive high-K intraoceanic arc magmas of Eastern Kamchatka: Implications for Paleo-Pacific tectonics and magmatism in the Cretaceous. <em>Earth-Science Reviews</em> 220, 1-22.</p>
-              <a class="doi-link" href="https://doi.org/10.1016/j.earscirev.2021.103703">10.1016/j.earscirev.2021.103703</a>
-            </li>
-            <li class="panel publication-item">
-              <p>Kutyrev, A.V., Kamenetsky, V.S., Sidorov, E.G., Abersteiner, A., Chubarov, V.M., 2020. Silicate inclusions in isoferroplatinum: Constraints on the origin of platinum mineralization in podiform chromitites. <em>Ore Geology Reviews</em> 119, 1-13.</p>
-              <a class="doi-link" href="https://doi.org/10.1016/j.oregeorev.2020.103367">10.1016/j.oregeorev.2020.103367</a>
-            </li>
-            <li class="panel publication-item">
-              <p>Kutyrev, A., Zelenski, M., Nekrylov, N., Savelyev, D., Kontonikas-Charos, A., Kamenetsky, V.S., 2021. Noble metals in arc basaltic magmas worldwide: a case study of modern and pre-historic lavas of the Tolbachik volcano. <em>Frontiers in Earth Science</em> 9.</p>
-              <a class="doi-link" href="https://doi.org/10.3389/feart.2021.791465">10.3389/feart.2021.791465</a>
-            </li>
-            <li class="panel publication-item">
-              <p>Kutyrev, A.V., Sidorov, E.G., Kamenetsky, V.S., Chubarov, V.M., Chayka, I.F., Abersteiner, A., 2021. Platinum mineralization and geochemistry of the Matysken zoned Ural-Alaskan type complex and related placer (Far East Russia). <em>Ore Geology Reviews</em> 130, 1-17.</p>
-              <a class="doi-link" href="https://doi.org/10.1016/j.oregeorev.2020.103947">10.1016/j.oregeorev.2020.103947</a>
-            </li>
-            <li class="panel publication-item">
-              <p>Kutyrev, A., McDonald, A., Tamura, N., Cabri, L.J., Tolstykh, N., Pekov, I., 2023. Sidorovite, PtFe3, a new mineral from the Snegovaya River placer, Koryak Highlands, Russia. <em>The Canadian Journal of Mineralogy and Petrology</em> 61(5), 1021-1030.</p>
-              <a class="doi-link" href="https://doi.org/10.3749/2200072">10.3749/2200072</a>
-            </li>
-            <li class="panel publication-item">
-              <p>Kutyrev, A., Kamenetsky, V.S., Kontonikas-Charos, A., Savelyev, D.P., Yakich, T.Y., Belousov, I.A., et al., 2023. Behavior of platinum-group elements during hydrous metamorphism: constraints from awaruite (Ni3Fe) mineralization. <em>Lithosphere</em>, 2023(1).</p>
-              <a class="doi-link" href="https://doi.org/10.2113/2023/lithosphere_2023_126">10.2113/2023/lithosphere_2023_126</a>
-            </li>
-            <li class="panel publication-item">
-              <p>Kutyrev, A.V., Zhirnova, T.S., 2019. Concentrically-zoned massifs of the Tamanvayam group (Koryak-Kamchatka Platiniferous Belt): structure, age, petrological and geochemical aspects. <em>Russian Journal of Pacific Geology</em> 13, 350-363.</p>
-              <a class="doi-link" href="https://doi.org/10.1134/S1819714019040031">10.1134/S1819714019040031</a>
-            </li>
-            <li class="panel publication-item">
-              <p>Kutyrev, A.V., Sidorov, E.G., Antonov, A.V., Chubarov, V.M., 2018. Platinum-group mineral assemblage of the Prizhimny Creek (Koryak Highland). <em>Russian Geology and Geophysics</em> 59, 935-944.</p>
-              <a class="doi-link" href="https://doi.org/10.1016/j.rgg.2018.07.014">10.1016/j.rgg.2018.07.014</a>
-            </li>
-            <li class="panel publication-item">
-              <p>Rhoads, E.A., Kutyrev, A., Bindeman, I.N., Lynn, K.J., Trusdell, F.A., Downs, D.T., Edwards, H.R., Cook, G.W., Day, J.M.D., 2025. Rhenium-osmium and oxygen isotope homogeneity during the 2022 Mauna Loa eruption and implications for basaltic magma storage. <em>Bulletin of Volcanology</em> 87.</p>
-              <a class="doi-link" href="https://doi.org/10.1007/s00445-025-01825-0">10.1007/s00445-025-01825-0</a>
-            </li>
-            <li class="panel publication-item">
-              <p>Chayka, I.F., Kamenetsky, V.S., Kutyrev, A.V., Barnes, S.J., Stepanov, A.S., Konstantinov, S.E., Baykov, N.I., Kryazhev, S.G., Belousov, I.A., Zhukova, I.A., Scherbakov, V.D., Kalugin, V.M., Ivanov, A.V., Bryanskiy, N.V., Park, J.W., 2025. Erratic behavior of platinum-group elements along an olivine-Cr-spinel cotectic in sulfide-undersaturated basaltic magma: roles of Cr-spinel and alloys. <em>Scientific Reports</em> 15, 14366.</p>
-              <a class="doi-link" href="https://doi.org/10.1038/s41598-025-97281-z">10.1038/s41598-025-97281-z</a>
-            </li>
-            <li class="panel publication-item">
-              <p>Yakubovich, O., Kutyrev, A., Sidorov, E., Travin, A., 2022. 190Pt-4He dating of platinum mineralization in Ural-Alaskan-type complexes in the Kamchatka region: evidence for remobilization of platinum-group elements. <em>Mineralium Deposita</em>.</p>
-              <a class="doi-link" href="https://doi.org/10.1007/s00126-022-01103-5">10.1007/s00126-022-01103-5</a>
-            </li>
-            <li class="panel publication-item">
-              <p>Bukhanova, D.S., Kutyrev, A.V., Sidorov, E.G., Chubarov, V.M., 2022. First finding of platinum group minerals at the Malmyzh porphyry gold-copper deposit, Khabarovsk Krai, Russia. <em>Geology of Ore Deposits</em> 63, 675-681.</p>
-              <a class="doi-link" href="https://doi.org/10.1134/s1075701521070035">10.1134/s1075701521070035</a>
-            </li>
-            <li class="panel publication-item">
-              <p>Sidorov, E.G., Kutyrev, A.V., Zhitova, E.S., Agakhanov, A.A., Sandimirova, E.I., Vymazalova, A., Chubarov, V.M., Zolotarev, A.A., 2021. Kufahrite, PtPb, a new mineral from Ledyanoy Creek placer, Galmoenan ultramafic complex, Koryak Highlands, Russia. <em>Mineralogical Magazine</em> 85, 254-261.</p>
-              <a class="doi-link" href="https://doi.org/10.1180/mgm.2021.18">10.1180/mgm.2021.18</a>
-            </li>
-            <li class="panel publication-item">
-              <p>Stepanov, S.Y., Kutyrev, A.V., Lepekhina, E.N., Sharpenok, L.N., Antonov, A.V., Kutyreva, M.E., 2021. Age of the dike complex in the dunite "core" of the Kamenushinsky clinopyroxenite-dunite massif, Ural Platinum belt, Middle Urals. <em>Geochemistry International</em> 59, 559-576.</p>
-              <a class="doi-link" href="https://doi.org/10.1134/s0016702921060094">10.1134/s0016702921060094</a>
-            </li>
-            <li class="panel publication-item">
-              <p>Sidorov, E., Kutyrev, A., Chubarov, V., Zhitova, E., 2021. Platinum mineralization of the Epilchik Ural-Alaskan type zoned complex (Far East Russia). <em>Mineralium Deposita</em> 56, 143-160.</p>
-              <a class="doi-link" href="https://doi.org/10.1007/s00126-020-01008-1">10.1007/s00126-020-01008-1</a>
-            </li>
-            <li class="panel publication-item">
-              <p>Sidorov, E.G., Kutyrev, A.V., Zhitova, E.S., Chubarov, V.M., Khanin, D.A., 2019. Origin of platinum-group mineral assemblages from placers in rivers draining from the Ural-Alaskan type Itchayvayamsky ultramafics, Far East Russia. <em>Canadian Mineralogist</em> 57, 91-104.</p>
-              <a class="doi-link" href="https://doi.org/10.3749/canmin.1800040">10.3749/canmin.1800040</a>
-            </li>
-            <li class="panel publication-item">
-              <p>Chayka, I.F., Izokh, A.E., Kamenetsky, V.S., Sokol, E.V., Lobastov, B.M., Kontonikas-Charos, A., Zelenski, M.E., Kutyrev, A.V., Sluzhenikin, S.F., Zhitova, L.M., Shvedov, G.I., Shevko, A.Y., Gora, M.P., 2023. Origin of chromitites in the Norilsk-1 intrusion (Siberian LIP) triggered by assimilation of argillaceous rocks by Cr-rich basic magma. <em>Lithos</em> 454-455.</p>
-              <a class="doi-link" href="https://doi.org/10.1016/j.lithos.2023.107254">10.1016/j.lithos.2023.107254</a>
-            </li>
-            <li class="panel publication-item">
-              <p>Zhitova, E.S., Nuzhdaev, A.A., Davydova, V.O., Sheveleva, R.M., Zhegunov, P.S., Kuznetsov, R.A., Kutyrev, A.V., Khokhlova, M.A., Vlasenko, N.S., 2025. Calcareous skarn-like mineral paragenesis from unaltered basalt of the Alaid volcano (Kuril-Kamchatka island arc). <em>Minerals</em> 15.</p>
-              <a class="doi-link" href="https://doi.org/10.3390/min15030237">10.3390/min15030237</a>
-            </li>
-            <li class="panel publication-item">
-              <p>Pekov, I.V., Zubkova, N.V., Yapaskurt, V.O., Belakovskiy, D.I., Britvin, S.N., Agakhanov, A.A., Turchkova, A.G., Sidorov, E.G., Kutyrev, A.V., Blatov, V.A., Pushcharovsky, D.Y., 2022. Nishanbaevite, KAl2O(AsO4)(SO4), a new As/S-ordered arsenate-sulfate mineral of fumarolic origin. <em>Mineralogy and Petrology</em>.</p>
-              <a class="doi-link" href="https://doi.org/10.1007/s00710-022-00803-0">10.1007/s00710-022-00803-0</a>
-            </li>
-            <li class="panel publication-item">
-              <p>Stepanov, S., Palamarchuk, R., Kutyrev, A., Lepekhina, E., Sharpenok, L., Shagalov, E., Minervina, E., 2024. Nature of perovskite mineralization of silicate-carbonate veins in the margins of Kusinsko-Kopanskaya layered intrusion (South Urals, Russia). <em>Minerals</em> 14, 478.</p>
-              <a class="doi-link" href="https://doi.org/10.3390/min14050478">10.3390/min14050478</a>
-            </li>
-            <li class="panel publication-item">
-              <p>Eslami, A., Grieco, G., Bussolesi, M., Ichiyama, Y., Lenaz, D., Skogby, H., Kutyrev, A.V., Cavallo, A., Khedr, M.Z., 2023. Co-occurrence of compositionally variable chromitites in the Sabzevar ophiolite, NE Iran. <em>Lithos</em> 446-447.</p>
-              <a class="doi-link" href="https://doi.org/10.1016/j.lithos.2023.107133">10.1016/j.lithos.2023.107133</a>
-            </li>
-            <li class="panel publication-item">
-              <p>Stepanov, S.Y., Palamarchuk, R.S., Kutyrev, A.V., Shilovskikh, V.V., Petrov, S.V., 2023. Mineralogy and geochemistry of platinum-group elements in the zoned mafic-ultramafic intrusions of the Uralian Platinum belt, Russia. <em>Journal of Geochemical Exploration</em> 246.</p>
-              <a class="doi-link" href="https://doi.org/10.1016/j.gexplo.2023.107155">10.1016/j.gexplo.2023.107155</a>
-            </li>
-            <li class="panel publication-item">
-              <p>Chayka, I.F., Baykov, N.I., Kamenetsky, V.S., Kutyrev, A.V., Pushkarev, E.V., Abersteiner, A., Shcherbakov, V.D., 2023. Volcano-plutonic complex of the Tumrok Range (Eastern Kamchatka): an example of the Ural-Alaskan type intrusion and related volcanic series. <em>Minerals</em> 13, 126.</p>
-              <a class="doi-link" href="https://doi.org/10.3390/min13010126">10.3390/min13010126</a>
-            </li>
-            <li class="panel publication-item">
-              <p>Pekov, I.V., Zubkova, N.V., Agakhanov, A.A., Yapaskurt, V.O., Belakovskiy, D.I., Britvin, S.N., Sidorov, E.G., Kutyrev, A.V., Pushcharovsky, D.Y., 2022. New arsenate minerals from the Arsenatnaya fumarole, Tolbachik volcano, Kamchatka, Russia. XIX. Axelite, Na14Cu7(AsO4)8F2Cl2. <em>Mineralogical Magazine</em>.</p>
-              <a class="doi-link" href="https://doi.org/10.1180/mgm.2022.120">10.1180/mgm.2022.120</a>
-            </li>
-            <li class="panel publication-item">
-              <p>Cui, M.-M., Su, B.-X., Wang, J., Wu, Y., Kutyrev, A., 2022. Early Paleozoic subduction fingerprints of the Paleo-Asian ocean in easternmost Central Asian Orogenic Belt (CAOB): Identification of the oldest Alaskan-type complex in the CAOB. <em>GSA Bulletin</em>.</p>
-              <a class="doi-link" href="https://doi.org/10.1130/B36307.1">10.1130/B36307.1</a>
-            </li>
-            <li class="panel publication-item">
-              <p>Nekrylov, N., Kamenetsky, V.S., Savelyev, D.P., Gorbach, N.V., Kontonikas-Charos, A., Palesskii, S.V., Shcherbakov, V.D., Kutyrev, A.V., Savelyeva, O.L., Korneeva, A.A., Kozmenko, O.A., Zelenski, M.E., 2022. Platinum-group elements in Late Quaternary high-Mg basalts of eastern Kamchatka: Evidence for minor cryptic sulfide fractionation in primitive arc magmas. <em>Lithos</em>.</p>
-              <a class="doi-link" href="https://doi.org/10.1016/j.lithos.2022.106608">10.1016/j.lithos.2022.106608</a>
-            </li>
-            <li class="panel publication-item">
-              <p>Ismagilova, R.M., Zhitova, E.S., Krivovichev, S.V., Sergeeva, A.V., Nuzhdaev, A.A., Anikin, L.P., Krzhizhanovskaya, M.G., Nazarova, M.A., Kupchinenko, A.N., Zolotarev, A.A., Kutyrev, A.V., Bukhanova, D.S., Kuznetsov, R.A., Khanin, D.A., 2021. Phase evolution from volborthite, Cu3(V2O7)(OH)2*2H2O, upon heat treatment. <em>Minerals</em> 11, 1312.</p>
-              <a class="doi-link" href="https://doi.org/10.3390/min11121312">10.3390/min11121312</a>
-            </li>
-            <li class="panel publication-item">
-              <p>Saveliev, D.E., Shilovskikh, V.V., Sergeev, S.N., Kutyrev, A.V., 2021. Chromian spinel neomineralisations and the microstructure of plastically deformed ophiolitic peridotites (Kraka massifs, Southern Urals, Russia). <em>Mineralogy and Petrology</em> 115, 411-430.</p>
-              <a class="doi-link" href="https://doi.org/10.1007/s00710-021-00748-w">10.1007/s00710-021-00748-w</a>
-            </li>
-            <li class="panel publication-item">
-              <p>Chayka, I.F., Sobolev, A.V., Izokh, A.E., Batanova, V.G., Krasheninnikov, S.P., Chervyakovskaya, M.V., Kontonikas-Charos, A., Kutyrev, A., Lobastov, B., Chervyakovskiy, V., 2020. Fingerprints of Kamafugite-Like Magmas in Mesozoic Lamproites of the Aldan Shield: Evidence from Olivine and Olivine-Hosted Inclusions. <em>Minerals</em> 10, 1-30.</p>
-              <a class="doi-link" href="https://doi.org/10.3390/min10040337">10.3390/min10040337</a>
-            </li>
-            <li class="panel publication-item">
-              <p>Stepanov, S.Y., Shagalov, E.S., Palamarchuk, R.S., Kutyrev, A.V., Sharpenok, L.N., Nabiullin, F.M., Troshkina, A.N., 2020. Mineralogical and geochemical evidence for granite metasomatism in dikes in the north of the Berezovskoe Ore field (Middle Urals). <em>Russian Geology and Geophysics</em> 61, 809-827.</p>
-              <a class="doi-link" href="https://doi.org/10.15372/RGG2019176">10.15372/RGG2019176</a>
-            </li>
-            <li class="panel publication-item">
-              <p>Zhegunov, P.S., Kutyrev, A.V., Zhitova, E.S., Moskaleva, S.V., Schweigert, P.E., 2024. First data on the mineralogy of the Evevpenta epithermal silver-gold ore occurrence, Kamchatka, Russia. <em>Journal of Volcanology and Seismology</em> 18, 149-164.</p>
-              <a class="doi-link" href="https://doi.org/10.1134/S0742046324700489">10.1134/S0742046324700489</a>
-            </li>
-          </ol>
-        </section>
+                <section class="section-block" id="published">
+                    <div class="section-heading">
+                        <p class="eyebrow">Peer-reviewed articles</p>
+                        <h2>Published</h2>
+                    </div>
+                    <ol class="publication-list">
+                        <li class="panel publication-item">
+                            <p>
+                                Kutyrev, A., Filimonova, O., Saxey, D.W.,
+                                Vymazalova, A., Evans, K., Kamenetsky, V.S.,
+                                Wermeille, D., Fougerouse, D., Reddy, S.M.,
+                                2026. Formation of natural IrO2 through Os-Ir-Ru
+                                alloy oxidation. <em>Chemical Geology</em>,
+                                123167.
+                            </p>
+                            <a
+                                class="doi-link"
+                                href="https://doi.org/10.1016/j.chemgeo.2025.123167" target="_blank" rel="noreferrer"
+                                >10.1016/j.chemgeo.2025.123167</a
+                            >
+                        </li>
+                        <li class="panel publication-item">
+                            <p>
+                                Kutyrev, A., Bindeman, I.N., O'Neil, J., Rizo,
+                                H., 2024. Seawater-oceanic crust interaction
+                                constrained by triple oxygen and hydrogen
+                                isotopes in rocks from the Saglek-Hebron
+                                complex, NE Canada: Implications for moderately
+                                low-d18O Eoarchean ocean.
+                                <em>Chemical Geology</em> 670.
+                            </p>
+                            <a
+                                class="doi-link"
+                                href="https://doi.org/10.1016/j.chemgeo.2024.122378" target="_blank" rel="noreferrer"
+                                >10.1016/j.chemgeo.2024.122378</a
+                            >
+                        </li>
+                        <li class="panel publication-item">
+                            <p>
+                                Kutyrev, A., Kamenetsky, V.S., Chayka, I.F.,
+                                Nekrylov, N.A., Kryuchkova, L., Shilovskikh,
+                                V.V., Kontonikas-Charos, A., Krasheninnikov,
+                                S.P., Sapegina, A., Perchuk, A.L., 2024.
+                                Metamorphic origin of large nuggets of
+                                platinum-group metals: evidence from multiphase
+                                inclusions in Os-Ir-Ru alloys from the
+                                Adamsfield placer, Tasmania.
+                                <em>Journal of Petrology</em>.
+                            </p>
+                            <a
+                                class="doi-link"
+                                href="https://doi.org/10.1093/petrology/egae086" target="_blank" rel="noreferrer"
+                                >10.1093/petrology/egae086</a
+                            >
+                        </li>
+                        <li class="panel publication-item">
+                            <p>
+                                Kutyrev, A.V., Kamenetsky, V.S., Park, J.-W.,
+                                Maas, R., Demonterova, E.I., Antsiferova, T.N.,
+                                Ivanov, A.V., Hwang, J., Abersteiner, A.,
+                                Ozerov, A.Y., 2021. Primitive high-K
+                                intraoceanic arc magmas of Eastern Kamchatka:
+                                Implications for Paleo-Pacific tectonics and
+                                magmatism in the Cretaceous.
+                                <em>Earth-Science Reviews</em> 220, 1-22.
+                            </p>
+                            <a
+                                class="doi-link"
+                                href="https://doi.org/10.1016/j.earscirev.2021.103703" target="_blank" rel="noreferrer"
+                                >10.1016/j.earscirev.2021.103703</a
+                            >
+                        </li>
+                        <li class="panel publication-item">
+                            <p>
+                                Kutyrev, A.V., Kamenetsky, V.S., Sidorov, E.G.,
+                                Abersteiner, A., Chubarov, V.M., 2020. Silicate
+                                inclusions in isoferroplatinum: Constraints on
+                                the origin of platinum mineralization in
+                                podiform chromitites.
+                                <em>Ore Geology Reviews</em> 119, 1-13.
+                            </p>
+                            <a
+                                class="doi-link"
+                                href="https://doi.org/10.1016/j.oregeorev.2020.103367" target="_blank" rel="noreferrer"
+                                >10.1016/j.oregeorev.2020.103367</a
+                            >
+                        </li>
+                        <li class="panel publication-item">
+                            <p>
+                                Kutyrev, A., Zelenski, M., Nekrylov, N.,
+                                Savelyev, D., Kontonikas-Charos, A., Kamenetsky,
+                                V.S., 2021. Noble metals in arc basaltic magmas
+                                worldwide: a case study of modern and
+                                pre-historic lavas of the Tolbachik volcano.
+                                <em>Frontiers in Earth Science</em> 9.
+                            </p>
+                            <a
+                                class="doi-link"
+                                href="https://doi.org/10.3389/feart.2021.791465" target="_blank" rel="noreferrer"
+                                >10.3389/feart.2021.791465</a
+                            >
+                        </li>
+                        <li class="panel publication-item">
+                            <p>
+                                Kutyrev, A.V., Sidorov, E.G., Kamenetsky, V.S.,
+                                Chubarov, V.M., Chayka, I.F., Abersteiner, A.,
+                                2021. Platinum mineralization and geochemistry
+                                of the Matysken zoned Ural-Alaskan type complex
+                                and related placer (Far East Russia).
+                                <em>Ore Geology Reviews</em> 130, 1-17.
+                            </p>
+                            <a
+                                class="doi-link"
+                                href="https://doi.org/10.1016/j.oregeorev.2020.103947" target="_blank" rel="noreferrer"
+                                >10.1016/j.oregeorev.2020.103947</a
+                            >
+                        </li>
+                        <li class="panel publication-item">
+                            <p>
+                                Kutyrev, A., McDonald, A., Tamura, N., Cabri,
+                                L.J., Tolstykh, N., Pekov, I., 2023. Sidorovite,
+                                PtFe3, a new mineral from the Snegovaya River
+                                placer, Koryak Highlands, Russia.
+                                <em
+                                    >The Canadian Journal of Mineralogy and
+                                    Petrology</em
+                                >
+                                61(5), 1021-1030.
+                            </p>
+                            <a
+                                class="doi-link"
+                                href="https://doi.org/10.3749/2200072" target="_blank" rel="noreferrer"
+                                >10.3749/2200072</a
+                            >
+                        </li>
+                        <li class="panel publication-item">
+                            <p>
+                                Kutyrev, A., Kamenetsky, V.S.,
+                                Kontonikas-Charos, A., Savelyev, D.P., Yakich,
+                                T.Y., Belousov, I.A., et al., 2023. Behavior of
+                                platinum-group elements during hydrous
+                                metamorphism: constraints from awaruite (Ni3Fe)
+                                mineralization. <em>Lithosphere</em>, 2023(1).
+                            </p>
+                            <a
+                                class="doi-link"
+                                href="https://doi.org/10.2113/2023/lithosphere_2023_126" target="_blank" rel="noreferrer"
+                                >10.2113/2023/lithosphere_2023_126</a
+                            >
+                        </li>
+                        <li class="panel publication-item">
+                            <p>
+                                Kutyrev, A.V., Zhirnova, T.S., 2019.
+                                Concentrically-zoned massifs of the Tamanvayam
+                                group (Koryak-Kamchatka Platiniferous Belt):
+                                structure, age, petrological and geochemical
+                                aspects.
+                                <em>Russian Journal of Pacific Geology</em> 13,
+                                350-363.
+                            </p>
+                            <a
+                                class="doi-link"
+                                href="https://doi.org/10.1134/S1819714019040031" target="_blank" rel="noreferrer"
+                                >10.1134/S1819714019040031</a
+                            >
+                        </li>
+                        <li class="panel publication-item">
+                            <p>
+                                Kutyrev, A.V., Sidorov, E.G., Antonov, A.V.,
+                                Chubarov, V.M., 2018. Platinum-group mineral
+                                assemblage of the Prizhimny Creek (Koryak
+                                Highland).
+                                <em>Russian Geology and Geophysics</em> 59,
+                                935-944.
+                            </p>
+                            <a
+                                class="doi-link"
+                                href="https://doi.org/10.1016/j.rgg.2018.07.014" target="_blank" rel="noreferrer"
+                                >10.1016/j.rgg.2018.07.014</a
+                            >
+                        </li>
+                        <li class="panel publication-item">
+                            <p>
+                                Rhoads, E.A., Kutyrev, A., Bindeman, I.N., Lynn,
+                                K.J., Trusdell, F.A., Downs, D.T., Edwards,
+                                H.R., Cook, G.W., Day, J.M.D., 2025.
+                                Rhenium-osmium and oxygen isotope homogeneity
+                                during the 2022 Mauna Loa eruption and
+                                implications for basaltic magma storage.
+                                <em>Bulletin of Volcanology</em> 87.
+                            </p>
+                            <a
+                                class="doi-link"
+                                href="https://doi.org/10.1007/s00445-025-01825-0" target="_blank" rel="noreferrer"
+                                >10.1007/s00445-025-01825-0</a
+                            >
+                        </li>
+                        <li class="panel publication-item">
+                            <p>
+                                Chayka, I.F., Kamenetsky, V.S., Kutyrev, A.V.,
+                                Barnes, S.J., Stepanov, A.S., Konstantinov,
+                                S.E., Baykov, N.I., Kryazhev, S.G., Belousov,
+                                I.A., Zhukova, I.A., Scherbakov, V.D., Kalugin,
+                                V.M., Ivanov, A.V., Bryanskiy, N.V., Park, J.W.,
+                                2025. Erratic behavior of platinum-group
+                                elements along an olivine-Cr-spinel cotectic in
+                                sulfide-undersaturated basaltic magma: roles of
+                                Cr-spinel and alloys.
+                                <em>Scientific Reports</em> 15, 14366.
+                            </p>
+                            <a
+                                class="doi-link"
+                                href="https://doi.org/10.1038/s41598-025-97281-z" target="_blank" rel="noreferrer"
+                                >10.1038/s41598-025-97281-z</a
+                            >
+                        </li>
+                        <li class="panel publication-item">
+                            <p>
+                                Yakubovich, O., Kutyrev, A., Sidorov, E.,
+                                Travin, A., 2022. 190Pt-4He dating of platinum
+                                mineralization in Ural-Alaskan-type complexes in
+                                the Kamchatka region: evidence for
+                                remobilization of platinum-group elements.
+                                <em>Mineralium Deposita</em>.
+                            </p>
+                            <a
+                                class="doi-link"
+                                href="https://doi.org/10.1007/s00126-022-01103-5" target="_blank" rel="noreferrer"
+                                >10.1007/s00126-022-01103-5</a
+                            >
+                        </li>
+                        <li class="panel publication-item">
+                            <p>
+                                Bukhanova, D.S., Kutyrev, A.V., Sidorov, E.G.,
+                                Chubarov, V.M., 2022. First finding of platinum
+                                group minerals at the Malmyzh porphyry
+                                gold-copper deposit, Khabarovsk Krai, Russia.
+                                <em>Geology of Ore Deposits</em> 63, 675-681.
+                            </p>
+                            <a
+                                class="doi-link"
+                                href="https://doi.org/10.1134/s1075701521070035" target="_blank" rel="noreferrer"
+                                >10.1134/s1075701521070035</a
+                            >
+                        </li>
+                        <li class="panel publication-item">
+                            <p>
+                                Sidorov, E.G., Kutyrev, A.V., Zhitova, E.S.,
+                                Agakhanov, A.A., Sandimirova, E.I., Vymazalova,
+                                A., Chubarov, V.M., Zolotarev, A.A., 2021.
+                                Kufahrite, PtPb, a new mineral from Ledyanoy
+                                Creek placer, Galmoenan ultramafic complex,
+                                Koryak Highlands, Russia.
+                                <em>Mineralogical Magazine</em> 85, 254-261.
+                            </p>
+                            <a
+                                class="doi-link"
+                                href="https://doi.org/10.1180/mgm.2021.18" target="_blank" rel="noreferrer"
+                                >10.1180/mgm.2021.18</a
+                            >
+                        </li>
+                        <li class="panel publication-item">
+                            <p>
+                                Stepanov, S.Y., Kutyrev, A.V., Lepekhina, E.N.,
+                                Sharpenok, L.N., Antonov, A.V., Kutyreva, M.E.,
+                                2021. Age of the dike complex in the dunite
+                                "core" of the Kamenushinsky
+                                clinopyroxenite-dunite massif, Ural Platinum
+                                belt, Middle Urals.
+                                <em>Geochemistry International</em> 59, 559-576.
+                            </p>
+                            <a
+                                class="doi-link"
+                                href="https://doi.org/10.1134/s0016702921060094" target="_blank" rel="noreferrer"
+                                >10.1134/s0016702921060094</a
+                            >
+                        </li>
+                        <li class="panel publication-item">
+                            <p>
+                                Sidorov, E., Kutyrev, A., Chubarov, V., Zhitova,
+                                E., 2021. Platinum mineralization of the
+                                Epilchik Ural-Alaskan type zoned complex (Far
+                                East Russia). <em>Mineralium Deposita</em> 56,
+                                143-160.
+                            </p>
+                            <a
+                                class="doi-link"
+                                href="https://doi.org/10.1007/s00126-020-01008-1" target="_blank" rel="noreferrer"
+                                >10.1007/s00126-020-01008-1</a
+                            >
+                        </li>
+                        <li class="panel publication-item">
+                            <p>
+                                Sidorov, E.G., Kutyrev, A.V., Zhitova, E.S.,
+                                Chubarov, V.M., Khanin, D.A., 2019. Origin of
+                                platinum-group mineral assemblages from placers
+                                in rivers draining from the Ural-Alaskan type
+                                Itchayvayamsky ultramafics, Far East Russia.
+                                <em>Canadian Mineralogist</em> 57, 91-104.
+                            </p>
+                            <a
+                                class="doi-link"
+                                href="https://doi.org/10.3749/canmin.1800040" target="_blank" rel="noreferrer"
+                                >10.3749/canmin.1800040</a
+                            >
+                        </li>
+                        <li class="panel publication-item">
+                            <p>
+                                Chayka, I.F., Izokh, A.E., Kamenetsky, V.S.,
+                                Sokol, E.V., Lobastov, B.M., Kontonikas-Charos,
+                                A., Zelenski, M.E., Kutyrev, A.V., Sluzhenikin,
+                                S.F., Zhitova, L.M., Shvedov, G.I., Shevko,
+                                A.Y., Gora, M.P., 2023. Origin of chromitites in
+                                the Norilsk-1 intrusion (Siberian LIP) triggered
+                                by assimilation of argillaceous rocks by Cr-rich
+                                basic magma. <em>Lithos</em> 454-455.
+                            </p>
+                            <a
+                                class="doi-link"
+                                href="https://doi.org/10.1016/j.lithos.2023.107254" target="_blank" rel="noreferrer"
+                                >10.1016/j.lithos.2023.107254</a
+                            >
+                        </li>
+                        <li class="panel publication-item">
+                            <p>
+                                Zhitova, E.S., Nuzhdaev, A.A., Davydova, V.O.,
+                                Sheveleva, R.M., Zhegunov, P.S., Kuznetsov,
+                                R.A., Kutyrev, A.V., Khokhlova, M.A., Vlasenko,
+                                N.S., 2025. Calcareous skarn-like mineral
+                                paragenesis from unaltered basalt of the Alaid
+                                volcano (Kuril-Kamchatka island arc).
+                                <em>Minerals</em> 15.
+                            </p>
+                            <a
+                                class="doi-link"
+                                href="https://doi.org/10.3390/min15030237" target="_blank" rel="noreferrer"
+                                >10.3390/min15030237</a
+                            >
+                        </li>
+                        <li class="panel publication-item">
+                            <p>
+                                Pekov, I.V., Zubkova, N.V., Yapaskurt, V.O.,
+                                Belakovskiy, D.I., Britvin, S.N., Agakhanov,
+                                A.A., Turchkova, A.G., Sidorov, E.G., Kutyrev,
+                                A.V., Blatov, V.A., Pushcharovsky, D.Y., 2022.
+                                Nishanbaevite, KAl2O(AsO4)(SO4), a new
+                                As/S-ordered arsenate-sulfate mineral of
+                                fumarolic origin.
+                                <em>Mineralogy and Petrology</em>.
+                            </p>
+                            <a
+                                class="doi-link"
+                                href="https://doi.org/10.1007/s00710-022-00803-0" target="_blank" rel="noreferrer"
+                                >10.1007/s00710-022-00803-0</a
+                            >
+                        </li>
+                        <li class="panel publication-item">
+                            <p>
+                                Stepanov, S., Palamarchuk, R., Kutyrev, A.,
+                                Lepekhina, E., Sharpenok, L., Shagalov, E.,
+                                Minervina, E., 2024. Nature of perovskite
+                                mineralization of silicate-carbonate veins in
+                                the margins of Kusinsko-Kopanskaya layered
+                                intrusion (South Urals, Russia).
+                                <em>Minerals</em> 14, 478.
+                            </p>
+                            <a
+                                class="doi-link"
+                                href="https://doi.org/10.3390/min14050478" target="_blank" rel="noreferrer"
+                                >10.3390/min14050478</a
+                            >
+                        </li>
+                        <li class="panel publication-item">
+                            <p>
+                                Eslami, A., Grieco, G., Bussolesi, M., Ichiyama,
+                                Y., Lenaz, D., Skogby, H., Kutyrev, A.V.,
+                                Cavallo, A., Khedr, M.Z., 2023. Co-occurrence of
+                                compositionally variable chromitites in the
+                                Sabzevar ophiolite, NE Iran.
+                                <em>Lithos</em> 446-447.
+                            </p>
+                            <a
+                                class="doi-link"
+                                href="https://doi.org/10.1016/j.lithos.2023.107133" target="_blank" rel="noreferrer"
+                                >10.1016/j.lithos.2023.107133</a
+                            >
+                        </li>
+                        <li class="panel publication-item">
+                            <p>
+                                Stepanov, S.Y., Palamarchuk, R.S., Kutyrev,
+                                A.V., Shilovskikh, V.V., Petrov, S.V., 2023.
+                                Mineralogy and geochemistry of platinum-group
+                                elements in the zoned mafic-ultramafic
+                                intrusions of the Uralian Platinum belt, Russia.
+                                <em>Journal of Geochemical Exploration</em> 246.
+                            </p>
+                            <a
+                                class="doi-link"
+                                href="https://doi.org/10.1016/j.gexplo.2023.107155" target="_blank" rel="noreferrer"
+                                >10.1016/j.gexplo.2023.107155</a
+                            >
+                        </li>
+                        <li class="panel publication-item">
+                            <p>
+                                Chayka, I.F., Baykov, N.I., Kamenetsky, V.S.,
+                                Kutyrev, A.V., Pushkarev, E.V., Abersteiner, A.,
+                                Shcherbakov, V.D., 2023. Volcano-plutonic
+                                complex of the Tumrok Range (Eastern Kamchatka):
+                                an example of the Ural-Alaskan type intrusion
+                                and related volcanic series.
+                                <em>Minerals</em> 13, 126.
+                            </p>
+                            <a
+                                class="doi-link"
+                                href="https://doi.org/10.3390/min13010126" target="_blank" rel="noreferrer"
+                                >10.3390/min13010126</a
+                            >
+                        </li>
+                        <li class="panel publication-item">
+                            <p>
+                                Pekov, I.V., Zubkova, N.V., Agakhanov, A.A.,
+                                Yapaskurt, V.O., Belakovskiy, D.I., Britvin,
+                                S.N., Sidorov, E.G., Kutyrev, A.V.,
+                                Pushcharovsky, D.Y., 2022. New arsenate minerals
+                                from the Arsenatnaya fumarole, Tolbachik
+                                volcano, Kamchatka, Russia. XIX. Axelite,
+                                Na14Cu7(AsO4)8F2Cl2.
+                                <em>Mineralogical Magazine</em>.
+                            </p>
+                            <a
+                                class="doi-link"
+                                href="https://doi.org/10.1180/mgm.2022.120" target="_blank" rel="noreferrer"
+                                >10.1180/mgm.2022.120</a
+                            >
+                        </li>
+                        <li class="panel publication-item">
+                            <p>
+                                Cui, M.-M., Su, B.-X., Wang, J., Wu, Y.,
+                                Kutyrev, A., 2022. Early Paleozoic subduction
+                                fingerprints of the Paleo-Asian ocean in
+                                easternmost Central Asian Orogenic Belt (CAOB):
+                                Identification of the oldest Alaskan-type
+                                complex in the CAOB. <em>GSA Bulletin</em>.
+                            </p>
+                            <a
+                                class="doi-link"
+                                href="https://doi.org/10.1130/B36307.1" target="_blank" rel="noreferrer"
+                                >10.1130/B36307.1</a
+                            >
+                        </li>
+                        <li class="panel publication-item">
+                            <p>
+                                Nekrylov, N., Kamenetsky, V.S., Savelyev, D.P.,
+                                Gorbach, N.V., Kontonikas-Charos, A., Palesskii,
+                                S.V., Shcherbakov, V.D., Kutyrev, A.V.,
+                                Savelyeva, O.L., Korneeva, A.A., Kozmenko, O.A.,
+                                Zelenski, M.E., 2022. Platinum-group elements in
+                                Late Quaternary high-Mg basalts of eastern
+                                Kamchatka: Evidence for minor cryptic sulfide
+                                fractionation in primitive arc magmas.
+                                <em>Lithos</em>.
+                            </p>
+                            <a
+                                class="doi-link"
+                                href="https://doi.org/10.1016/j.lithos.2022.106608" target="_blank" rel="noreferrer"
+                                >10.1016/j.lithos.2022.106608</a
+                            >
+                        </li>
+                        <li class="panel publication-item">
+                            <p>
+                                Ismagilova, R.M., Zhitova, E.S., Krivovichev,
+                                S.V., Sergeeva, A.V., Nuzhdaev, A.A., Anikin,
+                                L.P., Krzhizhanovskaya, M.G., Nazarova, M.A.,
+                                Kupchinenko, A.N., Zolotarev, A.A., Kutyrev,
+                                A.V., Bukhanova, D.S., Kuznetsov, R.A., Khanin,
+                                D.A., 2021. Phase evolution from volborthite,
+                                Cu3(V2O7)(OH)2*2H2O, upon heat treatment.
+                                <em>Minerals</em> 11, 1312.
+                            </p>
+                            <a
+                                class="doi-link"
+                                href="https://doi.org/10.3390/min11121312" target="_blank" rel="noreferrer"
+                                >10.3390/min11121312</a
+                            >
+                        </li>
+                        <li class="panel publication-item">
+                            <p>
+                                Saveliev, D.E., Shilovskikh, V.V., Sergeev,
+                                S.N., Kutyrev, A.V., 2021. Chromian spinel
+                                neomineralisations and the microstructure of
+                                plastically deformed ophiolitic peridotites
+                                (Kraka massifs, Southern Urals, Russia).
+                                <em>Mineralogy and Petrology</em> 115, 411-430.
+                            </p>
+                            <a
+                                class="doi-link"
+                                href="https://doi.org/10.1007/s00710-021-00748-w" target="_blank" rel="noreferrer"
+                                >10.1007/s00710-021-00748-w</a
+                            >
+                        </li>
+                        <li class="panel publication-item">
+                            <p>
+                                Chayka, I.F., Sobolev, A.V., Izokh, A.E.,
+                                Batanova, V.G., Krasheninnikov, S.P.,
+                                Chervyakovskaya, M.V., Kontonikas-Charos, A.,
+                                Kutyrev, A., Lobastov, B., Chervyakovskiy, V.,
+                                2020. Fingerprints of Kamafugite-Like Magmas in
+                                Mesozoic Lamproites of the Aldan Shield:
+                                Evidence from Olivine and Olivine-Hosted
+                                Inclusions. <em>Minerals</em> 10, 1-30.
+                            </p>
+                            <a
+                                class="doi-link"
+                                href="https://doi.org/10.3390/min10040337" target="_blank" rel="noreferrer"
+                                >10.3390/min10040337</a
+                            >
+                        </li>
+                        <li class="panel publication-item">
+                            <p>
+                                Stepanov, S.Y., Shagalov, E.S., Palamarchuk,
+                                R.S., Kutyrev, A.V., Sharpenok, L.N., Nabiullin,
+                                F.M., Troshkina, A.N., 2020. Mineralogical and
+                                geochemical evidence for granite metasomatism in
+                                dikes in the north of the Berezovskoe Ore field
+                                (Middle Urals).
+                                <em>Russian Geology and Geophysics</em> 61,
+                                809-827.
+                            </p>
+                            <a
+                                class="doi-link"
+                                href="https://doi.org/10.15372/RGG2019176" target="_blank" rel="noreferrer"
+                                >10.15372/RGG2019176</a
+                            >
+                        </li>
+                        <li class="panel publication-item">
+                            <p>
+                                Zhegunov, P.S., Kutyrev, A.V., Zhitova, E.S.,
+                                Moskaleva, S.V., Schweigert, P.E., 2024. First
+                                data on the mineralogy of the Evevpenta
+                                epithermal silver-gold ore occurrence,
+                                Kamchatka, Russia.
+                                <em>Journal of Volcanology and Seismology</em>
+                                18, 149-164.
+                            </p>
+                            <a
+                                class="doi-link"
+                                href="https://doi.org/10.1134/S0742046324700489" target="_blank" rel="noreferrer"
+                                >10.1134/S0742046324700489</a
+                            >
+                        </li>
+                    </ol>
+                </section>
 
-        <section class="section-block">
-          <div class="section-heading">
-            <p class="eyebrow">In progress</p>
-            <h2>In review</h2>
-          </div>
-          <ul class="simple-list">
-            <li class="panel">Kutyrev, A., Maier, W., Karinen, T., Barnes, S.-J., Hayes, B., Savard, D., Virtanen, V., Booth, C., Muir, D. Petrogenesis of the Akanvaara layered intrusion, Finnish Lapland. <em>Journal of Petrology</em>, under review.</li>
-            <li class="panel">Eslami, A., Chardelin, M., O'Driscoll, B., Malvoisin, B., Grieco, G., Bussolesi, M., Kutyrev, A. Fluid-driven alteration in chromitite-rodingite associations from the Nain ophiolite, Central Iran: Mineralogical and microstructural constraints. <em>Journal of Petrology</em>, under review.</li>
-            <li class="panel">Chayka, I., Hu, W.-J., Kutyrev, A., Petrenko, D., Zhitova, L., Shevko, A., Gora, M., Kalugin, V., Shvedov, G., Izokh, A., Yudovskaya, M. Fluid-mediated PGE enrichment of magmatic low-sulfide ores as modelled for the Norilsk deposits. <em>Geology</em>, under review.</li>
-          </ul>
-        </section>
+                <section class="section-block" id="in-review">
+                    <div class="section-heading">
+                        <p class="eyebrow">We are working on it...</p>
+                        <h2>Under review</h2>
+                    </div>
+                    <ul class="simple-list">
+                        <li class="panel" id="akanvaara-paper">
+                            Kutyrev, A., Maier, W., Karinen, T., Barnes, S.-J.,
+                            Hayes, B., Savard, D., Virtanen, V., Booth, C.,
+                            Muir, D. Petrogenesis of the Akanvaara layered
+                            intrusion, Finnish Lapland.
+                            <em>Journal of Petrology</em>, under review.
+                        </li>
+                        <li class="panel" id="nain-paper">
+                            Eslami, A., Chardelin, M., O'Driscoll, B.,
+                            Malvoisin, B., Grieco, G., Bussolesi, M., Kutyrev,
+                            A. Fluid-driven alteration in chromitite-rodingite
+                            associations from the Nain ophiolite, Central Iran:
+                            Mineralogical and microstructural constraints.
+                            <em>Journal of Petrology</em>, under review.
+                        </li>
+                        <li class="panel">
+                            Chayka, I., Hu, W.-J., Kutyrev, A., Petrenko, D.,
+                            Zhitova, L., Shevko, A., Gora, M., Kalugin, V.,
+                            Shvedov, G., Izokh, A., Yudovskaya, M.
+                            Fluid-mediated PGE enrichment of magmatic
+                            low-sulfide ores as modelled for the Norilsk
+                            deposits. <em>Geology</em>, under review.
+                        </li>
+                    </ul>
+                </section>
 
-        <section class="section-block">
-          <div class="section-heading">
-            <p class="eyebrow">Open science</p>
-            <h2>Datasets</h2>
-          </div>
-          <ul class="simple-list">
-            <li class="panel">
-              Filimonova, O., Kutyrev, A., Wermeille, D., 2025. Iridium L3-edge XAS dataset of natural Ir-O phase, comprising IrO2 [Dataset]. Zenodo.
-              <a class="doi-link" href="https://doi.org/10.5281/zenodo.15650871">10.5281/zenodo.15650871</a>
-            </li>
-            <li class="panel">
-              Kutyrev, A.V., Maier, W.D., Karinen, T., Barnes, S.J., Savard, D., 2025. Whole-rock geochemical dataset of the Akanvaara layered intrusion, Lapland, Finland. Interdisciplinary Earth Data Alliance (IEDA).
-              <a class="doi-link" href="https://doi.org/10.60520/IEDA/113569">10.60520/IEDA/113569</a>
-            </li>
-            <li class="panel">
-              Chayka, I.F., Kamenetsky, V.S., Kutyrev, A.V., Baykov, N.I., Barnes, S., Savard, D., Alexei, I.V., 2025. Major, trace, and platinum-group elements in the Late Cretaceous arc volcano-plutonic complex of the Tumrok Range, eastern Kamchatka, Version 1.0. Interdisciplinary Earth Data Alliance (IEDA).
-              <a class="doi-link" href="https://doi.org/10.60520/IEDA/113578">10.60520/IEDA/113578</a>
-            </li>
-            <li class="panel">
-              Kutyrev, A., Bindeman, I., O'Neil, J., Rizo, H., 2024. Code for 1- and 2-stage oxygen fractionation and metamorphic dehydration modeling from "Seawater-oceanic crust interaction constrained by triple oxygen and hydrogen isotopes in rocks from the Saglek-Hebron complex, NE Canada".
-              <a class="doi-link" href="https://doi.org/10.5281/zenodo.12795578">10.5281/zenodo.12795578</a>
-            </li>
-          </ul>
-        </section>
-      </main>
+                <section class="section-block" id="datasets">
+                    <div class="section-heading">
+                        <p class="eyebrow">Open science</p>
+                        <h2>Datasets</h2>
+                    </div>
+                    <ul class="simple-list">
+                        <li class="panel">
+                            Filimonova, O., Kutyrev, A., Wermeille, D., 2025.
+                            Iridium L3-edge XAS dataset of natural Ir-O phase,
+                            comprising IrO2 [Dataset]. Zenodo.
+                            <a
+                                class="doi-link"
+                                href="https://doi.org/10.5281/zenodo.15650871" target="_blank" rel="noreferrer"
+                                >10.5281/zenodo.15650871</a
+                            >
+                        </li>
+                        <li class="panel">
+                            Kutyrev, A.V., Maier, W.D., Karinen, T., Barnes,
+                            S.J., Savard, D., 2025. Whole-rock geochemical
+                            dataset of the Akanvaara layered intrusion, Lapland,
+                            Finland. Dataset deposited with the Interdisciplinary
+                            Earth Data Alliance (IEDA).
+                            <a
+                                class="doi-link"
+                                href="https://doi.org/10.60520/IEDA/113569" target="_blank" rel="noreferrer"
+                                >10.60520/IEDA/113569</a
+                            >
+                        </li>
+                        <li class="panel">
+                            Chayka, I.F., Kamenetsky, V.S., Kutyrev, A.V.,
+                            Baykov, N.I., Barnes, S., Savard, D., Alexei, I.V.,
+                            2025. Major, trace, and platinum-group elements in
+                            the Late Cretaceous arc volcano-plutonic complex of
+                            the Tumrok Range, eastern Kamchatka, Version 1.0.
+                            Interdisciplinary Earth Data Alliance (IEDA).
+                            <a
+                                class="doi-link"
+                                href="https://doi.org/10.60520/IEDA/113578" target="_blank" rel="noreferrer"
+                                >10.60520/IEDA/113578</a
+                            >
+                        </li>
+                        <li class="panel">
+                            Kutyrev, A., Bindeman, I., O'Neil, J., Rizo, H.,
+                            2024. Code for 1- and 2-stage oxygen fractionation
+                            and metamorphic dehydration modeling from
+                            "Seawater-oceanic crust interaction constrained by
+                            triple oxygen and hydrogen isotopes in rocks from
+                            the Saglek-Hebron complex, NE Canada".
+                            <a
+                                class="doi-link"
+                                href="https://doi.org/10.5281/zenodo.12795578" target="_blank" rel="noreferrer"
+                                >10.5281/zenodo.12795578</a
+                            >
+                        </li>
+                    </ul>
+                </section>
+            </main>
 
-      <footer class="site-footer">
-        <p>Anton Kutyrev</p>
-        <p>Publications with direct DOI access</p>
-      </footer>
-    </div>
-  </body>
+            <footer
+                class="site-footer"
+                data-site-footer
+                data-site-footer-secondary="Publications with direct DOI access"
+            ></footer>
+        </div>
+    </body>
 </html>

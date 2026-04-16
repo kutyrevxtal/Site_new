@@ -1,277 +1,311 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Anton Kutyrev | Petrology, Mineralogy, Critical Minerals</title>
-    <meta
-      name="description"
-      content="Anton Kutyrev researches layered intrusions, chromitites, platinum-group elements, critical minerals, and isotope geochemistry."
-    />
-    <link rel="stylesheet" href="./styles.css" />
-    <script src="./script.js" defer></script>
-  </head>
-  <body>
-    <div class="site-shell">
-      <header class="site-header">
-        <a class="brand" href="./index.html">Anton Kutyrev</a>
-        <nav class="site-nav" aria-label="Primary">
-          <a class="active" href="./index.html">Home</a>
-          <a href="./research.html">Research</a>
-          <a href="./publications.html">Publications</a>
-          <a href="./cv.html">CV</a>
-          <a href="./talks.html">Talks</a>
-          <a href="./photography.html">Photography</a>
-        </nav>
-        <button class="theme-toggle" type="button" aria-label="Toggle color theme">
-          Dark mode
-        </button>
-      </header>
+<!doctype html>
+<html lang="en" data-theme="dark">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Anton Kutyrev | Petrology, Mineralogy, Critical Minerals</title>
+        <meta
+            name="description"
+            content="Anton Kutyrev researches layered intrusions, chromitites, platinum-group elements, critical minerals, and isotope geochemistry."
+        />
+        <link rel="stylesheet" href="./styles.css" />
+        <script src="./script.js" defer></script>
+    </head>
+    <body>
+        <div class="site-shell">
+            <header class="site-header" data-site-header="home"></header>
 
-      <main>
-        <figure class="hero-banner panel">
-          <img
-            src="./assets/images/cover-mountain.jpg"
-            alt="Snow-covered mountain landscape from Anton Kutyrev's field photography."
-          />
-        </figure>
+            <main class="home-main">
+                <section class="landing-hero home-hero">
+                    <div class="landing-backdrop">
+                        <img
+                            src="./assets/images/portraits/anton-field-portrait.jpg"
+                            alt="Anton Kutyrev standing in the field in an orange jacket."
+                        />
+                    </div>
+                    <div class="landing-inner">
+                        <div class="landing-copy">
+                            <p class="eyebrow">
+                                Petrology | Mineralogy | Critical Minerals
+                            </p>
+                            <h1>Anton Kutyrev</h1>
+                            <p class="hero-role">
+                                Petrologist and mineralogist at the University
+                                of the Witwatersrand
+                            </p>
+                            <p class="hero-text">
+                                I work on layered intrusions, chromitites,
+                                platinum-group elements, and isotope
+                                geochemistry. My research moves between field
+                                geology, petrography, microanalysis, and
+                                modelling.
+                            </p>
+                            <p class="hero-text">
+                                I have worked across South Africa, Wales, the
+                                USA, and Kamchatka, and I am especially
+                                interested in the point where a landscape-scale
+                                problem becomes a mineral-scale clue.
+                            </p>
+                            <article class="panel compact-contact-panel">
+                                <p>
+                                    <a
+                                        class="text-link"
+                                        href="mailto:anton.kutyrev@wits.ac.za"
+                                        >anton.kutyrev@wits.ac.za</a
+                                    >
+                                </p>
+                                <p>
+                                    <a
+                                        class="text-link"
+                                        href="https://orcid.org/0000-0001-5933-6455"
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        >ORCID</a
+                                    >
+                                </p>
+                                <p>
+                                    <a
+                                        class="text-link"
+                                        href="https://scholar.google.com/citations?user=Z1HjL2MAAAAJ&hl=en&oi=ao"
+                                        target="_blank"
+                                        rel="noreferrer"
+                                    >
+                                        <svg
+                                            class="link-icon"
+                                            viewBox="0 0 24 24"
+                                            aria-hidden="true"
+                                        >
+                                            <path
+                                                fill="currentColor"
+                                                d="M12 3 1.5 8.6 12 14.2 20.6 9.6V17h1.9V8.6L12 3Zm-6.9 8.5V15c0 2.4 3.1 4.4 6.9 4.4s6.9-2 6.9-4.4v-3.5L12 15.2 5.1 11.5Z"
+                                            />
+                                        </svg>
+                                        Google Scholar
+                                    </a>
+                                </p>
+                                <p>
+                                    <a
+                                        class="text-link"
+                                        href="https://www.researchgate.net/profile/Anton-Kutyrev-2?ev=hdr_xprf"
+                                        target="_blank"
+                                        rel="noreferrer"
+                                    >
+                                        <svg
+                                            class="link-icon"
+                                            viewBox="0 0 24 24"
+                                            aria-hidden="true"
+                                        >
+                                            <circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.18"></circle>
+                                            <text x="12" y="15.2" text-anchor="middle" font-size="8.5" font-family="IBM Plex Sans, sans-serif" font-weight="600" fill="currentColor">RG</text>
+                                        </svg>
+                                        ResearchGate
+                                    </a>
+                                </p>
+                            </article>
+                        </div>
+                    </div>
+                </section>
 
-        <section class="hero hero-home">
-          <div class="hero-copy">
-            <p class="eyebrow">Petrology | Mineralogy | Critical Minerals</p>
-            <h1>Reading magmatic systems</h1>
-            <p class="hero-text">
-              I am a petrologist and mineralogist working on mafic-ultramafic
-              systems, platinum-group elements, oxygen isotopes, and critical
-              minerals. My research moves from field geology and petrography to
-              microanalytical work, thermodynamic modelling, and geochemical
-              interpretation.
-            </p>
-            <div class="button-row">
-              <a class="button" href="./research.html">Explore Research</a>
-              <a class="button button-secondary" href="./publications.html"
-                >Browse Publications</a
-              >
-            </div>
-          </div>
+                <section class="section-block">
+                    <div class="section-heading">
+                        <p class="eyebrow">Current profile</p>
+                        <h2>Current position and profile</h2>
+                    </div>
+                    <div class="compact-profile-stack">
+                        <div class="card-grid overview-grid">
+                            <article class="panel summary-panel">
+                                <h3>Current position</h3>
+                                <p>
+                                    Postdoctoral Research Fellow, School of
+                                    Geosciences, University of the
+                                    Witwatersrand, Johannesburg. Current work
+                                    focuses on critical minerals in layered
+                                    mafic-ultramafic intrusions and Bushveld
+                                    chromitites, with emphasis on Ni-Cu-PGE
+                                    systems, chromitites, and Critical Zone
+                                    petrogenesis.
+                                </p>
+                            </article>
+                            <article class="panel summary-panel">
+                                <h3>Research profile</h3>
+                                <p>
+                                    Research spans layered intrusions,
+                                    chromitites, platinum-group minerals, arc
+                                    systems, melt-rock interaction, isotope
+                                    geochemistry, and modelling, combining
+                                    fieldwork, petrography, mineral chemistry,
+                                    microanalysis, and thermodynamic approaches
+                                    across South Africa, Wales, the USA, and
+                                    Kamchatka.
+                                </p>
+                            </article>
+                        </div>
+                    </div>
+                </section>
 
-          <aside class="hero-panel">
-            <figure class="hero-visual panel">
-              <img
-                src="./assets/images/portrait-main.jpeg"
-                alt="Portrait of Anton Kutyrev in a mountain landscape."
-              />
-            </figure>
+                <section class="section-block home-interest-section">
+                    <div class="section-heading">
+                        <p class="eyebrow">Research areas</p>
+                        <h2>Research interests</h2>
+                    </div>
+          <div class="card-grid research-grid research-index-grid research-plates">
+                        <a
+                            class="panel feature-card research-index-card research-index-link"
+                            href="./platinum-group-minerals.html"
+                        >
+                            <img
+                                class="research-index-cover"
+                                src="./assets/images/research/pgm-band-micrograph.webp"
+                                alt="Platinum-group mineral band."
+                                loading="lazy"
+                            />
+                            <div class="research-index-copy">
+                                <h3>Platinum-group minerals</h3>
+                                <p>
+                                    Alloys, oxides, redistribution, and
+                                    mineral-scale evidence for metal mobility.
+                                </p>
+                            </div>
+                        </a>
+                        <a
+                            class="panel feature-card research-index-card research-index-link"
+                            href="./layered-intrusions.html"
+                        >
+                            <img
+                                class="research-index-cover"
+                                src="./assets/images/research/layered-intrusion-outcrop.jpg"
+                                alt="Layered intrusion landscape from Anton Kutyrev's field photography."
+                                loading="lazy"
+                            />
+                            <div class="research-index-copy">
+                                <h3>Layered intrusions</h3>
+                                <p>
+                                    Critical-metal stratigraphy, magma chamber
+                                    processes, and chromitite-bearing sequences.
+                                </p>
+                            </div>
+                        </a>
+                        <a
+                            class="panel feature-card research-index-card research-index-link"
+                            href="./chromitites.html"
+                        >
+                            <img
+                                class="research-index-cover"
+                                src="./assets/images/research/os-ir-ru-alloy-inclusion.png"
+                                alt="Inclusion in an Os-Ir-Ru alloy."
+                                loading="lazy"
+                            />
+                            <div class="research-index-copy">
+                                <h3>Chromitites</h3>
+                                <p>
+                                    Chromium enrichment, platinum-group
+                                    minerals, and magmatic to post-magmatic
+                                    overprint.
+                                </p>
+                            </div>
+                        </a>
+                        <a
+                            class="panel feature-card research-index-card research-index-link"
+                            href="./melt-rock-interaction.html"
+                        >
+                            <img
+                                class="research-index-cover"
+                                src="./assets/images/portraits/anton-field-portrait.jpg"
+                                alt="Anton Kutyrev in an orange field jacket."
+                                loading="lazy"
+                            />
+                            <div class="research-index-copy">
+                                <h3>Melt-rock interaction</h3>
+                                <p>
+                                    Reaction textures, inclusions, fluids, and
+                                    multi-stage mineral histories.
+                                </p>
+                            </div>
+                        </a>
+                        <a
+                            class="panel feature-card research-index-card research-index-link"
+                            href="./early-earth-isotopes.html"
+                        >
+                            <img
+                                class="research-index-cover"
+                                src="./assets/images/research/anton-microscope-lab.jpg"
+                                alt="Anton Kutyrev at a microscope in the lab."
+                                loading="lazy"
+                            />
+                            <div class="research-index-copy">
+                                <h3>Early Earth isotopes</h3>
+                                <p>
+                                    Triple oxygen and hydrogen isotopes,
+                                    seawater-rock interaction, and Archean
+                                    environments.
+                                </p>
+                            </div>
+                        </a>
+                        <a
+                            class="panel feature-card research-index-card research-index-link"
+                            href="./arc-magmas.html"
+                        >
+                            <img
+                                class="research-index-cover"
+                                src="./assets/images/research/kamchatka-winter-volcanoes.jpg"
+                                alt="Koryaksky and Avachinsky in winter."
+                                loading="lazy"
+                            />
+                            <div class="research-index-copy">
+                                <h3>Arc magmas</h3>
+                                <p>
+                                    Primitive arc systems, mantle wedge
+                                    processes, oxidation state, and noble
+                                    metals.
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                </section>
 
-            <div class="panel profile-panel">
-              <p class="panel-kicker">Current base</p>
-              <h2>University of the Witwatersrand</h2>
-              <p>
-                Postdoctoral Research Fellow in the School of Geosciences,
-                working on critical minerals in layered mafic-ultramafic
-                intrusions and Bushveld chromitites.
-              </p>
-            </div>
+                <section class="section-block home-hobbies-section">
+                    <div class="section-heading">
+                        <p class="eyebrow">Outside research</p>
+                        <h2>Hobbies</h2>
+                    </div>
+                    <div class="card-grid research-grid research-index-grid">
+                        <a
+                            class="panel research-index-card research-index-link"
+                            href="./hobbies.html#painting"
+                        >
+                            <img
+                                class="research-index-cover"
+                                src="./assets/images/hobbies/painting-dachshund.jpg"
+                                alt="Painting of a dachshund for the hobbies section"
+                                loading="lazy"
+                            />
+                            <div class="research-index-copy">
+                                <h3>Painting</h3>
+                            </div>
+                        </a>
+                        <a
+                            class="panel research-index-card research-index-link"
+                            href="./hobbies.html#skydiving"
+                        >
+                            <img
+                                class="research-index-cover"
+                                src="./assets/images/hobbies/skydiving-freefall.png"
+                                alt="Skydiving photograph for the hobbies section"
+                                loading="lazy"
+                            />
+                            <div class="research-index-copy">
+                                <h3>Skydiving</h3>
+                            </div>
+                        </a>
+                    </div>
+                </section>
+            </main>
 
-            <div class="stats-grid">
-              <article class="stat-card">
-                <p class="stat-label">Research terrain</p>
-                <p class="stat-value">Layered intrusions</p>
-              </article>
-              <article class="stat-card">
-                <p class="stat-label">Core materials</p>
-                <p class="stat-value">Chromitites & PGE</p>
-              </article>
-              <article class="stat-card">
-                <p class="stat-label">Funding received</p>
-                <p class="stat-value">~CAD 566k</p>
-              </article>
-              <article class="stat-card">
-                <p class="stat-label">Research footprint</p>
-                <p class="stat-value">South Africa, UK, USA, Russia</p>
-              </article>
-            </div>
-          </aside>
-        </section>
-
-        <section class="section-block">
-          <div class="section-heading">
-            <p class="eyebrow">Research focus</p>
-            <h2>What drives the work</h2>
-          </div>
-          <div class="card-grid feature-grid">
-            <article class="panel feature-card">
-              <h3>Layered intrusions</h3>
-              <p>
-                Understanding Ni-Cu-PGE systems, chromitites, and the
-                petrogenesis of the Bushveld Critical Zone in the context of the
-                energy transition.
-              </p>
-            </article>
-            <article class="panel feature-card">
-              <h3>PGE mineralogy</h3>
-              <p>
-                Tracking platinum-group minerals, alloys, oxides, and their
-                overprints from field textures to high-resolution analytical
-                data.
-              </p>
-            </article>
-            <article class="panel feature-card">
-              <h3>Melt-rock interaction</h3>
-              <p>
-                Using mineral textures, inclusion assemblages, and geochemistry
-                to decode how melts and fluids reshape ultramafic systems.
-              </p>
-            </article>
-            <article class="panel feature-card">
-              <h3>Early Earth isotopes</h3>
-              <p>
-                Applying triple oxygen and hydrogen isotopes to constrain crustal
-                recycling, hydrothermal alteration, and ancient surface
-                processes.
-              </p>
-            </article>
-          </div>
-        </section>
-
-        <section class="section-block two-column">
-          <div>
-            <div class="section-heading">
-              <p class="eyebrow">Site logic</p>
-              <h2>A research home</h2>
-            </div>
-            <p class="supporting-text">
-              The structure of this website follows the logic of a modern
-              academic profile site: a front page that quickly introduces the
-              person and the science, followed by dedicated sections for
-              research, publications, CV, talks, and public-facing visual work.
-            </p>
-            <p class="supporting-text">
-              That means this site can work both as a professional reference for
-              collaborators and as an accessible entry point for students,
-              journalists, and anyone curious about your research.
-            </p>
-          </div>
-
-          <div class="stack">
-            <article class="panel compact-panel">
-              <p class="panel-kicker">Research</p>
-              <p>
-                Themes, analytical methods, and current questions across
-                ultramafic systems, isotopes, and mineral deposits.
-              </p>
-            </article>
-            <article class="panel compact-panel">
-              <p class="panel-kicker">Publications</p>
-              <p>
-                Peer-reviewed papers, under-review work, and datasets with DOI
-                links.
-              </p>
-            </article>
-            <article class="panel compact-panel">
-              <p class="panel-kicker">Photography</p>
-              <p>
-                A dedicated gallery section for field, mineral, and travel
-                images, ready for your photographs.
-              </p>
-            </article>
-          </div>
-        </section>
-
-        <section class="section-block">
-          <div class="section-heading">
-            <p class="eyebrow">Selected outputs</p>
-            <h2>Recent work</h2>
-          </div>
-          <div class="card-grid publication-preview">
-            <article class="panel publication-card">
-              <p class="publication-year">2026</p>
-              <h3>Formation of natural IrO2 through Os-Ir-Ru alloy oxidation</h3>
-              <p>Chemical Geology</p>
-              <a class="text-link" href="https://doi.org/10.1016/j.chemgeo.2025.123167"
-                >View DOI</a
-              >
-            </article>
-            <article class="panel publication-card">
-              <p class="publication-year">2024</p>
-              <h3>
-                Seawater-oceanic crust interaction constrained by triple oxygen
-                and hydrogen isotopes
-              </h3>
-              <p>Chemical Geology</p>
-              <a class="text-link" href="https://doi.org/10.1016/j.chemgeo.2024.122378"
-                >View DOI</a
-              >
-            </article>
-            <article class="panel publication-card">
-              <p class="publication-year">2025</p>
-              <h3>Iridium L3-edge XAS dataset of natural Ir-O phase</h3>
-              <p>Zenodo dataset</p>
-              <a class="text-link" href="https://doi.org/10.5281/zenodo.15650871"
-                >View DOI</a
-              >
-            </article>
-          </div>
-        </section>
-
-        <section class="section-block home-split">
-          <div class="panel">
-            <div class="section-heading">
-              <p class="eyebrow">Talks</p>
-              <h2>Talks and recordings</h2>
-            </div>
-            <p class="supporting-text">
-              The talks page already includes your conference history from the
-              CV and is ready for YouTube links, embedded recordings, and talk
-              abstracts.
-            </p>
-            <a class="button button-secondary" href="./talks.html"
-              >Open Talks Page</a
-            >
-          </div>
-
-          <div class="panel">
-            <div class="section-heading">
-              <p class="eyebrow">Photography</p>
-              <h2>Photo galleries</h2>
-            </div>
-            <p class="supporting-text">
-              A dedicated gallery page is in place so we can turn your best
-              images into a proper visual portfolio rather than hiding them in
-              the background of the site.
-            </p>
-            <a class="button button-secondary" href="./photography.html"
-              >View Galleries</a
-            >
-          </div>
-        </section>
-
-        <section class="section-block contact-block">
-          <div class="section-heading">
-            <p class="eyebrow">Contact</p>
-            <h2>Contact</h2>
-          </div>
-          <div class="card-grid contact-grid">
-            <article class="panel contact-card">
-              <p class="panel-kicker">Email</p>
-              <a class="text-link" href="mailto:anton.kutyrev@wits.ac.za"
-                >anton.kutyrev@wits.ac.za</a
-              >
-            </article>
-            <article class="panel contact-card">
-              <p class="panel-kicker">ORCID</p>
-              <a class="text-link" href="https://orcid.org/0000-0001-5933-6455"
-                >0000-0001-5933-6455</a
-              >
-            </article>
-          </div>
-        </section>
-      </main>
-
-      <footer class="site-footer">
-        <p>Anton Kutyrev</p>
-        <p>Petrology | Mineralogy | Critical Minerals</p>
-      </footer>
-    </div>
-  </body>
+            <footer
+                class="site-footer"
+                data-site-footer
+                data-site-footer-secondary="Petrology | Mineralogy | Critical Minerals"
+            ></footer>
+        </div>
+    </body>
 </html>

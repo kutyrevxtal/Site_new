@@ -1,209 +1,141 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Research | Anton Kutyrev</title>
     <meta
       name="description"
-      content="Research themes, methods, and current questions in Anton Kutyrev's work on layered intrusions, chromitites, PGE mineralogy, and isotopes."
+      content="Six research rubrics across platinum-group minerals, layered intrusions, chromitites, melt-rock interaction, early Earth isotopes, and arc magmas."
     />
     <link rel="stylesheet" href="./styles.css" />
     <script src="./script.js" defer></script>
   </head>
   <body>
     <div class="site-shell">
-      <header class="site-header">
-        <a class="brand" href="./index.html">Anton Kutyrev</a>
-        <nav class="site-nav" aria-label="Primary">
-          <a href="./index.html">Home</a>
-          <a class="active" href="./research.html">Research</a>
-          <a href="./publications.html">Publications</a>
-          <a href="./cv.html">CV</a>
-          <a href="./talks.html">Talks</a>
-          <a href="./photography.html">Photography</a>
-        </nav>
-        <button class="theme-toggle" type="button" aria-label="Toggle color theme">
-          Dark mode
-        </button>
-      </header>
+      <header class="site-header" data-site-header="research"></header>
 
       <main>
-        <section class="hero page-hero">
-          <div class="hero-copy">
-            <p class="eyebrow">Research</p>
-            <h1>Minerals, magmas, textures</h1>
-            <p class="hero-text">
-              My work focuses on how mafic-ultramafic and island-arc systems
-              evolve, how metals move through melts and fluids, and how mineral
-              assemblages preserve that history from the outcrop scale to the
-              nanoscale.
-            </p>
+        <section class="landing-hero rubric-hero">
+          <div class="landing-backdrop">
+            <img
+              src="./assets/images/headers/research-bear.jpg"
+              alt="Bear photograph used as the research page header."
+            />
+          </div>
+          <div class="landing-inner">
+            <div class="landing-copy">
+              <h1>Research</h1>
+              <p class="hero-text">Six research rubrics.</p>
+            </div>
           </div>
         </section>
 
         <section class="section-block">
           <div class="section-heading">
-            <p class="eyebrow">Themes</p>
+            <p class="eyebrow">Rubrics</p>
             <h2>Research areas</h2>
           </div>
-          <div class="card-grid research-grid">
-            <article class="panel feature-card">
-              <h3>Layered intrusions</h3>
-              <p>
-                Studying the Bushveld and other layered mafic-ultramafic systems
-                to understand petrogenesis, stratigraphy, chromitite formation,
-                and metal distribution in Ni-Cu-PGE-bearing environments.
-              </p>
-            </article>
-            <article class="panel feature-card">
-              <h3>Chromitites</h3>
-              <p>
-                Investigating how chromitites form through magmatic processes,
-                assimilation, melt-rock interaction, and later fluid overprints.
-              </p>
-            </article>
-            <article class="panel feature-card">
-              <h3>PGE mobility</h3>
-              <p>
-                Following platinum-group elements and minerals across alloys,
-                oxides, inclusions, and alteration assemblages to constrain
-                metal cycling in melts and fluids.
-              </p>
-            </article>
-            <article class="panel feature-card">
-              <h3>Melt-rock interaction</h3>
-              <p>
-                Using petrography, mineral chemistry, and multiphase inclusions
-                to reconstruct how magmatic and hydrothermal processes modify
-                ultramafic rocks.
-              </p>
-            </article>
-            <article class="panel feature-card">
-              <h3>Early Earth isotopes</h3>
-              <p>
-                Applying triple oxygen and hydrogen isotopes to altered
-                metalavas and related rocks to explore hydrothermal exchange,
-                seawater interaction, and ancient surface conditions.
-              </p>
-            </article>
-            <article class="panel feature-card">
-              <h3>Arc magmas</h3>
-              <p>
-                Examining primitive high-K arc magmas, Ural-Alaskan type
-                complexes, and the relationships between volcanic and plutonic
-                suites in subduction-related environments.
-              </p>
-            </article>
-          </div>
-        </section>
-
-        <section class="section-block two-column">
-          <div>
-            <div class="section-heading">
-              <p class="eyebrow">Workflow</p>
-              <h2>How I work</h2>
-            </div>
-            <p class="supporting-text">
-              The research combines field observation, petrography, microanalysis,
-              geochemistry, isotope work, and numerical modelling. I am most
-              interested in the points where these approaches intersect: where a
-              thin-section texture changes the interpretation of a bulk-rock
-              trend, or where a mineral inclusion reframes a whole model of
-              metal mobility.
-            </p>
-          </div>
-
-          <div class="stack">
-            <article class="panel compact-panel">
-              <p class="panel-kicker">Hands-on methods</p>
-              <p>
-                SEM-EDS, Raman spectroscopy, field portable XRF, clean-lab
-                chemistry, and mass spectrometry.
-              </p>
-            </article>
-            <article class="panel compact-panel">
-              <p class="panel-kicker">Interpretation</p>
-              <p>
-                LA-ICP-MS, EBSD, XRD, synchrotron micro-XRF/XAS, FIB-TEM, EPMA,
-                and atom-probe-informed mineralogical reasoning.
-              </p>
-            </article>
-            <article class="panel compact-panel">
-              <p class="panel-kicker">Modelling</p>
-              <p>
-                Python workflows, MAGEMin and MELTS approaches, isotope
-                fractionation models, and mass-balance or mixing calculations.
-              </p>
-            </article>
-          </div>
-        </section>
-
-        <section class="section-block">
-          <div class="section-heading">
-            <p class="eyebrow">Field to microscope</p>
-            <h2>Field to microscope</h2>
-          </div>
-          <div class="card-grid research-grid">
-            <figure class="panel image-card">
+          <div class="card-grid research-grid research-index-grid research-plates">
+            <a class="panel feature-card research-index-card research-index-link" href="./platinum-group-minerals.html">
               <img
-                src="./assets/images/field-ridge.jpg"
-                alt="Mountain ridge landscape photographed during fieldwork."
+                class="research-index-cover"
+                src="./assets/images/research/pgm-band-micrograph.webp"
+                alt="Platinum-group mineral band."
+                loading="lazy"
               />
-              <figcaption>
-                Field context matters: outcrop geometry, terrain, weather, and
-                relationships in the landscape are part of the interpretation.
-              </figcaption>
-            </figure>
-            <figure class="panel image-card">
+              <div class="research-index-copy">
+                <h3>Platinum-group minerals</h3>
+                <p>
+                  I work on platinum-group elements not only as tracers of
+                  magmatic processes, but also as elements that can be
+                  redistributed during alteration, metamorphism, and fluid-rock
+                  interaction.
+                </p>
+              </div>
+            </a>
+            <a class="panel feature-card research-index-card research-index-link" href="./layered-intrusions.html">
               <img
-                src="./assets/images/new-mineral.png"
-                alt="Microscopic mineral image from Anton Kutyrev's collection."
+                class="research-index-cover"
+                src="./assets/images/research/layered-intrusion-outcrop.jpg"
+                alt="Layered intrusion landscape from Anton Kutyrev's field photography."
+                loading="lazy"
               />
-              <figcaption>
-                The same story continues at mineral scale, where textures,
-                inclusions, and phase relations become evidence.
-              </figcaption>
-            </figure>
-          </div>
-        </section>
-
-        <section class="section-block">
-          <div class="section-heading">
-            <p class="eyebrow">Current directions</p>
-            <h2>Current questions</h2>
-          </div>
-          <div class="card-grid feature-grid">
-            <article class="panel feature-card">
-              <h3>PGE concentration</h3>
-              <p>
-                Especially across the Bushveld Critical Zone, where the balance
-                between magmatic and post-magmatic processes remains a central
-                problem.
-              </p>
-            </article>
-            <article class="panel feature-card">
-              <h3>Low-T PGE behaviour</h3>
-              <p>
-                Silicate-oxide-platinum-group mineral intergrowths offer windows
-                into processes that are still poorly constrained.
-              </p>
-            </article>
-            <article class="panel feature-card">
-              <h3>Isotope signals</h3>
-              <p>
-                Oxygen and hydrogen isotopes provide powerful tests of
-                hydrothermal exchange and crustal signatures in ancient rocks.
-              </p>
-            </article>
+              <div class="research-index-copy">
+                <h3>Layered intrusions</h3>
+                <p>
+                  Layered intrusions are central to my current work on
+                  mafic-ultramafic systems, critical metals, and
+                  chromitite-bearing stratigraphy.
+                </p>
+              </div>
+            </a>
+            <a class="panel feature-card research-index-card research-index-link" href="./chromitites.html">
+              <img
+                class="research-index-cover"
+                src="./assets/images/research/os-ir-ru-alloy-inclusion.png"
+                alt="Inclusion in an Os-Ir-Ru alloy."
+                loading="lazy"
+              />
+              <div class="research-index-copy">
+                <h3>Chromitites</h3>
+                <p>
+                  Chromitites are one of the main threads running through my
+                  research.
+                </p>
+              </div>
+            </a>
+            <a class="panel feature-card research-index-card research-index-link" href="./melt-rock-interaction.html">
+              <img
+                class="research-index-cover"
+                src="./assets/images/portraits/anton-field-portrait.jpg"
+                alt="Anton Kutyrev in an orange field jacket."
+                loading="lazy"
+              />
+              <div class="research-index-copy">
+                <h3>Melt-rock interaction</h3>
+                <p>
+                  Many of the rocks I work on cannot be understood as closed
+                  systems.
+                </p>
+              </div>
+            </a>
+            <a class="panel feature-card research-index-card research-index-link" href="./early-earth-isotopes.html">
+              <img
+                class="research-index-cover"
+                src="./assets/images/research/anton-microscope-lab.jpg"
+                alt="Anton Kutyrev at a microscope in the lab."
+                loading="lazy"
+              />
+              <div class="research-index-copy">
+                <h3>Early Earth isotopes</h3>
+                <p>
+                  I use stable isotopes to investigate water-rock interaction,
+                  crustal recycling, and near-surface conditions on the early
+                  Earth.
+                </p>
+              </div>
+            </a>
+            <a class="panel feature-card research-index-card research-index-link" href="./arc-magmas.html">
+              <img
+                class="research-index-cover"
+                src="./assets/images/research/kamchatka-winter-volcanoes.jpg"
+                alt="Koryaksky and Avachinsky in winter."
+                loading="lazy"
+              />
+              <div class="research-index-copy">
+                <h3>Arc magmas</h3>
+                <p>
+                  Arc magmas provide one of the clearest ways to study how the
+                  mantle wedge is modified by subduction.
+                </p>
+              </div>
+            </a>
           </div>
         </section>
       </main>
 
-      <footer class="site-footer">
-        <p>Anton Kutyrev</p>
-        <p>Research across layered intrusions, ultramafic rocks, and isotopes</p>
-      </footer>
+      <footer class="site-footer" data-site-footer data-site-footer-secondary="Six research rubrics"></footer>
     </div>
   </body>
 </html>

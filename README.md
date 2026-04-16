@@ -16,7 +16,6 @@ Assets:
 - `styles.css` - shared design system
 
 Downloads:
-- `Kutyrev_CV_INRS.docx`
 - `Kutyrev_CV_INRS.pdf`
 
 Local preview:

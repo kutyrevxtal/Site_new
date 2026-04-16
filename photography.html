@@ -1,149 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Photography | Anton Kutyrev</title>
     <meta
       name="description"
-      content="Photography and gallery page for field, mineral, and travel images by Anton Kutyrev."
+      content="Photography index organized by field regions and localities."
     />
     <link rel="stylesheet" href="./styles.css" />
     <script src="./script.js" defer></script>
   </head>
   <body>
     <div class="site-shell">
-      <header class="site-header">
-        <a class="brand" href="./index.html">Anton Kutyrev</a>
-        <nav class="site-nav" aria-label="Primary">
-          <a href="./index.html">Home</a>
-          <a href="./research.html">Research</a>
-          <a href="./publications.html">Publications</a>
-          <a href="./cv.html">CV</a>
-          <a href="./talks.html">Talks</a>
-          <a class="active" href="./photography.html">Photography</a>
-        </nav>
-        <button class="theme-toggle" type="button" aria-label="Toggle color theme">
-          Dark mode
-        </button>
-      </header>
+      <header class="site-header" data-site-header="photography"></header>
 
       <main>
-        <section class="hero page-hero">
-          <div class="hero-copy">
-            <p class="eyebrow">Photography</p>
-            <h1>Field and mineral photography</h1>
-            <p class="hero-text">
-              I have already pulled the first batch of photographs from the
-              older site folder, so this page now works as a real preview rather
-              than a placeholder.
+        <section class="landing-hero rubric-hero">
+          <div class="landing-backdrop">
+            <img
+              src="./assets/images/photography/mountain-weather-landscape.jpg"
+              alt="Snow-covered mountain landscape from Anton Kutyrev's field photography."
+            />
+          </div>
+          <div class="landing-inner">
+            <div class="landing-copy">
+              <h1>Photography</h1>
+              <p class="hero-text">
+                Images organized by field region rather than as one long gallery.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-heading">
+            <p class="eyebrow">Geographic rubrics</p>
+            <h2>Browse by region</h2>
+            <p>
+              Each rubric opens a separate page with photographs, locality links,
+              and longer notes.
             </p>
           </div>
-        </section>
+          <div class="card-grid research-grid research-index-grid">
+            <a class="panel research-index-card research-index-link" href="./photography-kamchatka.html">
+              <img
+                class="research-index-cover"
+                src="./assets/images/photography/kamchatka-tolbachik-volcano.jpg"
+                alt="Tolbachik volcano in Kamchatka."
+                loading="lazy"
+              />
+              <div class="research-index-copy">
+                <h3>Kamchatka</h3>
+                <p>
+                  Volcanoes, field routes, wildlife, lava caves, and laboratory-scale
+                  observations tied to Kamchatka fieldwork.
+                </p>
+              </div>
+            </a>
 
-        <section class="section-block">
-          <div class="section-heading">
-            <p class="eyebrow">Imported gallery</p>
-            <h2>Imported gallery</h2>
-          </div>
-          <div class="photo-grid">
-            <figure class="panel photo-card">
+            <a class="panel research-index-card research-index-link" href="./photography-south-africa.html">
               <img
-                src="./assets/images/cover-mountain.jpg"
-                alt="Snow-covered mountain landscape under cloud bands."
+                class="research-index-cover"
+                src="./assets/images/portraits/anton-field-portrait.jpg"
+                alt="Anton Kutyrev standing in the field in South Africa."
+                loading="lazy"
               />
-              <figcaption>
-                <h3>Cover</h3>
-                <p>Strong homepage material and a good anchor image for the site.</p>
-              </figcaption>
-            </figure>
-            <figure class="panel photo-card">
-              <img
-                src="./assets/images/field-bear.jpeg"
-                alt="Bear in alpine terrain during fieldwork."
-              />
-              <figcaption>
-                <h3>Bear</h3>
-                <p>A memorable field image with wildlife and mountain context.</p>
-              </figcaption>
-            </figure>
-            <figure class="panel photo-card">
-              <img
-                src="./assets/images/field-ridge.jpg"
-                alt="Mountain ridge landscape photographed during fieldwork."
-              />
-              <figcaption>
-                <h3>Ridge</h3>
-                <p>Useful for research pages, fieldwork narratives, and the homepage.</p>
-              </figcaption>
-            </figure>
-            <figure class="panel photo-card">
-              <img
-                src="./assets/images/field-valley.jpg"
-                alt="Wide mountain valley landscape."
-              />
-              <figcaption>
-                <h3>Valley</h3>
-                <p>Good wide-format imagery for section breaks and gallery highlights.</p>
-              </figcaption>
-            </figure>
-            <figure class="panel photo-card">
-              <img
-                src="./assets/images/new-mineral.png"
-                alt="Monochrome mineral image on a dark background."
-              />
-              <figcaption>
-                <h3>Minerals</h3>
-                <p>Microscale texture imagery for mineralogy and publication-related pages.</p>
-              </figcaption>
-            </figure>
-            <figure class="panel photo-card">
-              <img
-                src="./assets/images/pge-band.webp"
-                alt="Wide mineral or polished section image from the PGE gallery."
-              />
-              <figcaption>
-                <h3>PGE</h3>
-                <p>A wide image suited to banner areas and research highlights.</p>
-              </figcaption>
-            </figure>
-          </div>
-        </section>
+              <div class="research-index-copy">
+                <h3>South Africa</h3>
+                <p>
+                  Bushveld-related field images, travel notes, and photographs connected
+                  to current work in South Africa.
+                </p>
+              </div>
+            </a>
 
-        <section class="section-block">
-          <div class="section-heading">
-            <p class="eyebrow">Portraits</p>
-            <h2>Selected portraits</h2>
-          </div>
-          <div class="photo-grid">
-            <figure class="panel photo-card">
+            <a class="panel research-index-card research-index-link" href="./photography-other-localities.html">
               <img
-                src="./assets/images/portrait-main.jpeg"
-                alt="Portrait of Anton Kutyrev in mountain light."
+                class="research-index-cover"
+                src="./assets/images/photography/mountain-weather-landscape.jpg"
+                alt="Mountain landscape from Anton Kutyrev's field photography."
+                loading="lazy"
               />
-              <figcaption>
-                <h3>Main portrait</h3>
-                <p>Strong close portrait for the homepage and profile sections.</p>
-              </figcaption>
-            </figure>
-            <figure class="panel photo-card">
-              <img
-                src="./assets/images/portrait-field.jpg"
-                alt="Anton Kutyrev standing in the field in an orange jacket."
-              />
-              <figcaption>
-                <h3>Field portrait</h3>
-                <p>A wider portrait that keeps the landscape and field setting in view.</p>
-              </figcaption>
-            </figure>
+              <div class="research-index-copy">
+                <h3>Other localities</h3>
+                <p>
+                  A place for photographs from Wales and other field areas that do not
+                  fit the Kamchatka or South Africa sections.
+                </p>
+              </div>
+            </a>
           </div>
         </section>
       </main>
 
-      <footer class="site-footer">
-        <p>Anton Kutyrev</p>
-        <p>Photography galleries with real imported images</p>
-      </footer>
+      <footer
+        class="site-footer"
+        data-site-footer
+        data-site-footer-secondary="Photography organized by field region"
+      ></footer>
     </div>
   </body>
 </html>
