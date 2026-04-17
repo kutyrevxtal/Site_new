@@ -1100,6 +1100,10 @@ figcaption p {
   object-fit: unset;
 }
 
+img[data-lightbox-self] {
+  cursor: zoom-in;
+}
+
 .photo-card figcaption {
   padding: 1.15rem 1.2rem 1.25rem;
 }

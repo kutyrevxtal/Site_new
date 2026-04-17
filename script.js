@@ -54,7 +54,10 @@ function renderSiteFooter() {
 }
 
 function ensureLightbox() {
-  if (!document.querySelector("[data-lightbox-src]")) {
+  if (
+    !document.querySelector("[data-lightbox-src]") &&
+    !document.querySelector("[data-lightbox-self]")
+  ) {
     return null;
   }
 
@@ -127,15 +130,41 @@ function setupLightbox() {
     document.body.classList.remove("lightbox-open");
   };
 
+  const openLightbox = ({ src, alt, title, note }) => {
+    lightboxImage.src = src || "";
+    lightboxImage.alt = alt || "";
+    lightboxTitle.textContent = title || "";
+    lightboxNote.textContent = note || "";
+    lightbox.hidden = false;
+    lightbox.setAttribute("aria-hidden", "false");
+    document.body.classList.add("lightbox-open");
+  };
+
   document.querySelectorAll("[data-lightbox-src]").forEach((trigger) => {
     trigger.addEventListener("click", () => {
-      lightboxImage.src = trigger.dataset.lightboxSrc || "";
-      lightboxImage.alt = trigger.dataset.lightboxAlt || "";
-      lightboxTitle.textContent = trigger.dataset.lightboxTitle || "";
-      lightboxNote.textContent = trigger.dataset.lightboxNote || "";
-      lightbox.hidden = false;
-      lightbox.setAttribute("aria-hidden", "false");
-      document.body.classList.add("lightbox-open");
+      openLightbox({
+        src: trigger.dataset.lightboxSrc || "",
+        alt: trigger.dataset.lightboxAlt || "",
+        title: trigger.dataset.lightboxTitle || "",
+        note: trigger.dataset.lightboxNote || "",
+      });
+    });
+  });
+
+  document.querySelectorAll("img[data-lightbox-self]").forEach((image) => {
+    image.addEventListener("click", () => {
+      const figure = image.closest("figure");
+      const caption = figure?.querySelector("figcaption");
+      openLightbox({
+        src: image.currentSrc || image.getAttribute("src") || "",
+        alt: image.getAttribute("alt") || "",
+        title:
+          image.dataset.lightboxTitle ||
+          caption?.textContent?.trim() ||
+          image.getAttribute("alt") ||
+          "",
+        note: image.dataset.lightboxNote || "",
+      });
     });
   });
 
