@@ -77,7 +77,9 @@ function ensureLightbox() {
             <button class="lightbox-close" type="button" aria-label="Close expanded photo">
               ×
             </button>
-            <img class="lightbox-image" src="" alt="" />
+            <div class="lightbox-viewport">
+              <img class="lightbox-image" src="" alt="" />
+            </div>
             <div class="lightbox-caption">
               <p class="lightbox-title"></p>
               <p class="lightbox-note"></p>
@@ -116,13 +118,61 @@ function setupLightbox() {
   }
 
   const lightboxImage = lightbox.querySelector(".lightbox-image");
+  const lightboxViewport = lightbox.querySelector(".lightbox-viewport");
   const lightboxTitle = lightbox.querySelector(".lightbox-title");
   const lightboxNote = lightbox.querySelector(".lightbox-note");
   const closeButton = lightbox.querySelector(".lightbox-close");
+  let isDragging = false;
+  let didDrag = false;
+  let dragStartX = 0;
+  let dragStartY = 0;
+  let scrollStartLeft = 0;
+  let scrollStartTop = 0;
+
+  const resetZoom = () => {
+    lightbox.classList.remove("is-zoomed");
+    lightboxImage.style.width = "";
+    lightboxViewport.scrollLeft = 0;
+    lightboxViewport.scrollTop = 0;
+  };
+
+  const zoomImage = () => {
+    const fittedWidth = lightboxImage.getBoundingClientRect().width;
+    const naturalWidth = lightboxImage.naturalWidth || fittedWidth;
+    const targetWidth = Math.min(
+      naturalWidth,
+      Math.max(fittedWidth * 2.5, window.innerWidth * 1.8),
+    );
+
+    lightboxImage.style.width = `${Math.round(targetWidth)}px`;
+    lightbox.classList.add("is-zoomed");
+
+    requestAnimationFrame(() => {
+      lightboxViewport.scrollLeft =
+        (lightboxViewport.scrollWidth - lightboxViewport.clientWidth) / 2;
+      lightboxViewport.scrollTop =
+        (lightboxViewport.scrollHeight - lightboxViewport.clientHeight) / 2;
+    });
+  };
+
+  const toggleZoom = () => {
+    if (lightbox.classList.contains("is-zoomed")) {
+      resetZoom();
+      return;
+    }
+
+    if (lightboxImage.complete) {
+      zoomImage();
+      return;
+    }
+
+    lightboxImage.addEventListener("load", zoomImage, { once: true });
+  };
 
   const closeLightbox = () => {
     lightbox.hidden = true;
     lightbox.setAttribute("aria-hidden", "true");
+    resetZoom();
     lightboxImage.removeAttribute("src");
     lightboxImage.alt = "";
     lightboxTitle.textContent = "";
@@ -130,14 +180,24 @@ function setupLightbox() {
     document.body.classList.remove("lightbox-open");
   };
 
-  const openLightbox = ({ src, alt, title, note }) => {
+  const openLightbox = ({ src, alt, title, note, zoomOnOpen = false }) => {
     lightboxImage.src = src || "";
     lightboxImage.alt = alt || "";
     lightboxTitle.textContent = title || "";
     lightboxNote.textContent = note || "";
+    resetZoom();
     lightbox.hidden = false;
     lightbox.setAttribute("aria-hidden", "false");
     document.body.classList.add("lightbox-open");
+
+    if (zoomOnOpen) {
+      if (lightboxImage.complete) {
+        requestAnimationFrame(zoomImage);
+        return;
+      }
+
+      lightboxImage.addEventListener("load", zoomImage, { once: true });
+    }
   };
 
   document.querySelectorAll("[data-lightbox-src]").forEach((trigger) => {
@@ -147,6 +207,7 @@ function setupLightbox() {
         alt: trigger.dataset.lightboxAlt || "",
         title: trigger.dataset.lightboxTitle || "",
         note: trigger.dataset.lightboxNote || "",
+        zoomOnOpen: trigger.dataset.lightboxZoom === "true",
       });
     });
   });
@@ -164,11 +225,60 @@ function setupLightbox() {
           image.getAttribute("alt") ||
           "",
         note: image.dataset.lightboxNote || "",
+        zoomOnOpen: image.dataset.lightboxZoom === "true",
       });
     });
   });
 
   closeButton?.addEventListener("click", closeLightbox);
+  lightboxImage.addEventListener("click", (event) => {
+    event.stopPropagation();
+
+    if (didDrag) {
+      didDrag = false;
+      return;
+    }
+
+    toggleZoom();
+  });
+
+  lightboxViewport.addEventListener("pointerdown", (event) => {
+    if (!lightbox.classList.contains("is-zoomed")) {
+      return;
+    }
+
+    isDragging = true;
+    didDrag = false;
+    dragStartX = event.clientX;
+    dragStartY = event.clientY;
+    scrollStartLeft = lightboxViewport.scrollLeft;
+    scrollStartTop = lightboxViewport.scrollTop;
+    lightboxViewport.setPointerCapture(event.pointerId);
+  });
+
+  lightboxViewport.addEventListener("pointermove", (event) => {
+    if (!isDragging) {
+      return;
+    }
+
+    if (
+      Math.abs(event.clientX - dragStartX) > 4 ||
+      Math.abs(event.clientY - dragStartY) > 4
+    ) {
+      didDrag = true;
+    }
+
+    lightboxViewport.scrollLeft = scrollStartLeft - (event.clientX - dragStartX);
+    lightboxViewport.scrollTop = scrollStartTop - (event.clientY - dragStartY);
+  });
+
+  lightboxViewport.addEventListener("pointerup", () => {
+    isDragging = false;
+  });
+
+  lightboxViewport.addEventListener("pointercancel", () => {
+    isDragging = false;
+  });
 
   lightbox.addEventListener("click", (event) => {
     if (event.target === lightbox) {
