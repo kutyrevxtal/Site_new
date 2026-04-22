@@ -129,6 +129,30 @@ function setupLightbox() {
   let scrollStartLeft = 0;
   let scrollStartTop = 0;
 
+  const setLightboxFrame = () => {
+    const naturalWidth = lightboxImage.naturalWidth || 1;
+    const naturalHeight = lightboxImage.naturalHeight || 1;
+    const aspectRatio = naturalWidth / naturalHeight;
+    const maxWidth = Math.min(1320, Math.max(280, window.innerWidth - 40));
+    const maxHeight = Math.max(220, window.innerHeight - 150);
+    let frameWidth = maxWidth;
+    let frameHeight = frameWidth / aspectRatio;
+
+    if (frameHeight > maxHeight) {
+      frameHeight = maxHeight;
+      frameWidth = frameHeight * aspectRatio;
+    }
+
+    lightboxViewport.style.setProperty(
+      "--lightbox-frame-width",
+      `${Math.round(frameWidth)}px`,
+    );
+    lightboxViewport.style.setProperty(
+      "--lightbox-frame-height",
+      `${Math.round(frameHeight)}px`,
+    );
+  };
+
   const resetZoom = () => {
     lightbox.classList.remove("is-zoomed");
     lightboxImage.style.width = "";
@@ -192,12 +216,30 @@ function setupLightbox() {
 
     if (zoomOnOpen) {
       if (lightboxImage.complete) {
-        requestAnimationFrame(zoomImage);
+        requestAnimationFrame(() => {
+          setLightboxFrame();
+          zoomImage();
+        });
         return;
       }
 
-      lightboxImage.addEventListener("load", zoomImage, { once: true });
+      lightboxImage.addEventListener(
+        "load",
+        () => {
+          setLightboxFrame();
+          zoomImage();
+        },
+        { once: true },
+      );
+      return;
     }
+
+    if (lightboxImage.complete) {
+      requestAnimationFrame(setLightboxFrame);
+      return;
+    }
+
+    lightboxImage.addEventListener("load", setLightboxFrame, { once: true });
   };
 
   document.querySelectorAll("[data-lightbox-src]").forEach((trigger) => {
@@ -289,6 +331,12 @@ function setupLightbox() {
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape" && !lightbox.hidden) {
       closeLightbox();
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    if (!lightbox.hidden) {
+      setLightboxFrame();
     }
   });
 }
