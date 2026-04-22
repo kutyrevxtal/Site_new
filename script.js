@@ -77,12 +77,19 @@ function ensureLightbox() {
             <button class="lightbox-close" type="button" aria-label="Close expanded photo">
               ×
             </button>
+            <button class="lightbox-nav lightbox-prev" type="button" aria-label="Previous image">
+              ‹
+            </button>
             <div class="lightbox-viewport">
               <img class="lightbox-image" src="" alt="" />
             </div>
+            <button class="lightbox-nav lightbox-next" type="button" aria-label="Next image">
+              ›
+            </button>
             <div class="lightbox-caption">
               <p class="lightbox-title"></p>
               <p class="lightbox-note"></p>
+              <p class="lightbox-count"></p>
             </div>
           </div>
         </div>
@@ -121,20 +128,25 @@ function setupLightbox() {
   const lightboxViewport = lightbox.querySelector(".lightbox-viewport");
   const lightboxTitle = lightbox.querySelector(".lightbox-title");
   const lightboxNote = lightbox.querySelector(".lightbox-note");
+  const lightboxCount = lightbox.querySelector(".lightbox-count");
   const closeButton = lightbox.querySelector(".lightbox-close");
+  const previousButton = lightbox.querySelector(".lightbox-prev");
+  const nextButton = lightbox.querySelector(".lightbox-next");
+  const galleryItems = [];
   let isDragging = false;
   let didDrag = false;
   let dragStartX = 0;
   let dragStartY = 0;
   let scrollStartLeft = 0;
   let scrollStartTop = 0;
+  let currentIndex = 0;
 
   const setLightboxFrame = () => {
     const naturalWidth = lightboxImage.naturalWidth || 1;
     const naturalHeight = lightboxImage.naturalHeight || 1;
     const aspectRatio = naturalWidth / naturalHeight;
-    const maxWidth = Math.min(1320, Math.max(280, window.innerWidth - 40));
-    const maxHeight = Math.max(220, window.innerHeight - 150);
+    const maxWidth = Math.max(280, window.innerWidth - 24);
+    const maxHeight = Math.max(220, window.innerHeight - 96);
     let frameWidth = maxWidth;
     let frameHeight = frameWidth / aspectRatio;
 
@@ -201,7 +213,19 @@ function setupLightbox() {
     lightboxImage.alt = "";
     lightboxTitle.textContent = "";
     lightboxNote.textContent = "";
+    lightboxCount.textContent = "";
     document.body.classList.remove("lightbox-open");
+  };
+
+  const updateGalleryControls = () => {
+    const hasGallery = galleryItems.length > 1;
+
+    lightbox.classList.toggle("has-gallery", hasGallery);
+    previousButton.hidden = !hasGallery;
+    nextButton.hidden = !hasGallery;
+    lightboxCount.textContent = galleryItems.length
+      ? `${currentIndex + 1} / ${galleryItems.length}`
+      : "";
   };
 
   const openLightbox = ({ src, alt, title, note, zoomOnOpen = false }) => {
@@ -209,6 +233,7 @@ function setupLightbox() {
     lightboxImage.alt = alt || "";
     lightboxTitle.textContent = title || "";
     lightboxNote.textContent = note || "";
+    updateGalleryControls();
     resetZoom();
     lightbox.hidden = false;
     lightbox.setAttribute("aria-hidden", "false");
@@ -242,23 +267,68 @@ function setupLightbox() {
     lightboxImage.addEventListener("load", setLightboxFrame, { once: true });
   };
 
-  document.querySelectorAll("[data-lightbox-src]").forEach((trigger) => {
-    trigger.addEventListener("click", () => {
-      openLightbox({
-        src: trigger.dataset.lightboxSrc || "",
-        alt: trigger.dataset.lightboxAlt || "",
-        title: trigger.dataset.lightboxTitle || "",
-        note: trigger.dataset.lightboxNote || "",
-        zoomOnOpen: trigger.dataset.lightboxZoom === "true",
-      });
-    });
-  });
+  const openGalleryItem = (index) => {
+    if (!galleryItems.length) {
+      return;
+    }
 
-  document.querySelectorAll("img[data-lightbox-self]").forEach((image) => {
-    image.addEventListener("click", () => {
+    currentIndex = (index + galleryItems.length) % galleryItems.length;
+    openLightbox(galleryItems[currentIndex]);
+  };
+
+  const showPreviousImage = () => {
+    openGalleryItem(currentIndex - 1);
+  };
+
+  const showNextImage = () => {
+    openGalleryItem(currentIndex + 1);
+  };
+
+  const addGalleryItem = (item) => {
+    if (!item.src) {
+      return;
+    }
+
+    const existingIndex = galleryItems.findIndex(
+      (galleryItem) => galleryItem.src === item.src,
+    );
+
+    if (existingIndex !== -1) {
+      item.element.addEventListener("click", () => {
+        openGalleryItem(existingIndex);
+      });
+      return;
+    }
+
+    const itemIndex = galleryItems.length;
+
+    galleryItems.push(item);
+    item.element.addEventListener("click", () => {
+      openGalleryItem(itemIndex);
+    });
+  };
+
+  document
+    .querySelectorAll("[data-lightbox-src], img[data-lightbox-self]")
+    .forEach((element) => {
+      if (element.matches("[data-lightbox-src]")) {
+        addGalleryItem({
+          element,
+          src: element.dataset.lightboxSrc || "",
+          alt: element.dataset.lightboxAlt || "",
+          title: element.dataset.lightboxTitle || "",
+          note: element.dataset.lightboxNote || "",
+          zoomOnOpen: element.dataset.lightboxZoom === "true",
+        });
+        return;
+      }
+
+      const image = element;
       const figure = image.closest("figure");
       const caption = figure?.querySelector("figcaption");
-      openLightbox({
+
+      addGalleryItem({
+        element: image,
         src: image.currentSrc || image.getAttribute("src") || "",
         alt: image.getAttribute("alt") || "",
         title:
@@ -270,9 +340,16 @@ function setupLightbox() {
         zoomOnOpen: image.dataset.lightboxZoom === "true",
       });
     });
-  });
 
   closeButton?.addEventListener("click", closeLightbox);
+  previousButton?.addEventListener("click", (event) => {
+    event.stopPropagation();
+    showPreviousImage();
+  });
+  nextButton?.addEventListener("click", (event) => {
+    event.stopPropagation();
+    showNextImage();
+  });
   lightboxImage.addEventListener("click", (event) => {
     event.stopPropagation();
 
@@ -329,8 +406,22 @@ function setupLightbox() {
   });
 
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && !lightbox.hidden) {
+    if (lightbox.hidden) {
+      return;
+    }
+
+    if (event.key === "Escape") {
       closeLightbox();
+      return;
+    }
+
+    if (event.key === "ArrowLeft") {
+      showPreviousImage();
+      return;
+    }
+
+    if (event.key === "ArrowRight") {
+      showNextImage();
     }
   });
 
