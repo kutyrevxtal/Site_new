@@ -14,15 +14,17 @@ const NAV_ITEMS = [
 function applyTheme(theme) {
   const root = document.documentElement;
   const button = document.querySelector(".theme-toggle");
-  const nextTheme = theme === "dark" ? "dark" : "light";
+  const nextTheme = theme === "accessible" ? "accessible" : "dark";
 
   root.setAttribute("data-theme", nextTheme);
 
   if (button) {
     const label =
-      nextTheme === "dark" ? "Switch to light mode" : "Switch to dark mode";
+      nextTheme === "accessible"
+        ? "Switch to standard theme"
+        : "Switch to accessibility theme";
 
-    button.textContent = "☼";
+    button.textContent = nextTheme === "accessible" ? "A−" : "A+";
     button.setAttribute("aria-label", label);
     button.setAttribute("title", label);
   }
@@ -39,7 +41,7 @@ function renderSiteHeader() {
     header.innerHTML = `
       <a class="brand" href="./index.html">Anton Kutyrev</a>
       <nav class="site-nav" aria-label="Primary">${nav}</nav>
-      <button class="theme-toggle" type="button" aria-label="Toggle color theme">☼</button>
+      <button class="theme-toggle" type="button" aria-label="Toggle accessibility theme">A+</button>
     `;
   });
 }
@@ -110,7 +112,7 @@ function setupThemeToggle() {
 
   button.addEventListener("click", () => {
     const current = document.documentElement.getAttribute("data-theme");
-    const next = current === "dark" ? "light" : "dark";
+    const next = current === "accessible" ? "dark" : "accessible";
 
     localStorage.setItem(THEME_KEY, next);
     applyTheme(next);
