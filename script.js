@@ -1,7 +1,8 @@
 const THEME_KEY = "anton-kutyrev-theme";
+const HOME_HREF = "./index.html";
 
 const NAV_ITEMS = [
-  ["home", "./", "Home"],
+  ["home", HOME_HREF, "Home"],
   ["research", "./research.html", "Research"],
   ["publications", "./publications.html", "Publications"],
   ["cv", "./cv.html", "CV"],
@@ -39,10 +40,16 @@ function renderSiteHeader() {
     }).join("");
 
     header.innerHTML = `
-      <a class="brand" href="./">Anton Kutyrev</a>
+      <a class="brand" href="${HOME_HREF}">Anton Kutyrev</a>
       <nav class="site-nav" aria-label="Primary">${nav}</nav>
       <button class="theme-toggle" type="button" aria-label="Toggle accessibility theme">A+</button>
     `;
+  });
+}
+
+function syncHomeLinks() {
+  document.querySelectorAll("[data-home-link]").forEach((link) => {
+    link.setAttribute("href", HOME_HREF);
   });
 }
 
@@ -352,8 +359,16 @@ function setupLightbox() {
     event.stopPropagation();
     showNextImage();
   });
-  lightboxImage.addEventListener("click", (event) => {
+  lightboxViewport.addEventListener("click", (event) => {
     event.stopPropagation();
+
+    if (
+      event.target === closeButton ||
+      event.target === previousButton ||
+      event.target === nextButton
+    ) {
+      return;
+    }
 
     if (didDrag) {
       didDrag = false;
@@ -439,6 +454,7 @@ applyTheme(localStorage.getItem(THEME_KEY) || "dark");
 document.addEventListener("DOMContentLoaded", () => {
   renderSiteHeader();
   renderSiteFooter();
+  syncHomeLinks();
   applyTheme(document.documentElement.getAttribute("data-theme") || "dark");
   setupThemeToggle();
   setupLightbox();
