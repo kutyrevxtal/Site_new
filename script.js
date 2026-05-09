@@ -1,7 +1,7 @@
 const THEME_KEY = "anton-kutyrev-theme";
 
 const NAV_ITEMS = [
-  ["home", "./index.html", "Home"],
+  ["home", "./", "Home"],
   ["research", "./research.html", "Research"],
   ["publications", "./publications.html", "Publications"],
   ["cv", "./cv.html", "CV"],
@@ -39,7 +39,7 @@ function renderSiteHeader() {
     }).join("");
 
     header.innerHTML = `
-      <a class="brand" href="./index.html">Anton Kutyrev</a>
+      <a class="brand" href="./">Anton Kutyrev</a>
       <nav class="site-nav" aria-label="Primary">${nav}</nav>
       <button class="theme-toggle" type="button" aria-label="Toggle accessibility theme">A+</button>
     `;
