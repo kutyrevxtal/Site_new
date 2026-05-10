@@ -312,11 +312,17 @@ function setupLightbox() {
       : "";
   };
 
-  const openLightbox = (item, requestedVariantIndex = 0) => {
+  const openLightbox = (
+    item,
+    requestedVariantIndex = 0,
+    options = {},
+  ) => {
     const { src, alt, variantIndex } = getCurrentView(
       item,
       requestedVariantIndex,
     );
+    const reopenZoomed =
+      options.preserveZoom === true && lightbox.classList.contains("is-zoomed");
 
     currentItem = item;
     lightboxImage.src = src || "";
@@ -330,7 +336,7 @@ function setupLightbox() {
     lightbox.setAttribute("aria-hidden", "false");
     document.body.classList.add("lightbox-open");
 
-    if (item?.zoomOnOpen) {
+    if (item?.zoomOnOpen || reopenZoomed) {
       if (lightboxImage.complete) {
         requestAnimationFrame(() => {
           setLightboxFrame();
@@ -412,20 +418,20 @@ function setupLightbox() {
           zoomOnOpen: element.dataset.lightboxZoom === "true",
           variants: [
             {
-              src: element.dataset.lightboxVariant1Src || "",
+              src: element.dataset.lightboxVariantASrc || "",
               alt:
-                element.dataset.lightboxVariant1Alt ||
+                element.dataset.lightboxVariantAAlt ||
                 element.dataset.lightboxAlt ||
                 "",
-              label: element.dataset.lightboxVariant1Label || "",
+              label: element.dataset.lightboxVariantALabel || "",
             },
             {
-              src: element.dataset.lightboxVariant2Src || "",
+              src: element.dataset.lightboxVariantBSrc || "",
               alt:
-                element.dataset.lightboxVariant2Alt ||
+                element.dataset.lightboxVariantBAlt ||
                 element.dataset.lightboxAlt ||
                 "",
-              label: element.dataset.lightboxVariant2Label || "",
+              label: element.dataset.lightboxVariantBLabel || "",
             },
           ].filter((variant) => variant.src),
         });
@@ -459,7 +465,7 @@ function setupLightbox() {
       }
 
       const variantIndex = Number(button.dataset.lightboxVariantIndex || 0);
-      openLightbox(currentItem, variantIndex);
+      openLightbox(currentItem, variantIndex, { preserveZoom: true });
     });
   });
 
