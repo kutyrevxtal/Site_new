@@ -1329,6 +1329,35 @@ img[data-lightbox-self] {
   text-align: center;
 }
 
+.lightbox-variants {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.55rem;
+  margin-bottom: 0.45rem;
+}
+
+.lightbox-variant-button {
+  min-width: 11rem;
+  padding: 0.7rem 1rem;
+  border: 1px solid rgba(248, 251, 255, 0.24);
+  background: rgba(15, 23, 42, 0.72);
+  color: rgba(248, 251, 255, 0.9);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.lightbox-variant-button:hover,
+.lightbox-variant-button:focus-visible,
+.lightbox-variant-button.is-active {
+  border-color: rgba(93, 124, 255, 0.92);
+  background: rgba(47, 91, 234, 0.22);
+  color: #f8fbff;
+}
+
 .lightbox-title,
 .lightbox-note,
 .lightbox-count {

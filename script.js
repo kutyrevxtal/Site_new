@@ -96,6 +96,18 @@ function ensureLightbox() {
               ›
             </button>
             <div class="lightbox-caption">
+              <div class="lightbox-variants" hidden>
+                <button
+                  class="lightbox-variant-button"
+                  type="button"
+                  data-lightbox-variant-index="0"
+                ></button>
+                <button
+                  class="lightbox-variant-button"
+                  type="button"
+                  data-lightbox-variant-index="1"
+                ></button>
+              </div>
               <p class="lightbox-title"></p>
               <p class="lightbox-note"></p>
               <p class="lightbox-count"></p>
@@ -138,6 +150,10 @@ function setupLightbox() {
   const lightboxTitle = lightbox.querySelector(".lightbox-title");
   const lightboxNote = lightbox.querySelector(".lightbox-note");
   const lightboxCount = lightbox.querySelector(".lightbox-count");
+  const lightboxVariants = lightbox.querySelector(".lightbox-variants");
+  const variantButtons = Array.from(
+    lightbox.querySelectorAll(".lightbox-variant-button"),
+  );
   const closeButton = lightbox.querySelector(".lightbox-close");
   const previousButton = lightbox.querySelector(".lightbox-prev");
   const nextButton = lightbox.querySelector(".lightbox-next");
@@ -149,6 +165,63 @@ function setupLightbox() {
   let scrollStartLeft = 0;
   let scrollStartTop = 0;
   let currentIndex = 0;
+  let currentItem = null;
+
+  const getVariants = (item) =>
+    Array.isArray(item?.variants)
+      ? item.variants.filter((variant) => variant?.src)
+      : [];
+
+  const setVariantButtons = (item, activeIndex = 0) => {
+    const variants = getVariants(item);
+    const hasVariantSwitcher = variants.length > 1;
+
+    lightboxVariants.hidden = !hasVariantSwitcher;
+
+    variantButtons.forEach((button, index) => {
+      const variant = variants[index];
+
+      if (!variant) {
+        button.hidden = true;
+        button.textContent = "";
+        button.classList.remove("is-active");
+        button.removeAttribute("aria-pressed");
+        return;
+      }
+
+      button.hidden = false;
+      button.textContent = variant.label || `View ${index + 1}`;
+      button.classList.toggle("is-active", index === activeIndex);
+      button.setAttribute(
+        "aria-pressed",
+        index === activeIndex ? "true" : "false",
+      );
+    });
+  };
+
+  const getCurrentView = (item, requestedVariantIndex = 0) => {
+    const variants = getVariants(item);
+
+    if (!variants.length) {
+      return {
+        src: item?.src || "",
+        alt: item?.alt || "",
+        variantIndex: 0,
+      };
+    }
+
+    const safeVariantIndex = Math.min(
+      Math.max(requestedVariantIndex, 0),
+      variants.length - 1,
+    );
+    const variant = variants[safeVariantIndex];
+
+    return {
+      src: variant.src || item?.src || "",
+      alt: variant.alt || item?.alt || "",
+      variantIndex: safeVariantIndex,
+    };
+  };
 
   const setLightboxFrame = () => {
     const naturalWidth = lightboxImage.naturalWidth || 1;
@@ -223,6 +296,8 @@ function setupLightbox() {
     lightboxTitle.textContent = "";
     lightboxNote.textContent = "";
     lightboxCount.textContent = "";
+    currentItem = null;
+    lightboxVariants.hidden = true;
     document.body.classList.remove("lightbox-open");
   };
 
@@ -237,18 +312,25 @@ function setupLightbox() {
       : "";
   };
 
-  const openLightbox = ({ src, alt, title, note, zoomOnOpen = false }) => {
+  const openLightbox = (item, requestedVariantIndex = 0) => {
+    const { src, alt, variantIndex } = getCurrentView(
+      item,
+      requestedVariantIndex,
+    );
+
+    currentItem = item;
     lightboxImage.src = src || "";
     lightboxImage.alt = alt || "";
-    lightboxTitle.textContent = title || "";
-    lightboxNote.textContent = note || "";
+    lightboxTitle.textContent = item?.title || "";
+    lightboxNote.textContent = item?.note || "";
+    setVariantButtons(item, variantIndex);
     updateGalleryControls();
     resetZoom();
     lightbox.hidden = false;
     lightbox.setAttribute("aria-hidden", "false");
     document.body.classList.add("lightbox-open");
 
-    if (zoomOnOpen) {
+    if (item?.zoomOnOpen) {
       if (lightboxImage.complete) {
         requestAnimationFrame(() => {
           setLightboxFrame();
@@ -282,7 +364,7 @@ function setupLightbox() {
     }
 
     currentIndex = (index + galleryItems.length) % galleryItems.length;
-    openLightbox(galleryItems[currentIndex]);
+    openLightbox(galleryItems[currentIndex], 0);
   };
 
   const showPreviousImage = () => {
@@ -328,6 +410,24 @@ function setupLightbox() {
           title: element.dataset.lightboxTitle || "",
           note: element.dataset.lightboxNote || "",
           zoomOnOpen: element.dataset.lightboxZoom === "true",
+          variants: [
+            {
+              src: element.dataset.lightboxVariant1Src || "",
+              alt:
+                element.dataset.lightboxVariant1Alt ||
+                element.dataset.lightboxAlt ||
+                "",
+              label: element.dataset.lightboxVariant1Label || "",
+            },
+            {
+              src: element.dataset.lightboxVariant2Src || "",
+              alt:
+                element.dataset.lightboxVariant2Alt ||
+                element.dataset.lightboxAlt ||
+                "",
+              label: element.dataset.lightboxVariant2Label || "",
+            },
+          ].filter((variant) => variant.src),
         });
         return;
       }
@@ -349,6 +449,19 @@ function setupLightbox() {
         zoomOnOpen: image.dataset.lightboxZoom === "true",
       });
     });
+
+  variantButtons.forEach((button) => {
+    button.addEventListener("click", (event) => {
+      event.stopPropagation();
+
+      if (!currentItem) {
+        return;
+      }
+
+      const variantIndex = Number(button.dataset.lightboxVariantIndex || 0);
+      openLightbox(currentItem, variantIndex);
+    });
+  });
 
   closeButton?.addEventListener("click", closeLightbox);
   previousButton?.addEventListener("click", (event) => {
