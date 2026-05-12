@@ -1176,7 +1176,14 @@ html[data-theme="accessible"] figcaption p {
 }
 
 .photo-map-link {
+  display: inline-block;
   color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 1.08rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  line-height: 1.2;
+  white-space: nowrap;
 }
 
 .photo-map-link:hover,
