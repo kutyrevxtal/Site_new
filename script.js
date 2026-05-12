@@ -1,5 +1,6 @@
 const THEME_KEY = "anton-kutyrev-theme";
 const HOME_HREF = "./index.html";
+const DEFAULT_THEME = "dark";
 
 const NAV_ITEMS = [
   ["home", HOME_HREF, "Home"],
@@ -14,20 +15,42 @@ const NAV_ITEMS = [
 
 function applyTheme(theme) {
   const root = document.documentElement;
-  const button = document.querySelector(".theme-toggle");
-  const nextTheme = theme === "accessible" ? "accessible" : "dark";
+  const accessibilityButton = document.querySelector(
+    ".theme-toggle-accessibility",
+  );
+  const orangeButton = document.querySelector(".theme-toggle-orange");
+  const nextTheme =
+    theme === "accessible" || theme === "orange" ? theme : DEFAULT_THEME;
 
   root.setAttribute("data-theme", nextTheme);
 
-  if (button) {
-    const label =
-      nextTheme === "accessible"
-        ? "Switch to standard theme"
-        : "Switch to accessibility theme";
+  if (accessibilityButton) {
+    const accessibilityActive = nextTheme === "accessible";
+    const label = accessibilityActive
+      ? "Switch to standard theme"
+      : "Switch to accessibility theme";
 
-    button.textContent = nextTheme === "accessible" ? "A−" : "A+";
-    button.setAttribute("aria-label", label);
-    button.setAttribute("title", label);
+    accessibilityButton.textContent = accessibilityActive ? "A−" : "A+";
+    accessibilityButton.setAttribute("aria-label", label);
+    accessibilityButton.setAttribute("title", label);
+    accessibilityButton.setAttribute(
+      "aria-pressed",
+      accessibilityActive ? "true" : "false",
+    );
+    accessibilityButton.classList.toggle("active", accessibilityActive);
+  }
+
+  if (orangeButton) {
+    const orangeActive = nextTheme === "orange";
+    const label = orangeActive
+      ? "Switch to standard theme"
+      : "Switch to orange theme";
+
+    orangeButton.textContent = "O";
+    orangeButton.setAttribute("aria-label", label);
+    orangeButton.setAttribute("title", label);
+    orangeButton.setAttribute("aria-pressed", orangeActive ? "true" : "false");
+    orangeButton.classList.toggle("active", orangeActive);
   }
 }
 
@@ -42,7 +65,18 @@ function renderSiteHeader() {
     header.innerHTML = `
       <a class="brand" href="${HOME_HREF}">Anton Kutyrev</a>
       <nav class="site-nav" aria-label="Primary">${nav}</nav>
-      <button class="theme-toggle" type="button" aria-label="Toggle accessibility theme">A+</button>
+      <div class="theme-controls">
+        <button
+          class="theme-toggle theme-toggle-accessibility"
+          type="button"
+          aria-label="Toggle accessibility theme"
+        >A+</button>
+        <button
+          class="theme-toggle theme-toggle-orange"
+          type="button"
+          aria-label="Toggle orange theme"
+        >O</button>
+      </div>
     `;
   });
 }
@@ -123,15 +157,26 @@ function ensureLightbox() {
 }
 
 function setupThemeToggle() {
-  const button = document.querySelector(".theme-toggle");
+  const accessibilityButton = document.querySelector(
+    ".theme-toggle-accessibility",
+  );
+  const orangeButton = document.querySelector(".theme-toggle-orange");
 
-  if (!button) {
+  if (!accessibilityButton && !orangeButton) {
     return;
   }
 
-  button.addEventListener("click", () => {
+  accessibilityButton?.addEventListener("click", () => {
     const current = document.documentElement.getAttribute("data-theme");
-    const next = current === "accessible" ? "dark" : "accessible";
+    const next = current === "accessible" ? DEFAULT_THEME : "accessible";
+
+    localStorage.setItem(THEME_KEY, next);
+    applyTheme(next);
+  });
+
+  orangeButton?.addEventListener("click", () => {
+    const current = document.documentElement.getAttribute("data-theme");
+    const next = current === "orange" ? DEFAULT_THEME : "orange";
 
     localStorage.setItem(THEME_KEY, next);
     applyTheme(next);
@@ -568,13 +613,13 @@ function setupLightbox() {
   });
 }
 
-applyTheme(localStorage.getItem(THEME_KEY) || "dark");
+applyTheme(localStorage.getItem(THEME_KEY) || DEFAULT_THEME);
 
 document.addEventListener("DOMContentLoaded", () => {
   renderSiteHeader();
   renderSiteFooter();
   syncHomeLinks();
-  applyTheme(document.documentElement.getAttribute("data-theme") || "dark");
+  applyTheme(document.documentElement.getAttribute("data-theme") || DEFAULT_THEME);
   setupThemeToggle();
   setupLightbox();
 });
