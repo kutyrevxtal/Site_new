@@ -45,19 +45,19 @@ html[data-theme="dark"] {
 
 html[data-theme="accessible"] {
   color-scheme: dark;
-  --bg: #08111f;
-  --surface: #0b1628;
-  --surface-soft: #14243d;
-  --text: #f5fbff;
-  --text-secondary: #d2ddf0;
+  --bg: #111316;
+  --surface: #171a1e;
+  --surface-soft: #21262c;
+  --text: #f7f9fb;
+  --text-secondary: #d8dde5;
   --heading: #ffffff;
-  --accent: #9cb7ff;
-  --accent-hover: #c4d2ff;
-  --border: #7288ad;
-  --header-bg: rgba(8, 17, 31, 0.98);
-  --base-font-size: 1.08rem;
-  --hero-text-size: 1.1rem;
-  --prose-font-size: 1.08rem;
+  --accent: #f47a2c;
+  --accent-hover: #ffab74;
+  --border: #6a737f;
+  --header-bg: rgba(18, 20, 23, 0.98);
+  --base-font-size: 1.2rem;
+  --hero-text-size: 1.212rem;
+  --prose-font-size: 1.2rem;
 }
 
 html[data-theme="orange"] {
@@ -232,8 +232,8 @@ html[data-theme="dark"] .landing-hero::after {
 
 html[data-theme="accessible"] .landing-hero::after {
   background:
-    linear-gradient(90deg, rgba(8, 17, 31, 0.88) 0%, rgba(8, 17, 31, 0.76) 36%, rgba(8, 17, 31, 0.38) 72%, rgba(8, 17, 31, 0.16) 100%),
-    linear-gradient(180deg, rgba(8, 17, 31, 0.08), rgba(8, 17, 31, 0.3));
+    linear-gradient(90deg, rgba(18, 20, 23, 0.9) 0%, rgba(18, 20, 23, 0.78) 36%, rgba(18, 20, 23, 0.4) 72%, rgba(18, 20, 23, 0.18) 100%),
+    linear-gradient(180deg, rgba(18, 20, 23, 0.1), rgba(18, 20, 23, 0.32));
 }
 
 html[data-theme="orange"] .landing-hero::after {
@@ -398,7 +398,7 @@ html[data-theme="accessible"] .interest-chip {
 }
 
 html[data-theme="accessible"] .interest-chip {
-  background: rgba(11, 22, 40, 0.9);
+  background: rgba(23, 26, 30, 0.92);
   border-color: var(--border);
 }
 
@@ -409,7 +409,7 @@ html[data-theme="accessible"] .hero-hobbies-box {
 }
 
 html[data-theme="accessible"] .hero-hobbies-box {
-  background: rgba(11, 22, 40, 0.86);
+  background: rgba(23, 26, 30, 0.88);
   border-color: var(--border);
 }
 
@@ -962,7 +962,7 @@ html[data-theme="accessible"] .research-plates .research-index-cover {
 html[data-theme="accessible"] .text-link,
 html[data-theme="accessible"] .publication-link-muted,
 html[data-theme="accessible"] .subtle-link {
-  color: #b7c9ff;
+  color: #ffab74;
 }
 
 html[data-theme="accessible"] .text-link:hover,
@@ -971,15 +971,46 @@ html[data-theme="accessible"] .publication-link-muted:hover,
 html[data-theme="accessible"] .publication-link-muted:focus-visible,
 html[data-theme="accessible"] .subtle-link:hover,
 html[data-theme="accessible"] .subtle-link:focus-visible {
-  color: #dbe5ff;
+  color: #ffd0aa;
 }
 
 html[data-theme="accessible"] .landing-copy h1 {
-  font-size: clamp(3rem, 6.6vw, 5rem);
+  font-size: clamp(3.24rem, 7.2vw, 5.4rem);
 }
 
 html[data-theme="accessible"] .cv-hero-title {
-  font-size: clamp(4.4rem, 12vw, 8.5rem);
+  font-size: clamp(4.8rem, 13.2vw, 9.36rem);
+}
+
+html[data-theme="accessible"] .brand {
+  font-size: 1.296rem;
+}
+
+html[data-theme="accessible"] .site-nav a {
+  font-size: 1.128rem;
+}
+
+html[data-theme="accessible"] .theme-toggle {
+  width: 3.3rem;
+  height: 3.3rem;
+  font-size: 1.74rem;
+}
+
+html[data-theme="accessible"] h2 {
+  font-size: clamp(1.98rem, 3.6vw, 2.82rem);
+}
+
+html[data-theme="accessible"] h3 {
+  font-size: 1.38rem;
+}
+
+html[data-theme="accessible"] .eyebrow,
+html[data-theme="accessible"] .site-note-label,
+html[data-theme="accessible"] .cv-entry-meta,
+html[data-theme="accessible"] .cv-section .section-heading h2,
+html[data-theme="accessible"] figcaption,
+html[data-theme="accessible"] figcaption p {
+  font-size: 0.9rem;
 }
 
 html[data-theme="accessible"] .hero-text,
@@ -1583,7 +1614,7 @@ img[data-lightbox-self] {
 
   html[data-theme="accessible"] .landing-hero::after {
     background:
-      linear-gradient(180deg, rgba(8, 17, 31, 0.88) 0%, rgba(8, 17, 31, 0.74) 48%, rgba(8, 17, 31, 0.24) 100%);
+      linear-gradient(180deg, rgba(18, 20, 23, 0.9) 0%, rgba(18, 20, 23, 0.76) 48%, rgba(18, 20, 23, 0.26) 100%);
   }
 
   .landing-inner {
@@ -1661,8 +1692,32 @@ img[data-lightbox-self] {
 
   html[data-theme="accessible"] .home-hero::after {
     background:
-      linear-gradient(180deg, rgba(8, 17, 31, 0.92) 0%, rgba(8, 17, 31, 0.78) 33%, rgba(8, 17, 31, 0.42) 68%, rgba(8, 17, 31, 0.14) 100%),
-      linear-gradient(90deg, rgba(8, 17, 31, 0.82) 0%, rgba(8, 17, 31, 0.44) 46%, rgba(8, 17, 31, 0.14) 100%);
+      linear-gradient(180deg, rgba(18, 20, 23, 0.94) 0%, rgba(18, 20, 23, 0.8) 33%, rgba(18, 20, 23, 0.44) 68%, rgba(18, 20, 23, 0.16) 100%),
+      linear-gradient(90deg, rgba(18, 20, 23, 0.84) 0%, rgba(18, 20, 23, 0.46) 46%, rgba(18, 20, 23, 0.16) 100%);
+  }
+
+  html[data-theme="accessible"] .brand {
+    font-size: 1.2rem;
+  }
+
+  html[data-theme="accessible"] .site-nav a {
+    font-size: 1.08rem;
+    padding: 0.72rem 0.95rem;
+  }
+
+  html[data-theme="accessible"] .theme-toggle {
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.28rem;
+  }
+
+  html[data-theme="accessible"] .home-hero .hero-text {
+    font-size: 1.18rem;
+    line-height: 1.6;
+  }
+
+  html[data-theme="accessible"] .home-hero .compact-contact-panel .text-link {
+    font-size: 1.08rem;
   }
 
   html[data-theme="orange"] .home-hero::after {

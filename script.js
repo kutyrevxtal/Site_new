@@ -1,7 +1,6 @@
 const THEME_KEY = "anton-kutyrev-theme-v2";
 const HOME_HREF = "./index.html";
 const DEFAULT_THEME = "orange";
-const STANDARD_THEME = "dark";
 
 const NAV_ITEMS = [
   ["home", HOME_HREF, "Home"],
@@ -19,9 +18,7 @@ function applyTheme(theme) {
   const accessibilityButton = document.querySelector(
     ".theme-toggle-accessibility",
   );
-  const orangeButton = document.querySelector(".theme-toggle-orange");
-  const nextTheme =
-    theme === "accessible" || theme === "orange" ? theme : DEFAULT_THEME;
+  const nextTheme = theme === "accessible" ? "accessible" : DEFAULT_THEME;
 
   root.setAttribute("data-theme", nextTheme);
 
@@ -39,19 +36,6 @@ function applyTheme(theme) {
       accessibilityActive ? "true" : "false",
     );
     accessibilityButton.classList.toggle("active", accessibilityActive);
-  }
-
-  if (orangeButton) {
-    const orangeActive = nextTheme === "orange";
-    const label = orangeActive
-      ? "Switch to standard theme"
-      : "Switch to orange theme";
-
-    orangeButton.textContent = "O";
-    orangeButton.setAttribute("aria-label", label);
-    orangeButton.setAttribute("title", label);
-    orangeButton.setAttribute("aria-pressed", orangeActive ? "true" : "false");
-    orangeButton.classList.toggle("active", orangeActive);
   }
 }
 
@@ -72,11 +56,6 @@ function renderSiteHeader() {
           type="button"
           aria-label="Toggle accessibility theme"
         >A+</button>
-        <button
-          class="theme-toggle theme-toggle-orange"
-          type="button"
-          aria-label="Toggle orange theme"
-        >O</button>
       </div>
     `;
   });
@@ -161,23 +140,14 @@ function setupThemeToggle() {
   const accessibilityButton = document.querySelector(
     ".theme-toggle-accessibility",
   );
-  const orangeButton = document.querySelector(".theme-toggle-orange");
 
-  if (!accessibilityButton && !orangeButton) {
+  if (!accessibilityButton) {
     return;
   }
 
   accessibilityButton?.addEventListener("click", () => {
     const current = document.documentElement.getAttribute("data-theme");
     const next = current === "accessible" ? DEFAULT_THEME : "accessible";
-
-    localStorage.setItem(THEME_KEY, next);
-    applyTheme(next);
-  });
-
-  orangeButton?.addEventListener("click", () => {
-    const current = document.documentElement.getAttribute("data-theme");
-    const next = current === "orange" ? STANDARD_THEME : "orange";
 
     localStorage.setItem(THEME_KEY, next);
     applyTheme(next);
