@@ -44,9 +44,9 @@ function applyTheme(theme) {
     const orangeActive = nextTheme === "orange";
     const label = orangeActive
       ? "Switch to standard theme"
-      : "Switch to grey theme";
+      : "Switch to orange theme";
 
-    orangeButton.textContent = "G";
+    orangeButton.textContent = "O";
     orangeButton.setAttribute("aria-label", label);
     orangeButton.setAttribute("title", label);
     orangeButton.setAttribute("aria-pressed", orangeActive ? "true" : "false");
@@ -74,8 +74,8 @@ function renderSiteHeader() {
         <button
           class="theme-toggle theme-toggle-orange"
           type="button"
-          aria-label="Toggle grey theme"
-        >G</button>
+          aria-label="Toggle orange theme"
+        >O</button>
       </div>
     `;
   });
