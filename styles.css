@@ -1206,11 +1206,8 @@ html[data-theme="accessible"] figcaption p {
 .photo-map-link {
   display: inline-block;
   color: var(--accent);
-  font-family: var(--font-mono);
-  font-size: 1rem;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  line-height: 1.2;
+  font: inherit;
+  line-height: inherit;
   white-space: nowrap;
 }
 

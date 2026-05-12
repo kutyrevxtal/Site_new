@@ -1,6 +1,7 @@
-const THEME_KEY = "anton-kutyrev-theme";
+const THEME_KEY = "anton-kutyrev-theme-v2";
 const HOME_HREF = "./index.html";
-const DEFAULT_THEME = "dark";
+const DEFAULT_THEME = "orange";
+const STANDARD_THEME = "dark";
 
 const NAV_ITEMS = [
   ["home", HOME_HREF, "Home"],
@@ -176,7 +177,7 @@ function setupThemeToggle() {
 
   orangeButton?.addEventListener("click", () => {
     const current = document.documentElement.getAttribute("data-theme");
-    const next = current === "orange" ? DEFAULT_THEME : "orange";
+    const next = current === "orange" ? STANDARD_THEME : "orange";
 
     localStorage.setItem(THEME_KEY, next);
     applyTheme(next);
