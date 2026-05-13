@@ -989,6 +989,18 @@ html[data-theme="accessible"] .subtle-link:focus-visible {
   color: #ffd0aa;
 }
 
+html[data-theme="orange"] .text-link,
+html[data-theme="orange"] .photo-map-link {
+  color: #ffab74;
+}
+
+html[data-theme="orange"] .text-link:hover,
+html[data-theme="orange"] .text-link:focus-visible,
+html[data-theme="orange"] .photo-map-link:hover,
+html[data-theme="orange"] .photo-map-link:focus-visible {
+  color: #ffd0aa;
+}
+
 html[data-theme="accessible"] .landing-copy h1 {
   font-size: clamp(3.24rem, 7.2vw, 5.4rem);
 }
