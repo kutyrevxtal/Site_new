@@ -116,6 +116,13 @@ img {
   padding-bottom: 3rem;
 }
 
+.site-header > *,
+.section-block > *,
+.panel > *,
+.publication-item > * {
+  min-width: 0;
+}
+
 .site-header {
   position: sticky;
   top: 0;
@@ -208,8 +215,8 @@ img {
 
 .landing-hero {
   position: relative;
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
+  width: 100%;
+  margin-left: 0;
   min-height: min(88vh, 860px);
   overflow: hidden;
 }
@@ -577,6 +584,11 @@ figcaption p {
     background 160ms ease,
     color 160ms ease,
     border-color 160ms ease;
+  max-width: 100%;
+  flex-wrap: wrap;
+  text-align: left;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .button svg,
@@ -890,7 +902,8 @@ figcaption p {
 
 .subtle-link,
 .publication-link-muted {
-  width: fit-content;
+  width: auto;
+  max-width: 100%;
   font-family: var(--font-sans);
   font-weight: 400;
   color: var(--text-secondary);
@@ -898,6 +911,8 @@ figcaption p {
   font-size: 0.93rem;
   line-height: 1.6;
   border-bottom: 1px solid transparent;
+  overflow-wrap: anywhere;
+  word-break: break-word;
   transition:
     color 160ms ease,
     border-color 160ms ease;
@@ -1102,6 +1117,8 @@ html[data-theme="accessible"] figcaption p {
   color: var(--accent);
   font-weight: 500;
   text-decoration: none;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .text-link:hover,
@@ -1125,6 +1142,7 @@ html[data-theme="accessible"] figcaption p {
 .publication-item {
   position: relative;
   padding-left: 4.25rem;
+  overflow-wrap: anywhere;
 }
 
 .publication-item::before {
@@ -1517,9 +1535,9 @@ img[data-lightbox-self] {
   .site-header {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
-    align-items: center;
-    gap: 0.75rem 0.85rem;
-    padding: 0.9rem 0.9rem 0.95rem;
+    align-items: start;
+    gap: 0.75rem;
+    padding: 0.9rem 0.9rem 1rem;
   }
 
   .brand {
@@ -1533,27 +1551,26 @@ img[data-lightbox-self] {
   .site-nav {
     grid-column: 1 / -1;
     grid-row: 2;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 0.55rem;
+    width: 100%;
     margin-left: 0;
-    overflow-x: auto;
-    overflow-y: hidden;
-    padding-bottom: 0.15rem;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-
-  .site-nav::-webkit-scrollbar {
-    display: none;
+    overflow: visible;
+    padding-bottom: 0;
   }
 
   .site-nav a {
-    flex: 0 0 auto;
-    white-space: nowrap;
-    padding: 0.62rem 0.82rem;
-    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    min-height: 3rem;
+    padding: 0.7rem 0.72rem;
+    font-size: 0.92rem;
+    line-height: 1.2;
+    text-align: center;
+    white-space: normal;
   }
 
   .theme-toggle {
@@ -1566,11 +1583,12 @@ img[data-lightbox-self] {
     grid-column: 2;
     grid-row: 1;
     justify-self: end;
+    align-self: start;
     gap: 0.38rem;
   }
 
   .panel {
-    padding: 1.15rem;
+    padding: 1.2rem;
   }
 
   .photo-card {
@@ -1578,13 +1596,13 @@ img[data-lightbox-self] {
   }
 
   .publication-item {
-    padding-left: 1.15rem;
-    padding-top: 2.4rem;
+    padding-left: 1.1rem;
+    padding-top: 2.55rem;
   }
 
   .publication-item::before {
     top: 1rem;
-    left: 1.15rem;
+    left: 1.1rem;
   }
 
   h1 {
@@ -1598,7 +1616,7 @@ img[data-lightbox-self] {
   .section-block,
   .site-footer,
   .landing-inner {
-    width: min(calc(100% - 1rem), var(--max-width));
+    width: min(calc(100% - 1.2rem), var(--max-width));
   }
 
   .landing-hero,
@@ -1618,11 +1636,13 @@ img[data-lightbox-self] {
   }
 
   .landing-inner {
-    padding-top: 2rem;
+    padding-top: 1.9rem;
+    padding-bottom: 1rem;
   }
 
   .landing-copy {
     padding-bottom: 0;
+    max-width: 100%;
   }
 
   .home-hero {
@@ -1637,7 +1657,7 @@ img[data-lightbox-self] {
   }
 
   .home-hero .landing-copy {
-    max-width: min(100%, 22.5rem);
+    max-width: min(100%, 23.75rem);
   }
 
   .home-hero .landing-copy h1 {
@@ -1651,9 +1671,9 @@ img[data-lightbox-self] {
   }
 
   .home-hero .hero-text {
-    max-width: 22.5rem;
-    font-size: 0.98rem;
-    line-height: 1.56;
+    max-width: 23.5rem;
+    font-size: 1rem;
+    line-height: 1.64;
   }
 
   .home-hero .site-note {
@@ -1663,9 +1683,9 @@ img[data-lightbox-self] {
   .home-hero .compact-contact-panel {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, max-content));
-    gap: 0.65rem 1rem;
+    gap: 0.7rem 1rem;
     width: fit-content;
-    margin-top: 1.05rem;
+    margin-top: 1.1rem;
     padding: 0.95rem 1rem;
   }
 
@@ -1674,13 +1694,13 @@ img[data-lightbox-self] {
   }
 
   .home-hero .compact-contact-panel .text-link {
-    font-size: 0.94rem;
-    line-height: 1.4;
+    font-size: 0.97rem;
+    line-height: 1.45;
   }
 
   .home-hero .landing-backdrop img {
-    object-position: 74% 24%;
-    transform: scale(1.07);
+    object-position: 78% 10%;
+    transform: scale(1.03);
   }
 
   .home-hero::after,
@@ -1737,5 +1757,65 @@ img[data-lightbox-self] {
   .lightbox-close {
     top: -0.1rem;
     right: -0.1rem;
+  }
+
+  .section-block {
+    padding: 2.15rem 0 0.45rem;
+  }
+
+  .section-heading {
+    margin-bottom: 1.15rem;
+  }
+
+  .hero-text,
+  .panel p,
+  .publication-item p,
+  .simple-list li {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .research-topic-panel {
+    padding: 1.2rem;
+  }
+
+  .research-topic-prose {
+    gap: 1.5rem;
+  }
+
+  .research-topic-section {
+    gap: 1.05rem;
+  }
+
+  .research-index-copy,
+  .photo-entry-copy,
+  .photo-card figcaption {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .research-index-copy {
+    padding-top: 1rem;
+    padding-bottom: 1.1rem;
+  }
+
+  .photo-entry-copy {
+    padding-top: 1rem;
+    padding-bottom: 1.15rem;
+  }
+
+  figcaption,
+  figcaption p,
+  .photo-meta {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    letter-spacing: 0.06em;
+  }
+
+  .button,
+  .button-secondary,
+  .doi-link {
+    width: 100%;
+    justify-content: flex-start;
   }
 }
