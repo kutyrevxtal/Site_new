@@ -276,8 +276,8 @@ html[data-theme="orange"] .landing-hero::after {
 }
 
 .painting-hero .landing-backdrop img {
-  object-position: center 72%;
-  transform: scale(1.12);
+  object-position: center 84%;
+  transform: scale(1.22);
 }
 
 .landing-inner {
@@ -1721,8 +1721,8 @@ img[data-lightbox-self] {
   }
 
   .painting-hero .landing-backdrop img {
-    object-position: center 68%;
-    transform: scale(1.18);
+    object-position: center 82%;
+    transform: scale(1.28);
   }
 
   .home-hero::after,
