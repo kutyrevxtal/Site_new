@@ -1,6 +1,7 @@
 const THEME_KEY = "anton-kutyrev-theme-v2";
 const HOME_HREF = "./index.html";
 const DEFAULT_THEME = "orange";
+const MOBILE_NAV_QUERY = "(max-width: 720px)";
 
 const NAV_ITEMS = [
   ["home", HOME_HREF, "Home"],
@@ -40,17 +41,34 @@ function applyTheme(theme) {
 }
 
 function renderSiteHeader() {
+  // Give the main content a stable destination for the keyboard skip link.
+  const mainContent = document.querySelector("main");
+
+  if (mainContent && !mainContent.id) {
+    mainContent.id = "main-content";
+  }
+
   document.querySelectorAll("[data-site-header]").forEach((header) => {
     const activeKey = header.dataset.siteHeader;
     const nav = NAV_ITEMS.map(([key, href, label]) => {
-      const activeClass = key === activeKey ? " class=\"active\"" : "";
-      return `<a${activeClass} href="${href}">${label}</a>`;
+      // aria-current tells screen readers which page is open.
+      const activeAttributes =
+        key === activeKey ? ' class="active" aria-current="page"' : "";
+
+      return `<a${activeAttributes} href="${href}">${label}</a>`;
     }).join("");
 
     header.innerHTML = `
+      <a class="skip-link" href="#main-content">Skip to main content</a>
       <a class="brand" href="${HOME_HREF}">Anton Kutyrev</a>
-      <nav class="site-nav" aria-label="Primary">${nav}</nav>
+      <nav class="site-nav" id="site-navigation" aria-label="Primary">${nav}</nav>
       <div class="theme-controls">
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-controls="site-navigation"
+          aria-expanded="false"
+        >Menu</button>
         <button
           class="theme-toggle theme-toggle-accessibility"
           type="button"
@@ -58,6 +76,50 @@ function renderSiteHeader() {
         >A+</button>
       </div>
     `;
+  });
+}
+
+function setupMenuToggle() {
+  const header = document.querySelector(".site-header");
+  const menuButton = document.querySelector(".nav-toggle");
+  const navigation = document.querySelector(".site-nav");
+
+  if (!header || !menuButton || !navigation) {
+    return;
+  }
+
+  // Keep the visual state, button text, and accessibility state synchronized.
+  const setMenuOpen = (isOpen) => {
+    header.classList.toggle("nav-open", isOpen);
+    menuButton.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    menuButton.textContent = isOpen ? "Close" : "Menu";
+  };
+
+  menuButton.addEventListener("click", () => {
+    const isOpen = menuButton.getAttribute("aria-expanded") === "true";
+    setMenuOpen(!isOpen);
+  });
+
+  // Close the menu after a visitor chooses a page.
+  navigation.addEventListener("click", (event) => {
+    if (event.target.closest("a")) {
+      setMenuOpen(false);
+    }
+  });
+
+  // Escape closes the menu and returns focus to its button.
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && header.classList.contains("nav-open")) {
+      setMenuOpen(false);
+      menuButton.focus();
+    }
+  });
+
+  // Reset the mobile menu when the window becomes wider than the breakpoint.
+  window.matchMedia(MOBILE_NAV_QUERY).addEventListener("change", (event) => {
+    if (!event.matches) {
+      setMenuOpen(false);
+    }
   });
 }
 
@@ -104,7 +166,14 @@ function ensureLightbox() {
               ‹
             </button>
             <div class="lightbox-viewport">
-              <img class="lightbox-image" src="" alt="" />
+              <img
+                class="lightbox-image"
+                src=""
+                alt=""
+                role="button"
+                tabindex="0"
+                aria-label="Zoom expanded image"
+              />
             </div>
             <button class="lightbox-nav lightbox-next" type="button" aria-label="Next image">
               ›
@@ -154,6 +223,27 @@ function setupThemeToggle() {
   });
 }
 
+function prepareLightboxTrigger(element, label, openItem) {
+  // Buttons and links already have built-in keyboard behavior.
+  const isNaturallyInteractive = element.matches("button, a[href]");
+
+  if (!isNaturallyInteractive) {
+    element.setAttribute("role", "button");
+    element.setAttribute("tabindex", "0");
+    element.setAttribute("aria-label", `Open expanded image: ${label}`);
+
+    // Enter and Space now open a bare gallery image just like a button.
+    element.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        openItem();
+      }
+    });
+  }
+
+  element.addEventListener("click", openItem);
+}
+
 function setupLightbox() {
   const lightbox = ensureLightbox();
 
@@ -182,6 +272,7 @@ function setupLightbox() {
   let scrollStartTop = 0;
   let currentIndex = 0;
   let currentItem = null;
+  let previouslyFocusedElement = null;
 
   const getVariants = (item) =>
     Array.isArray(item?.variants)
@@ -266,6 +357,7 @@ function setupLightbox() {
   const resetZoom = () => {
     lightbox.classList.remove("is-zoomed");
     lightboxImage.style.width = "";
+    lightboxImage.setAttribute("aria-label", "Zoom expanded image");
     lightboxViewport.scrollLeft = 0;
     lightboxViewport.scrollTop = 0;
   };
@@ -280,6 +372,7 @@ function setupLightbox() {
 
     lightboxImage.style.width = `${Math.round(targetWidth)}px`;
     lightbox.classList.add("is-zoomed");
+    lightboxImage.setAttribute("aria-label", "Reset image zoom");
 
     requestAnimationFrame(() => {
       lightboxViewport.scrollLeft =
@@ -304,6 +397,8 @@ function setupLightbox() {
   };
 
   const closeLightbox = () => {
+    const focusTarget = previouslyFocusedElement;
+
     lightbox.hidden = true;
     lightbox.setAttribute("aria-hidden", "true");
     resetZoom();
@@ -313,8 +408,14 @@ function setupLightbox() {
     lightboxNote.textContent = "";
     lightboxCount.textContent = "";
     currentItem = null;
+    previouslyFocusedElement = null;
     lightboxVariants.hidden = true;
     document.body.classList.remove("lightbox-open");
+
+    // Return keyboard users to the image or button that opened the viewer.
+    if (focusTarget && document.contains(focusTarget)) {
+      focusTarget.focus();
+    }
   };
 
   const updateGalleryControls = () => {
@@ -340,6 +441,11 @@ function setupLightbox() {
     const reopenZoomed =
       options.preserveZoom === true && lightbox.classList.contains("is-zoomed");
 
+    if (lightbox.hidden) {
+      previouslyFocusedElement =
+        options.triggerElement || item?.element || document.activeElement;
+    }
+
     currentItem = item;
     lightboxImage.src = src || "";
     lightboxImage.alt = alt || "";
@@ -351,6 +457,11 @@ function setupLightbox() {
     lightbox.hidden = false;
     lightbox.setAttribute("aria-hidden", "false");
     document.body.classList.add("lightbox-open");
+
+    // Move focus into the dialog so its controls are announced immediately.
+    requestAnimationFrame(() => {
+      closeButton?.focus();
+    });
 
     if (item?.zoomOnOpen || reopenZoomed) {
       if (lightboxImage.complete) {
@@ -380,13 +491,13 @@ function setupLightbox() {
     lightboxImage.addEventListener("load", setLightboxFrame, { once: true });
   };
 
-  const openGalleryItem = (index) => {
+  const openGalleryItem = (index, triggerElement = null) => {
     if (!galleryItems.length) {
       return;
     }
 
     currentIndex = (index + galleryItems.length) % galleryItems.length;
-    openLightbox(galleryItems[currentIndex], 0);
+    openLightbox(galleryItems[currentIndex], 0, { triggerElement });
   };
 
   const showPreviousImage = () => {
@@ -407,18 +518,30 @@ function setupLightbox() {
     );
 
     if (existingIndex !== -1) {
-      item.element.addEventListener("click", () => {
-        openGalleryItem(existingIndex);
-      });
+      const openExistingItem = () => {
+        openGalleryItem(existingIndex, item.element);
+      };
+
+      prepareLightboxTrigger(
+        item.element,
+        item.alt || item.title || "image",
+        openExistingItem,
+      );
       return;
     }
 
     const itemIndex = galleryItems.length;
 
     galleryItems.push(item);
-    item.element.addEventListener("click", () => {
-      openGalleryItem(itemIndex);
-    });
+    const openNewItem = () => {
+      openGalleryItem(itemIndex, item.element);
+    };
+
+    prepareLightboxTrigger(
+      item.element,
+      item.alt || item.title || "image",
+      openNewItem,
+    );
   };
 
   document
@@ -513,6 +636,13 @@ function setupLightbox() {
     toggleZoom();
   });
 
+  lightboxImage.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      toggleZoom();
+    }
+  });
+
   lightboxViewport.addEventListener("pointerdown", (event) => {
     if (!lightbox.classList.contains("is-zoomed")) {
       return;
@@ -562,17 +692,44 @@ function setupLightbox() {
       return;
     }
 
+    if (event.key === "Tab") {
+      // Keep Tab focus inside the open dialog.
+      const focusableElements = Array.from(
+        lightbox.querySelectorAll(
+          'button:not([hidden]), [href], [tabindex]:not([tabindex="-1"])',
+        ),
+      ).filter((element) => element.offsetParent !== null);
+
+      if (focusableElements.length) {
+        const firstElement = focusableElements[0];
+        const lastElement = focusableElements[focusableElements.length - 1];
+
+        if (event.shiftKey && document.activeElement === firstElement) {
+          event.preventDefault();
+          lastElement.focus();
+        } else if (!event.shiftKey && document.activeElement === lastElement) {
+          event.preventDefault();
+          firstElement.focus();
+        }
+      }
+
+      return;
+    }
+
     if (event.key === "Escape") {
+      event.preventDefault();
       closeLightbox();
       return;
     }
 
     if (event.key === "ArrowLeft") {
+      event.preventDefault();
       showPreviousImage();
       return;
     }
 
     if (event.key === "ArrowRight") {
+      event.preventDefault();
       showNextImage();
     }
   });
@@ -591,6 +748,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderSiteFooter();
   syncHomeLinks();
   applyTheme(document.documentElement.getAttribute("data-theme") || DEFAULT_THEME);
+  setupMenuToggle();
   setupThemeToggle();
   setupLightbox();
 });

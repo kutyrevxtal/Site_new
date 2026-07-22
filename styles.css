@@ -144,6 +144,23 @@ img {
   letter-spacing: -0.015em;
 }
 
+.skip-link {
+  position: fixed;
+  top: 0.6rem;
+  left: 0.6rem;
+  z-index: 100;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--accent);
+  background: var(--surface);
+  color: var(--heading);
+  text-decoration: none;
+  transform: translateY(-160%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
 .site-nav {
   display: flex;
   flex-wrap: wrap;
@@ -156,6 +173,20 @@ img {
   display: flex;
   align-items: center;
   gap: 0.45rem;
+}
+
+.nav-toggle {
+  display: none;
+  min-height: 3rem;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--heading);
+  font: inherit;
+  font-size: 0.94rem;
+  font-weight: 500;
+  cursor: pointer;
 }
 
 .site-nav a,
@@ -195,6 +226,8 @@ img {
 .site-nav a:hover,
 .site-nav a:focus-visible,
 .site-nav a.active,
+.nav-toggle:hover,
+.nav-toggle:focus-visible,
 .theme-toggle.active,
 .theme-toggle:hover,
 .theme-toggle:focus-visible {
@@ -1393,6 +1426,11 @@ img[data-lightbox-self] {
   cursor: zoom-in;
 }
 
+.lightbox-image:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: -4px;
+}
+
 .lightbox-viewport {
   width: min(var(--lightbox-frame-width, 100%), calc(100vw - 1.5rem));
   height: min(var(--lightbox-frame-height, 82vh), calc(100vh - 6rem));
@@ -1568,13 +1606,24 @@ img[data-lightbox-self] {
   .site-nav {
     grid-column: 1 / -1;
     grid-row: 2;
-    display: grid;
+    display: none;
     grid-template-columns: 1fr;
     gap: 0.55rem;
     width: 100%;
     margin-left: 0;
     overflow: visible;
     padding-bottom: 0;
+  }
+
+  .site-header.nav-open .site-nav {
+    display: grid;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.7rem;
   }
 
   .site-nav a {
@@ -1753,6 +1802,11 @@ img[data-lightbox-self] {
     font-size: 1.28rem;
   }
 
+  html[data-theme="accessible"] .nav-toggle {
+    min-height: 3rem;
+    font-size: 1.08rem;
+  }
+
   html[data-theme="accessible"] .home-hero .hero-text {
     font-size: 1.18rem;
     line-height: 1.6;
@@ -1839,5 +1893,18 @@ img[data-lightbox-self] {
   .doi-link {
     width: 100%;
     justify-content: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
   }
 }
