@@ -1294,6 +1294,10 @@ html[data-theme="accessible"] figcaption p {
   text-transform: uppercase;
 }
 
+.video-placeholder {
+  text-decoration: none;
+}
+
 .video-embed {
   width: 100%;
   aspect-ratio: 16 / 9;
