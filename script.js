@@ -138,6 +138,46 @@ function renderSiteFooter() {
   });
 }
 
+function renderPageToc() {
+  // Builds "On this page" jump links from any element marked
+  // data-toc-entry (its id is the anchor, its first heading is the label).
+  // Add a new data-toc-entry section anywhere on the page and it appears
+  // here automatically - nothing else needs to be kept in sync by hand.
+  document.querySelectorAll("[data-page-toc]").forEach((nav) => {
+    const entries = Array.from(
+      document.querySelectorAll("[data-toc-entry]"),
+    )
+      .map((entry) => {
+        const heading = entry.querySelector("h2, h3");
+
+        if (!entry.id || !heading) {
+          return null;
+        }
+
+        return {
+          id: entry.id,
+          label: heading.textContent.trim(),
+        };
+      })
+      .filter(Boolean);
+
+    if (!entries.length) {
+      nav.hidden = true;
+      return;
+    }
+
+    const links = entries
+      .map(({ id, label }) => `<a href="#${id}">${label}</a>`)
+      .join("");
+
+    nav.hidden = false;
+    nav.innerHTML = `
+      <p class="page-toc-label">On this page</p>
+      <div class="page-toc-links">${links}</div>
+    `;
+  });
+}
+
 function ensureLightbox() {
   if (
     !document.querySelector("[data-lightbox-src]") &&
@@ -746,6 +786,7 @@ applyTheme(localStorage.getItem(THEME_KEY) || DEFAULT_THEME);
 document.addEventListener("DOMContentLoaded", () => {
   renderSiteHeader();
   renderSiteFooter();
+  renderPageToc();
   syncHomeLinks();
   applyTheme(document.documentElement.getAttribute("data-theme") || DEFAULT_THEME);
   setupMenuToggle();

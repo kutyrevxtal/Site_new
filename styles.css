@@ -26,23 +26,6 @@
   --prose-font-size: 1rem;
 }
 
-html[data-theme="dark"] {
-  color-scheme: dark;
-  --bg: #0f172a;
-  --surface: #111827;
-  --surface-soft: #172235;
-  --text: #e5edf8;
-  --text-secondary: #9aa7bc;
-  --heading: #f8fbff;
-  --accent: #5d82ff;
-  --accent-hover: #83a3ff;
-  --border: #263349;
-  --shadow: none;
-  --header-bg: rgba(15, 23, 42, 0.96);
-  --hero-glow-a: transparent;
-  --hero-glow-b: transparent;
-}
-
 html[data-theme="accessible"] {
   color-scheme: dark;
   --bg: #111316;
@@ -264,12 +247,6 @@ img {
   pointer-events: none;
 }
 
-html[data-theme="dark"] .landing-hero::after {
-  background:
-    linear-gradient(90deg, rgba(15, 23, 42, 0.8) 0%, rgba(15, 23, 42, 0.68) 35%, rgba(15, 23, 42, 0.28) 72%, rgba(15, 23, 42, 0.1) 100%),
-    linear-gradient(180deg, rgba(15, 23, 42, 0.04), rgba(15, 23, 42, 0.22));
-}
-
 html[data-theme="accessible"] .landing-hero::after {
   background:
     linear-gradient(90deg, rgba(18, 20, 23, 0.9) 0%, rgba(18, 20, 23, 0.78) 36%, rgba(18, 20, 23, 0.4) 72%, rgba(18, 20, 23, 0.18) 100%),
@@ -436,7 +413,6 @@ html[data-theme="orange"] .landing-hero::after {
   color: var(--accent);
 }
 
-html[data-theme="dark"] .interest-chip,
 html[data-theme="accessible"] .interest-chip {
   background: rgba(17, 24, 39, 0.58);
   border-color: rgba(38, 51, 73, 0.9);
@@ -447,7 +423,6 @@ html[data-theme="accessible"] .interest-chip {
   border-color: var(--border);
 }
 
-html[data-theme="dark"] .hero-hobbies-box,
 html[data-theme="accessible"] .hero-hobbies-box {
   background: rgba(17, 24, 39, 0.42);
   border-color: rgba(38, 51, 73, 0.9);
@@ -549,6 +524,57 @@ figcaption p {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--accent);
+}
+
+.page-toc {
+  display: grid;
+  gap: 0.65rem;
+  margin: 1.6rem 0 2.4rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--border);
+  background: var(--surface-soft);
+  border-radius: var(--radius-sm);
+}
+
+.page-toc-label {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.page-toc-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.page-toc-links a {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 0.75rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.88rem;
+  line-height: 1.3;
+  transition:
+    border-color 160ms ease,
+    color 160ms ease;
+}
+
+.page-toc-links a:hover,
+.page-toc-links a:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent-hover);
+}
+
+[data-toc-entry] {
+  scroll-margin-top: 6rem;
 }
 
 .site-note-warning {
@@ -1750,8 +1776,7 @@ img[data-lightbox-self] {
     min-height: auto;
   }
 
-  .landing-hero::after,
-  html[data-theme="dark"] .landing-hero::after {
+  .landing-hero::after {
     background:
       linear-gradient(180deg, rgba(15, 23, 42, 0.82) 0%, rgba(15, 23, 42, 0.66) 48%, rgba(15, 23, 42, 0.18) 100%);
   }
@@ -1834,8 +1859,7 @@ img[data-lightbox-self] {
     transform: scale(1.28);
   }
 
-  .home-hero::after,
-  html[data-theme="dark"] .home-hero::after {
+  .home-hero::after {
     background:
       linear-gradient(180deg, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.74) 33%, rgba(15, 23, 42, 0.34) 68%, rgba(15, 23, 42, 0.1) 100%),
       linear-gradient(90deg, rgba(15, 23, 42, 0.76) 0%, rgba(15, 23, 42, 0.38) 46%, rgba(15, 23, 42, 0.1) 100%);
