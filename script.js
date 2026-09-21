@@ -9,6 +9,7 @@ const NAV_ITEMS = [
   ["publications", "./publications.html", "Publications"],
   ["cv", "./cv.html", "CV"],
   ["talks", "./talks.html", "Talks"],
+  ["further-learning", "./further-learning.html", "Further learning"],
   ["photography", "./photography.html", "Photography"],
   ["petrography", "./petrography.html", "Petrography"],
   ["hobbies", "./hobbies.html", "Hobbies"],
