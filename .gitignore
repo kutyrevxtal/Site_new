@@ -5,3 +5,7 @@ dist/
 .parcel-cache/
 .vite/
 coverage/
+
+# Full-size originals kept for reference only - not linked from any page,
+# not served by the site. See assets/images/_originals/README.md.
+assets/images/_originals/

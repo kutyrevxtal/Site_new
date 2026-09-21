@@ -3,11 +3,25 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+        <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16.png" />
+        <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
         <title>Kazakhstan | Photography | Anton Kutyrev</title>
         <meta
             name="description"
             content="Photography from Kazakhstan by Anton Kutyrev."
         />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Anton Kutyrev" />
+        <meta property="og:title" content="Kazakhstan | Photography | Anton Kutyrev" />
+        <meta property="og:description" content="Photography from Kazakhstan by Anton Kutyrev." />
+        <meta property="og:url" content="https://www.antonkutyrev.com/photography-kazakhstan.html" />
+        <meta property="og:image" content="https://www.antonkutyrev.com/assets/images/photography/kazakhstan/kazakhstan-steppe-cattle.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Kazakhstan | Photography | Anton Kutyrev" />
+        <meta name="twitter:description" content="Photography from Kazakhstan by Anton Kutyrev." />
+        <meta name="twitter:image" content="https://www.antonkutyrev.com/assets/images/photography/kazakhstan/kazakhstan-steppe-cattle.jpg" />
         <meta name="robots" content="noindex, follow" />
         <link
             rel="canonical"
@@ -21,7 +35,22 @@
             <header class="site-header" data-site-header="photography"></header>
 
             <main>
-                <section class="landing-hero rubric-hero compact-rubric-hero">
+                <section class="landing-hero rubric-hero">
+                    <div class="landing-backdrop">
+                        <button
+                            class="hero-lightbox-trigger"
+                            type="button"
+                            data-lightbox-src="./assets/images/photography/kazakhstan/kazakhstan-steppe-cattle.jpg"
+                            data-lightbox-alt="Cattle grazing on the steppe near hills in Kazakhstan."
+                            data-lightbox-title="Steppe grazing"
+                            data-lightbox-note="Kazakhstan"
+                        >
+                            <img
+                                src="./assets/images/photography/kazakhstan/kazakhstan-steppe-cattle.jpg"
+                                alt="Cattle grazing on the steppe near hills in Kazakhstan."
+                            />
+                        </button>
+                    </div>
                     <div class="landing-inner">
                         <div class="landing-copy">
                             <h1>Kazakhstan</h1>
@@ -36,11 +65,32 @@
                     <div class="section-heading">
                         <h2>Album</h2>
                     </div>
-                    <div class="site-note" role="note">
-                        <p class="site-note-label">Photographs coming soon</p>
-                        <p>
-                            Images from Kazakhstan will be added to this album.
-                        </p>
+                    <div class="photo-essay-grid photo-essay-grid-single">
+                        <article class="panel photo-entry">
+                            <button
+                                class="lightbox-trigger"
+                                type="button"
+                                data-lightbox-src="./assets/images/photography/kazakhstan/kazakhstan-steppe-cattle.jpg"
+                                data-lightbox-alt="Cattle grazing on the steppe near hills in Kazakhstan."
+                                data-lightbox-title="Steppe grazing"
+                                data-lightbox-note="Kazakhstan"
+                            >
+                                <img
+                                    src="./assets/images/photography/kazakhstan/kazakhstan-steppe-cattle.jpg"
+                                    alt="Cattle grazing on the steppe near hills in Kazakhstan."
+                                    loading="lazy"
+                                />
+                            </button>
+                            <div class="photo-entry-copy">
+                                <h3>Steppe grazing</h3>
+                                <p>
+                                    Cattle grazing on open grassland, with dry
+                                    hills rising behind. More images from
+                                    Kazakhstan will be added to this album over
+                                    time.
+                                </p>
+                            </div>
+                        </article>
                     </div>
                 </section>
             </main>

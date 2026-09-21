@@ -1992,3 +1992,105 @@ img[data-lightbox-self] {
     transition-duration: 0.01ms !important;
   }
 }
+
+/*
+  Print styles. The site is dark-themed everywhere, which prints as pale
+  text on a white page unless overridden. This resets to plain black-on-
+  white, drops navigation/chrome that means nothing on paper, and undoes
+  the viewport-height hero sizing that would otherwise burn a blank page.
+  Applies site-wide (most useful on cv.html, but any page benefits).
+*/
+@media print {
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    background: transparent !important;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #111111 !important;
+  }
+
+  .site-header,
+  .site-footer,
+  .page-toc,
+  .skip-link,
+  .lightbox,
+  .button-row,
+  .home-hobbies-section,
+  .home-interest-section .research-index-copy p:empty {
+    display: none !important;
+  }
+
+  .landing-hero,
+  .landing-inner {
+    min-height: auto !important;
+  }
+
+  .landing-backdrop {
+    display: none !important;
+  }
+
+  .landing-hero::after {
+    display: none !important;
+  }
+
+  .landing-inner {
+    padding: 0 0 1rem !important;
+    display: block !important;
+  }
+
+  .landing-copy {
+    max-width: none !important;
+  }
+
+  h1,
+  h2,
+  h3,
+  .cv-hero-title,
+  .eyebrow,
+  .cv-section .section-heading h2,
+  .site-note-label {
+    color: #000000 !important;
+  }
+
+  .hero-text,
+  .panel p,
+  .publication-item p,
+  .simple-list li,
+  .cv-entry-meta {
+    color: #111111 !important;
+  }
+
+  a,
+  .text-link,
+  .doi-link,
+  .publication-link-muted {
+    color: #111111 !important;
+    text-decoration: underline;
+  }
+
+  a[href]:not([href^="#"])::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #444444;
+  }
+
+  .panel,
+  .cv-entry,
+  .publication-item,
+  .site-note {
+    border: 1px solid #cccccc !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .site-shell {
+    padding-bottom: 0;
+  }
+
+  main {
+    max-width: none;
+  }
+}
