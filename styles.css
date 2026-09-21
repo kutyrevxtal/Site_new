@@ -671,6 +671,51 @@ figcaption p {
   box-shadow: none;
 }
 
+.resource-logo-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 6.5rem;
+  margin: -0.25rem -0.25rem 1.25rem;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  background: #ffffff;
+}
+
+.resource-logo {
+  width: 100%;
+  max-width: 15rem;
+  max-height: 4.5rem;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.resource-logo-pair {
+  gap: 1.25rem;
+}
+
+.resource-logo-pair .resource-logo {
+  width: calc(50% - 0.625rem);
+  max-width: 10rem;
+}
+
+.resource-callout {
+  display: block;
+  max-width: 46rem;
+  text-decoration: none;
+  transition: border-color 180ms ease, background 180ms ease;
+}
+
+.resource-callout:hover,
+.resource-callout:focus-visible {
+  border-color: var(--accent);
+  background: var(--surface-soft);
+}
+
+.resource-callout p:last-of-type {
+  margin-bottom: 1rem;
+}
+
 .photo-card {
   overflow: hidden;
   padding: 0;
