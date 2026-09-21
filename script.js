@@ -8,7 +8,7 @@ const NAV_ITEMS = [
   ["research", "./research.html", "Research"],
   ["publications", "./publications.html", "Publications"],
   ["cv", "./cv.html", "CV"],
-  ["further-learning", "./further-learning.html", "Further learning"],
+  ["further-learning", "./further-learning.html", "For students"],
   ["photography", "./photography.html", "Photography"],
   ["petrography", "./petrography.html", "Petrography"],
   ["hobbies", "./hobbies.html", "Hobbies"],
