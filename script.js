@@ -206,6 +206,45 @@ function renderPageToc() {
   });
 }
 
+function setupClickablePublications() {
+  // Publication/dataset entries carrying data-doi-link open their DOI in a
+  // new tab when clicked anywhere on the card. Clicks on a real link inside
+  // the card (e.g. a location link in the citation text) are left alone so
+  // they still go to their own target instead of being hijacked.
+  document.querySelectorAll("[data-doi-link]").forEach((item) => {
+    const url = item.dataset.doiLink;
+
+    if (!url) {
+      return;
+    }
+
+    const open = () => window.open(url, "_blank", "noopener,noreferrer");
+
+    item.setAttribute("role", "link");
+    item.setAttribute("tabindex", "0");
+    item.setAttribute("aria-label", `Open DOI record: ${url}`);
+
+    item.addEventListener("click", (event) => {
+      if (event.target.closest("a")) {
+        return;
+      }
+
+      open();
+    });
+
+    item.addEventListener("keydown", (event) => {
+      if (event.target !== item) {
+        return;
+      }
+
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        open();
+      }
+    });
+  });
+}
+
 function ensureLightbox() {
   if (
     !document.querySelector("[data-lightbox-src]") &&
@@ -815,6 +854,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderSiteHeader();
   renderSiteFooter();
   renderPageToc();
+  setupClickablePublications();
   syncHomeLinks();
   applyTheme(document.documentElement.getAttribute("data-theme") || DEFAULT_THEME);
   setupMenuToggle();
