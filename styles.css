@@ -639,8 +639,7 @@ figcaption p {
 }
 
 .button,
-.button-secondary,
-.doi-link {
+.button-secondary {
   font-family: var(--font-sans);
   font-size: 0.95rem;
   font-weight: 500;
@@ -666,8 +665,7 @@ figcaption p {
 }
 
 .button svg,
-.button-secondary svg,
-.doi-link svg {
+.button-secondary svg {
   width: 1rem;
   height: 1rem;
   flex: 0 0 auto;
@@ -684,17 +682,14 @@ figcaption p {
   border-color: var(--accent-hover);
 }
 
-.button-secondary,
-.doi-link {
+.button-secondary {
   background: var(--surface);
   border-color: var(--border);
   color: var(--heading);
 }
 
 .button-secondary:hover,
-.button-secondary:focus-visible,
-.doi-link:hover,
-.doi-link:focus-visible {
+.button-secondary:focus-visible {
   background: var(--surface-soft);
   border-color: var(--accent);
 }
@@ -1097,7 +1092,6 @@ html[data-theme="accessible"] .theme-toggle,
 html[data-theme="accessible"] .panel,
 html[data-theme="accessible"] .button,
 html[data-theme="accessible"] .button-secondary,
-html[data-theme="accessible"] .doi-link,
 html[data-theme="accessible"] .research-inline-figure img,
 html[data-theme="accessible"] .figure-placeholder,
 html[data-theme="accessible"] .research-plates .research-index-cover {
@@ -1322,14 +1316,13 @@ html[data-theme="accessible"] figcaption p {
   outline-offset: 2px;
 }
 
-.doi-link {
-  margin-top: 0.75rem;
-}
-
-#datasets .doi-link {
-  margin-top: 0;
-  margin-left: 0.55rem;
-  vertical-align: baseline;
+.citation-doi {
+  display: inline;
+  margin-left: 0.4em;
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  color: var(--text-secondary);
+  overflow-wrap: anywhere;
 }
 
 .tight-list {
@@ -2005,8 +1998,7 @@ img[data-lightbox-self] {
   }
 
   .button,
-  .button-secondary,
-  .doi-link {
+  .button-secondary {
     width: 100%;
     justify-content: flex-start;
   }
@@ -2097,7 +2089,7 @@ img[data-lightbox-self] {
 
   a,
   .text-link,
-  .doi-link,
+  .citation-doi,
   .publication-link-muted {
     color: #111111 !important;
     text-decoration: underline;
