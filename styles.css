@@ -1271,6 +1271,12 @@ html[data-theme="accessible"] figcaption p {
   gap: 1rem;
 }
 
+.section-footnote {
+  margin: 1rem 0 0;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
 .publication-list {
   counter-reset: publication;
 }
