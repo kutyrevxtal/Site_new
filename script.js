@@ -6,8 +6,7 @@ const MOBILE_NAV_QUERY = "(max-width: 720px)";
 const NAV_ITEMS = [
   ["home", HOME_HREF, "Home"],
   ["research", "./research.html", "Research"],
-  ["publications", "./publications.html", "Publications"],
-  ["cv", "./cv.html", "CV"],
+  ["cv", "./cv.html", "CV & Publications"],
   ["further-learning", "./further-learning.html", "For students"],
   ["photography", "./photography.html", "Photography"],
   ["petrography", "./petrography.html", "Petrography"],
@@ -143,6 +142,12 @@ function renderPageToc() {
   // data-toc-entry (its id is the anchor, its first heading is the label).
   // Add a new data-toc-entry section anywhere on the page and it appears
   // here automatically - nothing else needs to be kept in sync by hand.
+  //
+  // Optionally, wrap a cluster of data-toc-entry elements in (or mark
+  // directly on) an ancestor carrying data-toc-group="Some Label" to get a
+  // grouped, labelled TOC (used on pages that merge two kinds of content,
+  // e.g. CV + Publications). Pages with a single group, or none, keep the
+  // original flat pill list.
   document.querySelectorAll("[data-page-toc]").forEach((nav) => {
     const entries = Array.from(
       document.querySelectorAll("[data-toc-entry]"),
@@ -154,9 +159,12 @@ function renderPageToc() {
           return null;
         }
 
+        const groupEl = entry.closest("[data-toc-group]");
+
         return {
           id: entry.id,
           label: heading.textContent.trim(),
+          group: groupEl ? groupEl.dataset.tocGroup : "",
         };
       })
       .filter(Boolean);
@@ -166,15 +174,35 @@ function renderPageToc() {
       return;
     }
 
-    const links = entries
-      .map(({ id, label }) => `<a href="#${id}">${label}</a>`)
-      .join("");
+    const groupNames = [...new Set(entries.map((entry) => entry.group))];
+    const renderLinks = (list) =>
+      list.map(({ id, label }) => `<a href="#${id}">${label}</a>`).join("");
 
     nav.hidden = false;
-    nav.innerHTML = `
-      <p class="page-toc-label">On this page</p>
-      <div class="page-toc-links">${links}</div>
-    `;
+
+    if (groupNames.length <= 1) {
+      nav.innerHTML = `
+        <p class="page-toc-label">On this page</p>
+        <div class="page-toc-links">${renderLinks(entries)}</div>
+      `;
+      return;
+    }
+
+    const groups = groupNames
+      .map((name) => {
+        const groupEntries = entries.filter((entry) => entry.group === name);
+        const label = name || "On this page";
+
+        return `
+          <div class="page-toc-group">
+            <p class="page-toc-label">${label}</p>
+            <div class="page-toc-links">${renderLinks(groupEntries)}</div>
+          </div>
+        `;
+      })
+      .join("");
+
+    nav.innerHTML = groups;
   });
 }
 

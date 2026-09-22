@@ -536,6 +536,16 @@ figcaption p {
   border-radius: var(--radius-sm);
 }
 
+.page-toc-group {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.page-toc-group + .page-toc-group {
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--border);
+}
+
 .page-toc-label {
   margin: 0;
   font-family: var(--font-mono);
