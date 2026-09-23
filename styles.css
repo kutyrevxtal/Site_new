@@ -1271,19 +1271,6 @@ html[data-theme="accessible"] figcaption p {
   gap: 1rem;
 }
 
-.tips-list {
-  margin: 0;
-  padding-left: 1.2rem;
-  display: grid;
-  gap: 0.75rem;
-  color: var(--text-secondary);
-  line-height: 1.62;
-}
-
-.tips-list strong {
-  color: var(--heading);
-}
-
 .section-footnote {
   margin: 1rem 0 0;
   font-size: 0.9rem;
