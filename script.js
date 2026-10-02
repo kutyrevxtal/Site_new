@@ -1,4 +1,5 @@
 const THEME_KEY = "anton-kutyrev-theme-v2";
+const MODE_KEY = "anton-kutyrev-mode";
 const HOME_HREF = "./index.html";
 const DEFAULT_THEME = "orange";
 const MOBILE_NAV_QUERY = "(max-width: 720px)";
@@ -39,6 +40,67 @@ function applyTheme(theme) {
   }
 }
 
+const SUN_ICON =
+  '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 1.5v2.5M12 20v2.5M1.5 12H4M20 12h2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/></g></svg>';
+const MOON_ICON =
+  '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.5 14.6A8.5 8.5 0 0 1 9.4 3.5a8.5 8.5 0 1 0 11.1 11.1Z"/></svg>';
+
+function readStored(key) {
+  try {
+    return localStorage.getItem(key);
+  } catch {
+    return null;
+  }
+}
+
+function writeStored(key, value) {
+  try {
+    localStorage.setItem(key, value);
+  } catch {
+    // Storage can be blocked (private mode); the choice then lasts one page.
+  }
+}
+
+function applyMode(mode) {
+  const root = document.documentElement;
+  const modeButton = document.querySelector(".theme-toggle-mode");
+  const isLight = mode === "light";
+
+  if (isLight) {
+    root.setAttribute("data-mode", "light");
+  } else {
+    root.removeAttribute("data-mode");
+  }
+
+  if (modeButton) {
+    const label = isLight ? "Switch to dark mode" : "Switch to light mode";
+
+    // Show the mode you will switch to.
+    modeButton.innerHTML = isLight ? MOON_ICON : SUN_ICON;
+    modeButton.setAttribute("aria-label", label);
+    modeButton.setAttribute("title", label);
+    modeButton.setAttribute("aria-pressed", isLight ? "true" : "false");
+  }
+}
+
+function setupModeToggle() {
+  const modeButton = document.querySelector(".theme-toggle-mode");
+
+  if (!modeButton) {
+    return;
+  }
+
+  modeButton.addEventListener("click", () => {
+    const next =
+      document.documentElement.getAttribute("data-mode") === "light"
+        ? "dark"
+        : "light";
+
+    writeStored(MODE_KEY, next);
+    applyMode(next);
+  });
+}
+
 function renderSiteHeader() {
   // Give the main content a stable destination for the keyboard skip link.
   const mainContent = document.querySelector("main");
@@ -68,6 +130,11 @@ function renderSiteHeader() {
           aria-controls="site-navigation"
           aria-expanded="false"
         >Menu</button>
+        <button
+          class="theme-toggle theme-toggle-mode"
+          type="button"
+          aria-label="Switch to light mode"
+        ></button>
         <button
           class="theme-toggle theme-toggle-accessibility"
           type="button"
@@ -325,7 +392,7 @@ function setupThemeToggle() {
     const current = document.documentElement.getAttribute("data-theme");
     const next = current === "accessible" ? DEFAULT_THEME : "accessible";
 
-    localStorage.setItem(THEME_KEY, next);
+    writeStored(THEME_KEY, next);
     applyTheme(next);
   });
 }
@@ -848,7 +915,8 @@ function setupLightbox() {
   });
 }
 
-applyTheme(localStorage.getItem(THEME_KEY) || DEFAULT_THEME);
+applyTheme(readStored(THEME_KEY) || DEFAULT_THEME);
+applyMode(readStored(MODE_KEY));
 
 document.addEventListener("DOMContentLoaded", () => {
   renderSiteHeader();
@@ -857,7 +925,9 @@ document.addEventListener("DOMContentLoaded", () => {
   setupClickablePublications();
   syncHomeLinks();
   applyTheme(document.documentElement.getAttribute("data-theme") || DEFAULT_THEME);
+  applyMode(document.documentElement.getAttribute("data-mode"));
   setupMenuToggle();
   setupThemeToggle();
+  setupModeToggle();
   setupLightbox();
 });
