@@ -2124,3 +2124,89 @@ img[data-lightbox-self] {
     max-width: none;
   }
 }
+
+/* Light mode: toggled by the sun/moon button, stored separately from the
+   A+ accessibility theme so the two can be combined. */
+html[data-mode="light"] {
+  color-scheme: light;
+  --bg: #f6f4f0;
+  --surface: #ffffff;
+  --surface-soft: #efebe5;
+  --text: #1c2026;
+  --text-secondary: #4f5762;
+  --heading: #111418;
+  --accent: #a8470c;
+  --accent-hover: #8f3a06;
+  --border: #d6d0c7;
+  --header-bg: rgba(246, 244, 240, 0.96);
+}
+
+html[data-mode="light"][data-theme="accessible"] {
+  --text-secondary: #3d434c;
+  --heading: #000000;
+  --accent: #8f3a06;
+  --border: #8a8f96;
+  --header-bg: rgba(246, 244, 240, 0.98);
+}
+
+html[data-mode="light"] .text-link,
+html[data-mode="light"] .photo-map-link,
+html[data-mode="light"] .publication-link-muted,
+html[data-mode="light"] .subtle-link {
+  color: var(--accent);
+}
+
+html[data-mode="light"] .text-link:hover,
+html[data-mode="light"] .text-link:focus-visible,
+html[data-mode="light"] .photo-map-link:hover,
+html[data-mode="light"] .photo-map-link:focus-visible,
+html[data-mode="light"] .publication-link-muted:hover,
+html[data-mode="light"] .publication-link-muted:focus-visible,
+html[data-mode="light"] .subtle-link:hover,
+html[data-mode="light"] .subtle-link:focus-visible {
+  color: var(--accent-hover);
+}
+
+html[data-mode="light"] .landing-hero::after {
+  background:
+    linear-gradient(90deg, rgba(246, 244, 240, 0.94) 0%, rgba(246, 244, 240, 0.84) 35%, rgba(246, 244, 240, 0.4) 72%, rgba(246, 244, 240, 0.12) 100%),
+    linear-gradient(180deg, rgba(246, 244, 240, 0.04), rgba(246, 244, 240, 0.24));
+}
+
+html[data-mode="light"] .site-note-warning {
+  border-color: #b4233a;
+  background: rgba(180, 35, 58, 0.07);
+  color: #5c0f1b;
+}
+
+html[data-mode="light"] .site-note-warning p {
+  color: #5c0f1b;
+}
+
+html[data-mode="light"] .site-note-warning .site-note-label {
+  color: #a3162b;
+}
+
+html[data-mode="light"] .interest-chip,
+html[data-mode="light"] .hero-hobbies-box {
+  background: rgba(255, 255, 255, 0.7);
+  border-color: var(--border);
+}
+
+.theme-toggle-mode svg {
+  width: 1.3rem;
+  height: 1.3rem;
+}
+
+@media (max-width: 720px) {
+  html[data-mode="light"] .landing-hero::after {
+    background:
+      linear-gradient(180deg, rgba(246, 244, 240, 0.95) 0%, rgba(246, 244, 240, 0.88) 55%, rgba(246, 244, 240, 0.72) 100%);
+  }
+
+  html[data-mode="light"] .home-hero::after {
+    background:
+      linear-gradient(180deg, rgba(246, 244, 240, 0.95) 0%, rgba(246, 244, 240, 0.84) 33%, rgba(246, 244, 240, 0.46) 68%, rgba(246, 244, 240, 0.14) 100%),
+      linear-gradient(90deg, rgba(246, 244, 240, 0.84) 0%, rgba(246, 244, 240, 0.46) 46%, rgba(246, 244, 240, 0.14) 100%);
+  }
+}
