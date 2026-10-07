@@ -445,6 +445,10 @@ html[data-theme="accessible"] .hero-hobbies-box {
   gap: 1rem;
 }
 
+.cv-block {
+  gap: 2.25rem;
+}
+
 .eyebrow {
   margin: 0 0 0.7rem;
   font-family: var(--font-mono);
